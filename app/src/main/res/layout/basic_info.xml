@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:text="@string/title_basic_info"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/line_fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="22dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/full_name"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/fullname"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_position"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/position_basic_info"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/position"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/location"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/phone"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/phone"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/email"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/gender"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/gender"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/age"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/age"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_joint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/joint"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/joint"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_nik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/nik"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/nik"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_bpjs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:text="@string/bpjs"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/bpjs"
+                style="@style/text_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/line_linkedin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/text_regular"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70dp"
+                android:text="Linkedin"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/linkedin"
+                style="@style/text_regular_purple"
+                android:text="www.linkedin.com/in/rizman768/"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="topUser"
+            type="id.co.dif.base_project.data.TopUser" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_profile_pic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="14dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_profile_pic"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:src="@drawable/img_technician" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_organization"
+            android:layout_width="0dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingEnd="48dp"
+            android:paddingStart="0dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_profile_completion"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:text="@{topUser.username}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/tv_username"
+            app:layout_constraintStart_toEndOf="@id/card_profile_pic"
+            app:layout_constraintTop_toTopOf="@id/card_profile_pic"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="Mirza My HumayungMirza My Humayung" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:text="@{topUser.position}"
+            android:textColor="@color/purple"
+            app:layout_constraintBottom_toBottomOf="@id/card_profile_pic"
+            app:layout_constraintStart_toEndOf="@id/card_profile_pic"
+            app:layout_constraintTop_toBottomOf="@id/tv_organization"
+            tools:text="Staff TO" />
+
+        <TextView
+            android:id="@+id/tv_profile_completion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:text="@string/time_spent"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/tv_value_time_spent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/card_profile_pic"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_value_time_spent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:text="@{topUser.timeSpent}"
+            tools:text="55h 10m"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/card_profile_pic"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_profile_completion" />
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/divider_item"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="14dp"
+            android:visibility="visible"
+            app:dividerColor="@color/gray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_profile_pic" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_dashboard"
+        android:icon="@drawable/ic_menu_home_belitung"
+        android:title="Dashboard" />
+    <item
+        android:id="@+id/menu_trouble_ticket"
+        android:icon="@drawable/ic_my_ticket"
+        android:title="My Ticket" />
+    <item
+        android:id="@+id/menu_map" android:title=""
+        android:enabled="false"/>
+    <item
+        android:id="@+id/menu_notification"
+        android:icon="@drawable/ic_inbox_belitung"
+        android:title="Inbox" />
+    <item
+        android:id="@+id/menu_me"
+        android:icon="@drawable/ic_menu_me_belitung"
+        android:title="Me" />
+</menu>

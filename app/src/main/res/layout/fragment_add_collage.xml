@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:title="@string/add_a_collage">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:backgroundTint="@color/white"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="31dp"
+                        android:layout_marginTop="17dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Add a Collage"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="School" />
+
+                    <EditText
+                        android:id="@+id/txt_company"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine" />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Time Periode" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/fromdate"
+                            style="@style/Form.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_edit_text"
+                            android:clickable="false"
+                            android:drawableEnd="@drawable/ic_datee"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="From"
+                            android:paddingStart="6dp" />
+
+                        <EditText
+                            android:id="@+id/untildate"
+                            style="@style/Form.EditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_edit_text"
+                            android:clickable="false"
+                            android:drawableEnd="@drawable/ic_datee"
+                            android:focusable="false"
+                            android:gravity="center"
+                            android:hint="Until"
+                            android:inputType="none"
+                            android:paddingStart="6dp" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Graduate  :" />
+
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="6dp"
+                        android:buttonTint="@color/purple"
+                        android:checked="true" />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Description" />
+
+                    <EditText
+                        android:id="@+id/txt_description"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine" />
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Connection" />
+
+                    <EditText
+                        android:id="@+id/edt_connection1"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine" />
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Connection  " />
+
+                    <EditText
+                        android:id="@+id/edt_connection2"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionNext"
+                        android:inputType="textMultiLine" />
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="Attended for  :" />
+
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="College" />
+
+                        <RadioButton
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Graduate School   " />
+
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/bt_save"
+                    style="@style/Form.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:text="Save" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

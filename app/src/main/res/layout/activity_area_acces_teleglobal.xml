@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:actionButtonIcon="@drawable/ic_btn_save_area_acces"
+        app:actionButtonTint="@color/purple"
+        app:title="Area Acces">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_no_area_acces_alert"
+            style="@style/text_bold_purple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:text="@string/you_dont_have_area_acces"
+            android:textAlignment="center"
+            android:textSize="16sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_area_acces"/>
+
+        </FrameLayout>
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

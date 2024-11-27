@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/id_tower_signal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_icon"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/textName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:paddingEnd="8dp"
+                android:paddingStart="0dp"
+                android:ellipsize="end"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:textColor="#404040"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/img_icon"
+                app:layout_constraintStart_toEndOf="@id/img_icon"
+                app:layout_constraintTop_toTopOf="@id/img_icon"
+                tools:text="Tower Signal" />
+
+            <ImageView
+                android:id="@+id/btn_select_this_site"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_direction_new"
+                android:layout_marginEnd="62dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textAddress"
+                app:layout_constraintBottom_toBottomOf="@id/pic_ic"/>
+
+            <TextView
+                android:id="@+id/title_select_this_site"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/create_ticket_for_this_site"
+                android:textColor="#404040"
+                app:layout_constraintTop_toBottomOf="@id/btn_select_this_site"
+                app:layout_constraintStart_toStartOf="@id/btn_select_this_site"
+                app:layout_constraintEnd_toEndOf="@id/btn_select_this_site"/>
+
+
+            <ImageView
+                android:id="@+id/address_ic"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_pinpoint"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_icon"
+                app:tint="#404040" />
+
+            <TextView
+                android:id="@+id/textAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_regular"
+                app:layout_constraintBottom_toBottomOf="@id/address_ic"
+                app:layout_constraintStart_toEndOf="@id/address_ic"
+                app:layout_constraintTop_toTopOf="@id/address_ic"
+                tools:text="Jawa Barat" />
+
+            <ImageView
+                android:id="@+id/pic_ic"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_person"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/address_ic"
+                app:tint="#404040" />
+
+            <TextView
+                android:id="@+id/textPic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/pic_ic"
+                app:layout_constraintStart_toEndOf="@id/pic_ic"
+                app:layout_constraintTop_toTopOf="@id/pic_ic"
+                tools:text="DCL Gilang" />
+
+            <ImageView
+                android:id="@+id/tel_ic"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pic_ic"
+                app:tint="#404040" />
+
+            <TextView
+                android:id="@+id/contact_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:fontFamily="@font/roboto_regular"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/tel_ic"
+                app:layout_constraintStart_toEndOf="@id/tel_ic"
+                app:layout_constraintTop_toBottomOf="@id/pic_ic"
+                app:layout_constraintTop_toTopOf="@id/tel_ic"
+                tools:text="+62882812819" />
+
+            <ImageView
+                android:id="@+id/img_house"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/ic_house"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tel_ic"
+                app:tint="#404040" />
+
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textSize="12sp"
+                android:fontFamily="@font/roboto_regular"
+                app:layout_constraintBottom_toBottomOf="@id/img_house"
+                app:layout_constraintStart_toEndOf="@id/img_house"
+                app:layout_constraintTop_toBottomOf="@id/img_house"
+                app:layout_constraintTop_toTopOf="@id/img_house"
+                tools:text="Mampang Prapatan" />
+
+            <Button
+                android:id="@+id/btn_detail"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:background="@color/purple"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/detail"
+                android:textAppearance="@style/detail"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_house" />
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="0dp"
+                android:background="@color/purple"
+                app:layout_constraintBottom_toBottomOf="@id/tel_ic"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_icon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

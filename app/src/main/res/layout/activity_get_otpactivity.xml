@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.activity.GetOTPActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/verify_your_phone_number"
+        style="@style/verify_your"
+        android:textStyle="bold"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="128dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="35dp"
+        android:gravity=""
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/we_have_send_you_an_on_this_mobile_number"
+        style="@style/we_have_sen"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="215dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="18dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/one_time_password_otp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="215dp"
+        android:layout_marginLeft="182dp"
+        android:layout_marginRight="18dp"
+        android:textColor="#313646"
+        />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_mobile_no"
+        style="@style/we_have_sen"
+        android:fontFamily="@font/roboto_regular"
+        android:layout_marginTop="303dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginRight="18dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="100dp"
+        android:layout_height="46dp"
+        app:cardCornerRadius="6dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="23dp">
+
+        <Spinner
+            android:id="@+id/id_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:entries="@array/country_codes"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="6dp"
+        android:background="@drawable/bg_otp_long"
+        android:layout_marginTop="325dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="19dp"
+        android:paddingStart="15dp"
+        android:textSize="15sp"
+        android:text="08"
+        android:inputType="phone"/>
+
+
+
+    <Button
+        android:id="@+id/id_getcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="18dp"
+        android:text="Get Code"
+        style="@style/Form.Button"
+        android:fontFamily="@font/roboto_regular"
+        />
+
+
+</RelativeLayout>
+</layout>

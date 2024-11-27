@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/layout_on_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EEF6FF">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layout_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="24dp"
+                android:orientation="vertical"
+                app:cardBackgroundColor="@color/purple"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/tv_request_spare_part"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:drawablePadding="4dp"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:padding="8dp"
+                        android:text="Request Spare Part"
+                        android:textColor="@color/white"
+                        app:drawableStartCompat="@drawable/ic_plus"
+                        app:drawableTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/white" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sparepart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_spare_part" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_error_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cream"
+                android:elevation="2dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/img_error_list"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@mipmap/img_network_error_foreground"
+                    app:layout_constraintBottom_toTopOf="@id/tv_title_error_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tv_title_error_list"
+                    style="@style/text_bold_purple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:includeFontPadding="false"
+                    android:text="Something went wrong"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_description_error_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_error_list" />
+
+                <TextView
+                    android:id="@+id/tv_description_error_list"
+                    style="@style/text_regular_purple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:includeFontPadding="false"
+                    android:text="Check network or contact administrator"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/btn_error_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_error_list" />
+
+                <Button
+                    android:id="@+id/btn_error_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rounded_button"
+                    android:drawableStart="@drawable/baseline_refresh_24"
+                    android:drawablePadding="6dp"
+                    android:drawableTint="@color/white"
+                    android:paddingHorizontal="24dp"
+                    android:text="Reload"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_description_error_list"
+                    app:layout_goneMarginTop="32dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_empty_state"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/cream"
+                android:elevation="2dp"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/img_empty_list"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@mipmap/img_magnifying_foreground"
+                    app:layout_constraintBottom_toTopOf="@id/tv_title_empty_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tv_title_empty_list"
+                    style="@style/text_bold_purple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:includeFontPadding="false"
+                    android:text="No spare part requests found"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@id/tv_description_empty_list"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_empty_list" />
+
+                <TextView
+                    android:id="@+id/tv_description_empty_list"
+                    style="@style/text_regular_purple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:includeFontPadding="false"
+                    android:text="No Spare Part had been requested \nfor this ticket yet"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toTopOf="@id/btn_empty_list_add"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_empty_list" />
+
+                <Button
+                    android:id="@+id/btn_empty_list_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_rounded_button"
+                    android:drawableStart="@drawable/ic_plus"
+                    android:drawablePadding="6dp"
+                    android:paddingHorizontal="24dp"
+                    android:text="Request Spare Part"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_description_empty_list" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

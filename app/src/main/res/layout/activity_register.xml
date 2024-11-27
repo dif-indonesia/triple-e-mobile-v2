@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.activity.RegisterActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/background"
+            android:fitsSystemWindows="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".presentation.activity.RegisterActivity">
+
+            <ImageView
+                android:id="@+id/ic_logo"
+                android:layout_width="149dp"
+                android:layout_height="120dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="105dp"
+                android:layout_marginTop="62dp"
+                android:layout_marginRight="105dp"
+                android:src="@drawable/logo_triplee_news"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/artivicialwatson"
+                style="@style/welcome_to_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center_horizontal"
+                android:text="@string/welcome_to_artificial_watson"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/ic_logo" />
+
+            <TextView
+                android:id="@+id/txt_artivicial"
+                style="@style/only_regist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="38dp"
+                android:layout_marginRight="38dp"
+                android:gravity="center_horizontal"
+                android:text="@string/only_registration_with_valid_name_email_mobile_phone_and_birth_date_will_be_approved"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/artivicialwatson" />
+
+            <TextView
+                android:id="@+id/txt_fullname"
+                style="@style/full_name1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/full_name"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/txt_artivicial" />
+
+            <EditText
+                android:id="@+id/fullname"
+                style="@style/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="19dp"
+                android:background="@drawable/bg_edt_email"
+                android:hint="@string/full_name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName"
+                android:paddingStart="6dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_fullname" />
+
+            <TextView
+                android:id="@+id/txt_email"
+                style="@style/full_name1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/email_triple_e_id_if_you_have"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/fullname" />
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="19dp"
+                android:background="@drawable/bg_edt_email"
+                android:hint="@string/email"
+                android:imeOptions="actionNext"
+                android:inputType="textEmailAddress"
+                android:paddingStart="6dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_email" />
+
+            <TextView
+                android:id="@+id/txt_mobile"
+                style="@style/full_name1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/mobile"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/email" />
+
+            <EditText
+                android:id="@+id/mobile"
+                style="@style/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="19dp"
+                android:background="@drawable/bg_edt_email"
+                android:maxLength="12"
+                validateMinLength="@{11}"
+                android:hint="@string/mobile"
+                android:imeOptions="actionNext"
+                android:inputType="numberDecimal"
+                android:paddingStart="6dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_mobile" />
+
+            <TextView
+                android:id="@+id/txt_statusdate"
+                style="@style/full_name1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/birthdate_"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/mobile" />
+
+            <EditText
+                android:id="@+id/statusdate"
+                style="@style/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="19dp"
+                android:background="@drawable/bg_edt_email"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:focusable="false"
+                android:hint="@string/birthdate"
+                android:imeOptions="actionNext"
+                android:inputType="date"
+                android:paddingStart="6dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_statusdate" />
+
+            <TextView
+                android:id="@+id/txt_password"
+                style="@style/full_name1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/password"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/statusdate" />
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="19dp"
+                android:background="@drawable/bg_edt_email"
+                android:hint="@string/password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:paddingStart="6dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_password" />
+
+            <CheckBox
+                android:id="@+id/showpassword"
+                style="@style/check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:button="@drawable/round_hide_show_password"
+                android:buttonTint="@color/dark_grey"
+                android:checked="false"
+                android:src="@drawable/ic_pw_show"
+                app:layout_constraintBottom_toBottomOf="@id/password"
+                app:layout_constraintEnd_toEndOf="@id/password"
+                app:layout_constraintTop_toTopOf="@id/password" />
+
+            <ImageView
+                android:id="@+id/error_pass"
+                style="@style/check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_error_empty"
+                app:layout_constraintBottom_toBottomOf="@id/password"
+               app:layout_constraintEnd_toStartOf="@id/showpassword"
+                app:layout_constraintTop_toTopOf="@id/password" />
+
+            <TextView
+                android:id="@+id/txt_retype_password"
+                style="@style/full_name1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginTop="18dp"
+                android:text="@string/retype_password"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/password" />
+
+            <EditText
+                android:id="@+id/retypepassword"
+                style="@style/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="19dp"
+                android:background="@drawable/bg_edt_email"
+                android:hint="@string/retype_password"
+                android:imeOptions="actionNext"
+                android:inputType="textPassword"
+                android:paddingStart="6dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_retype_password" />
+
+            <CheckBox
+                android:id="@+id/showreypepass"
+                style="@style/check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="30dp"
+                android:button="@drawable/round_hide_show_password"
+                android:buttonTint="@color/dark_grey"
+                android:checked="false"
+                android:src="@drawable/ic_pw_show"
+                app:layout_constraintBottom_toBottomOf="@id/retypepassword"
+                app:layout_constraintEnd_toEndOf="@id/retypepassword"
+                app:layout_constraintTop_toTopOf="@id/retypepassword" />
+
+            <ImageView
+                android:id="@+id/error_passretype"
+                style="@style/check_box"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_error_empty"
+                app:layout_constraintBottom_toBottomOf="@id/retypepassword"
+                app:layout_constraintEnd_toStartOf="@id/showreypepass"
+                app:layout_constraintTop_toTopOf="@id/retypepassword" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bt_register"
+                style="@style/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="41dp"
+                android:layout_marginEnd="18dp"
+                android:background="@drawable/bg_bt_login"
+                android:text="@string/register"
+                app:layout_constraintTop_toBottomOf="@id/retypepassword" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="41dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/bt_register">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/id_login"
+                        style="@style/sign_up"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/log_in" />
+
+                    <TextView
+                        android:id="@+id/txt_label_bottom"
+                        style="@style/if_you_have"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/if_you_already_have_an_account" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/id_pop_messages"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_bottom_sheet"
+            android:clipToPadding="false"
+            android:fitsSystemWindows="true"
+            android:layoutDirection="ltr"
+            tools:context=".presentation.dialog.PopupMessagesDialog">
+
+            <ImageView
+                android:id="@+id/btn_hide"
+                android:layout_width="0dp"
+                android:layout_height="6dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/bg_bt_hide_login"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/title_create_messages"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="19dp"
+                android:layout_marginTop="22dp"
+                android:drawableStart="@drawable/ic_create_messages"
+                android:drawablePadding="19dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Create Message"
+                android:textColor="#404040"
+                android:textSize="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_hide" />
+
+            <ImageView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/line_horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_create_messages" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/receiver"
+                style="@style/Form.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                app:validateEmpty="@{true}"
+                android:drawablePadding="12dp"
+                android:hint="Receiver"
+                android:completionThreshold="1"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+
+            <EditText
+                android:id="@+id/messages"
+                style="@style/Form.Message"
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:layout_marginStart="20dp"
+                app:validateEmpty="@{true}"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:drawablePadding="12dp"
+                android:gravity="start"
+                android:hint="Write Message Here..."
+                android:imeOptions="actionDone"
+                android:inputType="textMultiLine"
+                android:minLines="4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/receiver" />
+
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="0dp"
+                android:layout_height="46dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/bg_rounded_button_next"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Send"
+                android:textColor="@color/white"
+                android:textSize="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/messages" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

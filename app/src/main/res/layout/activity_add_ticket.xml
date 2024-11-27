@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="validationStatus"
+            type="boolean" />
+        <variable
+            name="validationTele"
+            type="boolean" />
+    </data>
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:actionButtonTint="@color/purple"
+        app:backButtonIcon="@drawable/ic_back_ticket_belitung"
+        app:backButtonTint="#3532C3"
+        app:title="@string/add_ticket">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:background="#EEF6FF"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Form.SectionBelitung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17dp"
+                        android:text="@string/new_ticket" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ticket_number_command_center" />
+
+                        <EditText
+                            android:id="@+id/txt_ticket_number_command"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ticket_number_assigned" />
+
+                        <EditText
+                            android:id="@+id/txt_ticket_number_assigned"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"
+                            tools:ignore="TextFields" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/asign_to" />
+
+                        <EditText
+                            android:id="@+id/txt_assign_to"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="12dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/severity" />
+
+                        <EditText
+                            android:id="@+id/txt_severity"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/ticket_type" />
+
+                        <EditText
+                            android:id="@+id/txt_ticket_type"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:validateEmpty="@{true}" />
+
+                        <LinearLayout
+                            android:id="@+id/form_system_fault"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Form.Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/system_fault" />
+
+                            <EditText
+                                android:id="@+id/system_fault"
+                                style="@style/Form.Spinner1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="12dp"
+                                app:validateEmpty="@{validationStatus}"
+                                android:imeOptions="actionNext"
+                                android:inputType="text" />
+
+                            <TextView
+                                style="@style/Form.Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/sub_system_fault" />
+                            <EditText
+                                android:id="@+id/sub_system_fault"
+                                style="@style/Form.Spinner1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="12dp"
+                                app:validateEmpty="@{validationStatus}"
+                                android:imeOptions="actionNext"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/form_problem_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/Form.Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/system_fault" />
+
+                            <EditText
+                                android:id="@+id/system_fault_teleglobal"
+                                style="@style/Form.Spinner1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="12dp"
+                                android:imeOptions="actionNext"
+                                app:validateEmpty="@{validationTele}"
+                                android:inputType="text" />
+
+                            <TextView
+                                style="@style/Form.Label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/problem_type" />
+
+                            <EditText
+                                android:id="@+id/problem_type"
+                                style="@style/Form.Spinner1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:drawablePadding="12dp"
+                                android:imeOptions="actionNext"
+                                app:validateEmpty="@{validationTele}"
+                                android:inputType="text" />
+
+                        </LinearLayout>
+
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/field_engineer" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/txt_field_engineer"
+                                style="@style/Form.EditText_grey"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:completionThreshold="1"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/btn_select_engineer"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+                            <ImageView
+                                android:id="@+id/btn_select_engineer"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/bg_rounded_card_light"
+                                android:backgroundTint="@color/purple"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:padding="8dp"
+                                android:src="@mipmap/ic_open_maps_foreground"
+                                app:layout_constraintBottom_toBottomOf="@id/txt_field_engineer"
+                                app:layout_constraintEnd_toStartOf="@id/btn_remove_engineer"
+                                app:layout_constraintStart_toEndOf="@id/txt_field_engineer"
+                                app:layout_constraintTop_toTopOf="@id/txt_field_engineer" />
+
+                            <ImageView
+                                android:id="@+id/btn_remove_engineer"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/bg_rounded_card_light"
+                                android:backgroundTint="@color/red"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:padding="8dp"
+                                android:src="@drawable/baseline_remove_24"
+                                app:layout_constraintBottom_toBottomOf="@id/txt_field_engineer"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/btn_select_engineer"
+                                app:layout_constraintTop_toTopOf="@id/txt_field_engineer"
+                                app:tint="@color/white" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="12dp"
+                        android:layout_marginTop="32dp"
+                        app:dividerColor="@color/border_and_divider" />
+
+                    <TextView
+                        style="@style/Form.SectionBelitung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="34dp"
+                        android:text="@string/site_name" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/site_id_site_name_add" />
+
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <AutoCompleteTextView
+                                android:id="@+id/txt_site_id_site_name"
+                                style="@style/Form.EditText_grey"
+                                android:completionThreshold="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:imeOptions="actionNext"
+                                android:inputType="text"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/btn_select_site"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/btn_select_site"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/bg_rounded_card_light"
+                                android:backgroundTint="@color/purple"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:padding="8dp"
+                                android:src="@mipmap/ic_open_maps_foreground"
+                                app:layout_constraintBottom_toBottomOf="@id/txt_site_id_site_name"
+                                app:layout_constraintEnd_toStartOf="@id/btn_remove_site"
+                                app:layout_constraintStart_toEndOf="@id/txt_site_id_site_name"
+                                app:layout_constraintTop_toTopOf="@id/txt_site_id_site_name" />
+
+                            <ImageView
+                                android:id="@+id/btn_remove_site"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/bg_rounded_card_light"
+                                android:backgroundTint="@color/red"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:padding="8dp"
+                                android:src="@drawable/baseline_remove_24"
+                                app:layout_constraintBottom_toBottomOf="@id/txt_site_id_site_name"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/btn_select_site"
+                                app:layout_constraintTop_toTopOf="@id/txt_site_id_site_name"
+                                app:tint="@color/white" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tower_provider" />
+
+                        <EditText
+                            android:id="@+id/txt_tower_provider"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:hint="Auto Filled"
+                            android:imeOptions="actionNext"
+                            android:inputType="text" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/area_ns_region_add" />
+
+                        <EditText
+                            android:id="@+id/txt_area_ns_region"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:imeOptions="actionDone"
+                            android:inputType="text"/>
+
+<!--                        <TextView-->
+<!--                            style="@style/Form.Label"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/system_fault" />-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/system_fault"-->
+<!--                            style="@style/Form.Spinner1"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:drawablePadding="12dp"-->
+<!--                            android:imeOptions="actionNext"-->
+<!--                            android:inputType="text" />-->
+
+<!--                        <TextView-->
+<!--                            style="@style/Form.Label"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/sub_system_fault" />-->
+
+<!--                        <EditText-->
+<!--                            android:id="@+id/sub_system_fault"-->
+<!--                            style="@style/Form.Spinner1"-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:drawablePadding="12dp"-->
+<!--                            android:imeOptions="actionNext"-->
+<!--                            android:inputType="text" />-->
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/triple_e_in_charge" />
+
+                        <EditText
+                            android:id="@+id/txt_triple_e_in_charge"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add_notes" />
+
+                        <EditText
+                            android:id="@+id/txt_add_notes"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:imeOptions="actionDone"
+                            android:inputType="textShortMessage|textMultiLine"
+                            android:minLines="4"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/status" />
+
+                        <EditText
+                            android:id="@+id/et_status"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:validateEmpty="@{true}" />
+
+                        <!--                        <TextView-->
+                        <!--                            style="@style/Form.Label"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:focusable="false"-->
+                        <!--                            android:text="@string/request_spare_part" />-->
+
+                        <!--                        <androidx.appcompat.widget.SwitchCompat-->
+                        <!--                            android:id="@+id/sparepart"-->
+                        <!--                            style="@style/Form.Switch"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:clickable="false"-->
+                        <!--                            app:thumbTint="@drawable/selector_switch_compat_thumb_tint"-->
+                        <!--                            app:trackTint="@drawable/selector_switch_compat_track_tint" />-->
+
+                        <!--                        <LinearLayout-->
+                        <!--                            android:id="@+id/view_sparepart"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:orientation="vertical"-->
+                        <!--                            android:visibility="gone">-->
+
+                        <!--                            <TextView-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:layout_marginLeft="31dp"-->
+                        <!--                                android:layout_marginTop="45dp"-->
+                        <!--                                android:fontFamily="@font/roboto_bold"-->
+                        <!--                                android:text="@string/request_return_spare_part"-->
+                        <!--                                android:textColor="#404040"-->
+                        <!--                                android:textSize="16sp"-->
+                        <!--                                android:textStyle="bold" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                android:id="@+id/id"-->
+                        <!--                                style="@style/Form.Label"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:text="ID# #" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                style="@style/Form.Label"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:text="@string/article_name" />-->
+
+                        <!--                            <AutoCompleteTextView-->
+                        <!--                                android:id="@+id/article_name"-->
+                        <!--                                style="@style/Form.EditText"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:imeOptions="actionNext"-->
+                        <!--                                android:inputType="text" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                style="@style/Form.Label"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:text="@string/article_code" />-->
+
+                        <!--                            <EditText-->
+                        <!--                                android:id="@+id/article_code"-->
+                        <!--                                style="@style/Form.EditText_grey"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:imeOptions="actionNext"-->
+                        <!--                                android:inputType="text" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                style="@style/Form.Label"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:text="@string/quantity" />-->
+
+                        <!--                            <EditText-->
+                        <!--                                android:id="@+id/quantity"-->
+                        <!--                                style="@style/Form.EditText_grey"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:imeOptions="actionNext"-->
+                        <!--                                android:inputType="text" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                style="@style/Form.Label"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:text="@string/serial_number" />-->
+
+                        <!--                            <EditText-->
+                        <!--                                android:id="@+id/serial_number"-->
+                        <!--                                style="@style/Form.EditText_grey"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:imeOptions="actionNext"-->
+                        <!--                                android:inputType="text" />-->
+
+                        <!--                            <TextView-->
+                        <!--                                style="@style/Form.Label"-->
+                        <!--                                android:layout_width="wrap_content"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:text="@string/status" />-->
+
+                        <!--                            <EditText-->
+                        <!--                                android:id="@+id/status"-->
+                        <!--                                style="@style/Form.Spinner1"-->
+                        <!--                                android:layout_width="match_parent"-->
+                        <!--                                android:layout_height="wrap_content"-->
+                        <!--                                android:drawablePadding="12dp"-->
+                        <!--                                android:imeOptions="actionDone"-->
+                        <!--                                android:inputType="text" />-->
+                        <!--                        </LinearLayout>-->
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/resolution_accepted_by_triple_e" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/accepted_by_triple_e"
+                            style="@style/Form.Switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                            app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/closed_ticket_at_command_center" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/closed_ticket"
+                            style="@style/Form.Switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                            app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/upload_file" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingVertical="12dp">
+
+                            <Button
+                                android:id="@+id/chooce_file"
+                                android:layout_width="wrap_content"
+                                android:layout_height="29dp"
+                                android:layout_marginStart="12dp"
+                                android:background="@drawable/bg_upload_file_ticket"
+                                android:drawableStart="@drawable/ic_upload1"
+                                android:drawablePadding="11dp"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:paddingStart="11dp"
+                                android:paddingEnd="11dp"
+                                android:text="@string/choose_file"
+                                android:textAllCaps="false" />
+
+                            <TextView
+                                android:id="@+id/status_file"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:gravity="center_vertical"
+                                android:text="@string/no_file_chosen" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/id_submit"
+                            style="@style/Form.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/submit" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </FrameLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+
+</layout>

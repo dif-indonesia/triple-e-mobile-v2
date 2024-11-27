@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <CheckBox
+            android:id="@+id/tv_title"
+            style="@style/text_bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:checked="false"
+            android:enabled="false"
+            android:text="Notification"
+            android:textColor="@drawable/selector_inbox_tab_title"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_count"
+            app:layout_constraintEnd_toStartOf="@id/tv_count"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_count" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            style="@style/text_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_rounded_card_light"
+            android:backgroundTint="@color/alpha_20_red"
+            android:includeFontPadding="false"
+            android:paddingHorizontal="4dp"
+            android:paddingVertical="3dp"
+            android:text="@{@string/unread_notification_count(0)}"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_title"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="32+" />
+
+        <View
+            android:id="@+id/overlay"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/transparent"
+            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_title" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

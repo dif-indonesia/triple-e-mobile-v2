@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_upload_profile_cover"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.dialog.DialogUploadProfileCover">
+
+
+<!--    <carbon.widget.FlowLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="442dp"-->
+<!--        android:id="@+id/detil"-->
+<!--        android:background="@drawable/bg_upload_profile_cover"-->
+<!--        app:carbon_elevationShadowColor="@color/purple_new"-->
+<!--        android:elevation="2dp"-->
+<!--        app:carbon_elevation="2dp"-->
+<!--        app:carbon_cornerRadius="20dp">-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/btn_hide"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/bg_bt_hide_login"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/btn_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_hide"
+            android:drawableStart="@drawable/icon_choose_profile"
+            android:text="Change Photo Profile"
+            android:drawablePadding="10dp"
+            android:textColor="#404040"
+            android:fontFamily="@font/poppins_medium"
+            android:textSize="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="39dp"/>
+
+        <TextView
+            android:id="@+id/btn_cover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/btn_profile"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:drawableStart="@drawable/icon_choose_cover"
+            android:text="Change Photo Background"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/poppins_medium"
+            android:textColor="#404040"
+            android:textSize="14dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginBottom="20dp"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--    </carbon.widget.FlowLayout>-->
+</LinearLayout>
+</layout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:title="@string/account_settings">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingVertical="32dp"
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:paddingHorizontal="16dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tx_1"
+                style="@style/email_me_wh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                app:layout_constraintEnd_toStartOf="@id/swt_expense_claim_period_paid"
+                android:text="@string/email_me_when_my_expense_claim_paid"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_expense_claim_period_paid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/tx_1"
+                app:layout_constraintStart_toEndOf="@id/tx_1"
+                app:layout_constraintTop_toTopOf="@id/tx_1"
+                app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+            <TextView
+                android:id="@+id/tx_2"
+                style="@style/email_me_wh"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                android:text="@string/email_me_when_my_cash_advance_approved_or_rejected"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tx_1" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_cash_advance_approved_or_rejected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tx_2"
+                app:layout_constraintEnd_toEndOf="@id/swt_expense_claim_period_paid"
+                app:layout_constraintStart_toStartOf="@id/swt_expense_claim_period_paid"
+                app:layout_constraintTop_toTopOf="@id/tx_2"
+                app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+            <TextView
+                android:id="@+id/tx_3"
+                style="@style/email_me_wh"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/send_me_email_any_updated_about_artificial_watson"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/swt_any_updated_about"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintTop_toBottomOf="@id/tx_2" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_any_updated_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tx_3"
+                android:theme="@style/SCBSwitch"
+                app:layout_constraintEnd_toEndOf="@id/swt_expense_claim_period_paid"
+                app:layout_constraintStart_toStartOf="@id/swt_expense_claim_period_paid"
+                app:layout_constraintTop_toTopOf="@id/tx_3"
+                app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+            <TextView
+                android:id="@+id/tx_4"
+                style="@style/email_me_wh"
+                android:layout_marginStart="5dp"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                android:text="@string/activate_my_second_email_to_receive_email_from_artificial_watson"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/swt_second_email_to_receive"
+                app:layout_constraintTop_toBottomOf="@id/tx_3" />
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_second_email_to_receive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="@id/swt_expense_claim_period_paid"
+                app:layout_constraintStart_toStartOf="@id/swt_expense_claim_period_paid"
+                app:layout_constraintTop_toTopOf="@id/tx_4"
+                app:layout_constraintBottom_toBottomOf="@id/tx_4"
+                app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

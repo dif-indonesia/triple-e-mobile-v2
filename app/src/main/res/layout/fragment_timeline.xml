@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EEF6FF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#EEF6FF"
+            android:animateLayoutChanges="true">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Notes Timeline Ticket"
+                android:textColor="#404040"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tic_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="31dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Ts5182410415"
+                android:textColor="#404040"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_chronology"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="31dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintHorizontal_bias="0"
+                android:text="@string/ticket_chronology_based_on_notes_from_user" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_timeline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_timeline" />
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:visibility="gone"
+            android:id="@+id/layout_empty_state"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cream"
+            android:elevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_empty_list"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@drawable/bg_empty_timeline"
+                app:layout_constraintBottom_toTopOf="@id/tv_title_empty_list"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed" />
+
+            <TextView
+                android:id="@+id/tv_title_empty_list"
+                style="@style/text_bold_purple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:includeFontPadding="false"
+                android:text="@string/timeline_not_found"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@id/tv_description_empty_list"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_empty_list" />
+
+            <TextView
+                android:id="@+id/tv_description_empty_list"
+                style="@style/text_regular_purple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:includeFontPadding="false"
+                android:text="@string/you_have_to_fill_out_a_trouble_ticket_first_add_ticket_is_in_the_upper_right_corner"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_title_empty_list" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

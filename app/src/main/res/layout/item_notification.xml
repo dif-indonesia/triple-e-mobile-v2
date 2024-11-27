@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isRead"
+            type="Boolean" />
+    </data>
+
+    <carbon.widget.LinearLayout
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{isRead ? @color/white :  @color/extra_light_blue}"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="14dp"
+        app:carbon_cornerRadius="10dp"
+        app:carbon_elevation="1dp">
+
+        <FrameLayout
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:background="@drawable/logo_triple_e"
+            android:backgroundTint="#D9D9D9">
+
+            <ImageView
+                android:id="@+id/image_notif"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo_triple_e" />
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="11dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ticket_number"
+                style="@style/text_bold_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:text="T001" />
+
+            <TextView
+                android:id="@+id/notif_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/outfit_medium"
+                android:gravity="top"
+                android:text="@string/m_ago_"
+                android:textColor="#9C9C9C"
+                android:textSize="11.03sp" />
+
+            <TextView
+                android:id="@+id/notif_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:text="Lorem Ipsum Dollor sit amet Lorem Ipsum Dollor sit amet Lorem Ipsum Dollor sit amet"
+                android:textColor="#404040"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </carbon.widget.LinearLayout>
+
+</layout>

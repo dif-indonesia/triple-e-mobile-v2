@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RoundedBarChart">
+        <attr name="radius" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="LinearLayoutWithAppBar">
+        <attr name="title" format="string" />
+        <attr name="actionButtonIcon" format="reference" />
+        <attr name="actionButtonText" format="string" />
+        <attr name="actionButtonTint" format="color" />
+        <attr name="backButtonTint" format="color" />
+        <attr name="backButtonIcon" format="reference" />
+        <attr name="barTint" format="color" />
+        <attr name="titleTextColor" format="color" />
+
+    </declare-styleable>
+</resources>

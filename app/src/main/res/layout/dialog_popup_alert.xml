@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            app:layout_constraintTop_toTopOf="@id/layout"
+            app:layout_constraintStart_toEndOf="@id/layout"
+            android:layout_width="16dp"
+            android:rotation="-90"
+            android:layout_marginStart="-3dp"
+            app:layout_constraintBottom_toBottomOf="@id/layout"
+            android:layout_height="12dp"
+            android:backgroundTint="@color/white"
+            android:background="@drawable/bg_triangle_marker"/>
+        <FrameLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_card_medium"
+            android:backgroundTint="@color/white"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="8dp"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="148dp"
+                android:text="@string/image_captured_is_not_within_the_site_radius"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:title="@string/edit_collage">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:padding="10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:background="@drawable/bg_rounded_card_medium"
+                android:backgroundTint="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/school" />
+
+                    <EditText
+                        android:id="@+id/txt_school"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionNext"
+                        app:validateEmpty="@{true}"
+                        android:inputType="text" />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/time_periode" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+                        <EditText
+                            android:id="@+id/fromdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Form.EditText"
+                            android:layout_weight="1"
+                            android:hint="@string/from"
+                            android:drawableEnd="@drawable/ic_datee"
+                            app:validateEmpty="@{true}"
+                            android:gravity="center"
+                            android:paddingStart="6dp"
+                            android:clickable="false"
+                            android:focusable="false"
+                            android:background="@drawable/bg_edit_text"
+                            />
+                        <EditText
+                            android:id="@+id/untildate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/Form.EditText"
+                            android:hint="@string/until"
+                            android:layout_weight="1"
+                            android:drawableEnd="@drawable/ic_datee"
+                            app:validateEmpty="@{true}"
+                            android:gravity="center"
+                            android:paddingStart="6dp"
+                            android:inputType="none"
+                            android:focusable="false"
+                            android:clickable="false"
+                            android:background="@drawable/bg_edit_text"
+                            />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/graduate" />
+
+                    <CheckBox
+                        android:id="@+id/graduate"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginLeft="30dp"
+                        android:checked="true"
+                        android:buttonTint="@color/purple"
+                        />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/description" />
+
+                    <EditText
+                        android:id="@+id/txt_description"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:validateEmpty="@{true}"
+                        android:layout_marginTop="6dp"
+                        android:inputType="textMultiLine" />
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/connection" />
+
+                    <EditText
+                        android:id="@+id/edt_connection1"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionNext"
+                        app:validateEmpty="@{true}"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/edt_connection2"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="text" />
+
+                    <EditText
+                        android:id="@+id/edt_connection3"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:imeOptions="actionDone"
+                        android:inputType="text" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <TextView
+                            android:id="@+id/txt_attended"
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/attended_for"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"/>
+
+                        <!--                        <ImageView-->
+                        <!--                            android:id="@+id/ic_error"-->
+                        <!--                            android:layout_width="wrap_content"-->
+                        <!--                            android:layout_height="wrap_content"-->
+                        <!--                            android:src="@drawable/ic_error_empty"-->
+                        <!--                            android:visibility="gone"-->
+                        <!--                            app:layout_constraintTop_toTopOf="@id/txt_attended"-->
+                        <!--                            app:layout_constraintBottom_toBottomOf="@id/txt_attended"-->
+                        <!--                            app:layout_constraintStart_toEndOf="@id/txt_attended"-->
+                        <!--                            android:layout_marginStart="20dp"/>-->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <RadioGroup
+                        android:id="@+id/attended"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        >
+
+                        <RadioButton
+                            android:id="@+id/rb_college"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:text="@string/college"
+                            />
+
+                        <RadioButton
+                            android:id="@+id/rb_graduate_school"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/graduate_school"
+                            />
+
+                        <!--                        <TextView-->
+                        <!--                            android:id="@+id/connection3"-->
+                        <!--                            android:layout_width="match_parent"-->
+                        <!--                            android:layout_height="wrap_content"/>-->
+
+
+                    </RadioGroup>
+                </LinearLayout>
+                <Button
+                    android:id="@+id/bt_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:text="@string/save" style="@style/Form.Button"
+                    />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

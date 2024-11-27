@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:actionButtonIcon="@drawable/ic_rotate_right_24"
+        app:actionButtonTint="@color/white"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:backButtonTint="@color/white"
+        app:barTint="@color/black"
+        app:title="Crop Image"
+        app:titleTextColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black">
+
+            <com.canhub.cropper.CropImageView
+                android:id="@+id/cropImageView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:cropAspectRatioY="9"
+                app:cropAspectRatioX="16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_margin="16dp"
+                android:orientation="vertical"
+                app:cardBackgroundColor="@color/purple"
+                app:cardCornerRadius="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_finalise_cropping"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:drawablePadding="4dp"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:padding="8dp"
+                        android:text="Crop"
+                        android:textColor="@color/white"
+                        app:drawableStartCompat="@drawable/baseline_crop_24"
+                        app:drawableTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:tint="@color/white" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

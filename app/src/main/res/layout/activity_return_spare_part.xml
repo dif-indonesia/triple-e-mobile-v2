@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.activity.ReturnSparePartActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".presentation.activity.ReturnSparePartActivity">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/id_header"
+                android:layout_width="match_parent"
+                android:layout_height="94dp"
+                android:src="@drawable/img_header1">
+
+                <TextView
+                    style="@style/ToolbarTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="@string/request_return_spare_part"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/bt_back"
+                    android:layout_width="42dp"
+                    android:layout_height="36dp"
+                    android:layout_marginLeft="18dp"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    android:layout_marginTop="44dp"
+                    android:src="@drawable/ic_button_prev" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="78dp"
+                android:layout_marginTop="108dp"
+                android:text="@string/return_form"
+                android:textColor="#404040"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="176dp"
+                android:layout_marginTop="108dp"
+                android:text="@string/return_spare_part"
+                android:textColor="#6045E2"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="39dp"
+                android:layout_height="7dp"
+                android:layout_marginLeft="210dp"
+                android:layout_marginTop="129dp"
+                android:src="@drawable/slide_return" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="150dp"
+                android:layout_marginRight="18dp"
+                android:background="@color/white">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="31dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Request/Return Spare Part"
+                    android:textColor="#404040"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="112dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Last Update"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="66dp"
+                    android:buttonTint="@color/purple"
+                    android:checked="true" />
+
+                <TextView
+                    style="@style/id_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="244dp"
+                    android:layout_marginTop="69dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="ID#"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    style="@style/id_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="277dp"
+                    android:layout_marginTop="69dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="#12" />
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="112dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Follow Up"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_last_update"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="130dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    android:id="@+id/id_follow_up"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="206dp"
+                    android:layout_marginTop="130dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="162dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Ticket"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_ticket"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="TS91824103409" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="248dp"
+                    android:layout_marginTop="162dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Created"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_created"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="206dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="212dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Article Name"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_article_name"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="230dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Modem HT2300" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="242dp"
+                    android:layout_marginTop="212dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Article Code"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_article_code"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="230dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="118,7002" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="262dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Serial Number"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_serial_number"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="280dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="543675" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="244dp"
+                    android:layout_marginTop="262dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Quantity"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_quantity"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="295dp"
+                    android:layout_marginTop="280dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="1" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="312dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Balikpapan"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_city"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="330dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Balikpapan" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="278dp"
+                    android:layout_marginTop="312dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="PIC"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_pic"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="208dp"
+                    android:layout_marginTop="330dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="dev_ilyasa_dif" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="362dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Status"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_request"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="380dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Request" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="362dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="System"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_system"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="269dp"
+                    android:layout_marginTop="380dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="VSAT" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="412dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Vendor"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_vendor"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="430dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Teleglobal" />
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="233dp"
+                    android:layout_marginTop="412dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Treatment"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/id_treatment"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="233dp"
+                    android:layout_marginTop="430dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Returnable" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="627dp"
+                android:layout_marginRight="18dp"
+                android:background="@color/white">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="31dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Request/Return Spare Part"
+                    android:textColor="#404040"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="112dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Last Update"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkbox2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="66dp"
+                    android:buttonTint="@color/purple"
+                    android:checked="true" />
+
+                <TextView
+                    style="@style/id_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="244dp"
+                    android:layout_marginTop="69dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="ID#"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    style="@style/id_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="277dp"
+                    android:layout_marginTop="69dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="#12" />
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="112dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Follow Up"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_last_update2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="130dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    android:id="@+id/id_follow_up2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="206dp"
+                    android:layout_marginTop="130dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="162dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Ticket"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_ticket2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="TS91824103409" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="248dp"
+                    android:layout_marginTop="162dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Created"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_created2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="206dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="212dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Article Name"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_article_name2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="230dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Modem HT2300" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="242dp"
+                    android:layout_marginTop="212dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Article Code"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_article_code2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="230dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="118,7002" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="262dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Serial Number"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_serial_number2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="280dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="543675" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="244dp"
+                    android:layout_marginTop="262dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Quantity"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_quantity2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="295dp"
+                    android:layout_marginTop="280dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="1" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="312dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Balikpapan"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_city2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="330dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Balikpapan" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="278dp"
+                    android:layout_marginTop="312dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="PIC"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_pic2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="208dp"
+                    android:layout_marginTop="330dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="dev_ilyasa_dif" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="362dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Status"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_request2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="380dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Request" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="362dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="System"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_system2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="269dp"
+                    android:layout_marginTop="380dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="VSAT" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="412dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Vendor"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_vendor2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="430dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Teleglobal" />
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="233dp"
+                    android:layout_marginTop="412dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Treatment"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/id_treatment2"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="233dp"
+                    android:layout_marginTop="430dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Returnable" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="1104dp"
+                android:layout_marginRight="18dp"
+                android:background="@color/white">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="31dp"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Request/Return Spare Part"
+                    android:textColor="#404040"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="112dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Last Update"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/checkbox3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="66dp"
+                    android:buttonTint="@color/purple"
+                    android:checked="true" />
+
+                <TextView
+                    style="@style/id_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="244dp"
+                    android:layout_marginTop="69dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="ID#"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    style="@style/id_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="277dp"
+                    android:layout_marginTop="69dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="#12" />
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="240dp"
+                    android:layout_marginTop="112dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Follow Up"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_last_update3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="130dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    android:id="@+id/id_follow_up3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="206dp"
+                    android:layout_marginTop="130dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="162dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Ticket"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_ticket3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="TS91824103409" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="248dp"
+                    android:layout_marginTop="162dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Created"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_created3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="206dp"
+                    android:layout_marginTop="180dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="24-03-23, 20:57" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="212dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Article Name"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_article_name3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="230dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Modem HT2300" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="242dp"
+                    android:layout_marginTop="212dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Article Code"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_article_code3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="230dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="118,7002" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="262dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Serial Number"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_serial_number3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="280dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="543675" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="244dp"
+                    android:layout_marginTop="262dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Quantity"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_quantity3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="295dp"
+                    android:layout_marginTop="280dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="1" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="312dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Balikpapan"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_city3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="330dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Balikpapan" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="278dp"
+                    android:layout_marginTop="312dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="PIC"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_pic3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="208dp"
+                    android:layout_marginTop="330dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="dev_ilyasa_dif" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="362dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Status"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_request3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="380dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Request" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="252dp"
+                    android:layout_marginTop="362dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="System"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_system3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="269dp"
+                    android:layout_marginTop="380dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="VSAT" />
+
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="412dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Vendor"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/id_vendor3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="430dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Teleglobal" />
+
+                <TextView
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="233dp"
+                    android:layout_marginTop="412dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Treatment"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/id_treatment3"
+                    style="@style/old_passwor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="233dp"
+                    android:layout_marginTop="430dp"
+                    android:fontFamily="@font/roboto_regular"
+                    android:text="Returnable" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

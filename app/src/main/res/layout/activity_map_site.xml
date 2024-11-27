@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey"
+        android:scrollbars="vertical">
+
+        <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+            android:id="@+id/root_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+            app:title="@string/detail_tt_map_site">
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tab_layout"
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextAppearance="@style/MyTablayoutItemStyle"
+                app:tabTextColor="#404040"
+                app:tabGravity="center"
+                app:tabMode="scrollable"
+                app:tabSelectedTextColor="#6045E2"
+                app:tabIndicatorHeight="7dp"
+                android:shadowRadius="10"
+                app:tabIndicatorFullWidth="false"
+                android:elevation="3dp"
+                app:tabIndicatorColor="#6045E2"
+                />
+
+
+            <id.co.dif.base_project.utils.WrapContentViewPager
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</layout>

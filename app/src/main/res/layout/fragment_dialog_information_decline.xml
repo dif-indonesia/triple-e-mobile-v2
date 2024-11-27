@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp"
+        tools:context=".presentation.dialog.FilterDialog">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/blue_belitung"
+            android:background="@drawable/bg_dialog_filter">
+
+            <ImageView
+                android:id="@+id/btn_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <LinearLayout
+                android:id="@+id/bg_edt"
+                android:layout_width="match_parent"
+                android:layout_height="208dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"
+                android:background="@drawable/bg_rounded_card_medium"
+                android:backgroundTint="@color/blue_belitung"
+                app:layout_constraintTop_toBottomOf="@id/btn_close">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/open_sauce_one_bold"
+                    android:text="Information"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
+
+                <EditText
+                    android:id="@+id/text_information"
+                    style="@style/Form.MultilineEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="@color/black"
+                    android:enabled="false"
+                    android:padding="10dp"
+                    android:minLines="7"
+                    android:gravity="top"
+                    />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</layout>

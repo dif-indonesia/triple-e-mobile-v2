@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <carbon.widget.FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cream"
+        android:paddingBottom="16dp"
+        app:carbon_cornerRadiusTopEnd="20dp"
+        app:carbon_cornerRadiusTopStart="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/strip"
+                android:layout_width="32dp"
+                android:layout_height="6dp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/bg_strip_round" />
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/notes_in_this_cluster"
+                android:textColor="#404040"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="12dp"
+                android:text="@string/chronoly_of_this_ticket_based_on_notes_from_from_users_in_this_cluster" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_timeline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/tv_title"
+                tools:itemCount="1"
+                tools:listitem="@layout/item_timeline" />
+        </LinearLayout>
+
+
+    </carbon.widget.FrameLayout>
+</layout>

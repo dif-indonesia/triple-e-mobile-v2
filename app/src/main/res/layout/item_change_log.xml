@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_card_medium"
+        android:backgroundTint="@color/white"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="10dp"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+
+            android:text="@string/date"
+            android:textColor="#404040"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_changed_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:text="@string/changed_items"
+            android:textColor="#404040"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:textColor="#404040"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_date"
+            tools:text="7 Mar 2023" />
+
+        <TextView
+            android:id="@+id/changed_item"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:paddingEnd="24dp"
+            android:paddingStart="0dp"
+            android:textColor="#404040"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@id/date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_changed_item"
+            tools:text="Field change from to sarjan Salama" />
+
+        <TextView
+            android:id="@+id/txt_update_by"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:text="@string/updated_by"
+            android:textColor="#404040"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/changed_item" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:textColor="#404040"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_update_by"
+            tools:text="Ilyasa Nur Haafiz" />
+
+        <TextView
+            android:id="@+id/txt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:text="@string/time"
+            android:textColor="#404040"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/changed_item" />
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:textColor="#404040"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_time"
+            tools:text="09:45 am" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

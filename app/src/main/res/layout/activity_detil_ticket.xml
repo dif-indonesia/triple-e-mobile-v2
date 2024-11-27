@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:actionButtonTint="@color/purple"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:title="@{@string/detail_ticket(``)}"
+        tools:title="Detail Ticket">
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:background="@color/white"
+            android:textSize="12sp"
+            app:tabGravity="center"
+            app:tabIndicator="@drawable/bg_tab_indicator"
+            app:tabIndicatorColor="@color/purple"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="5dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="#6045E2"
+            app:tabTextAppearance="@style/MyTablayoutItemStyle"
+            app:tabTextColor="#404040" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

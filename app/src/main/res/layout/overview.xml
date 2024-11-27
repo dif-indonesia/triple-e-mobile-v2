@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="basicInfo"
+            type="id.co.dif.base_project.data.BasicInfo" />
+
+        <variable
+            name="session"
+            type="id.co.dif.base_project.data.Session" />
+
+        <variable
+            name="completedProfile"
+            type="id.co.dif.base_project.data.CompletedProfile" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_completed_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_card_light"
+                android:backgroundTint="@color/light_blue"
+                android:padding="16dp">
+
+
+                <com.google.android.material.progressindicator.CircularProgressIndicator
+                    android:id="@+id/progress_bar_1"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:max="100"
+                    android:progress="@{completedProfile.score}"
+                    app:indicatorColor="@color/white"
+                    app:indicatorSize="80dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:trackColor="@color/alpha_10_white"
+                    app:trackCornerRadius="11dp"
+                    app:trackThickness="9dp"
+                    tools:progress="60" />
+
+                <TextView
+                    android:id="@+id/tv_progress_bar_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:includeFontPadding="false"
+                    android:text="@{completedProfile.score + `%`}"
+                    android:textAppearance="@style/text_progress_bar"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/progress_bar_1"
+                    app:layout_constraintEnd_toEndOf="@id/progress_bar_1"
+                    app:layout_constraintStart_toStartOf="@id/progress_bar_1"
+                    app:layout_constraintTop_toTopOf="@id/progress_bar_1"
+                    tools:text="60%" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:includeFontPadding="false"
+                    android:justificationMode="inter_word"
+                    android:text="@{completedProfile.text ?? `-`}"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    app:layout_constraintTop_toBottomOf="@id/progress_bar_1"
+                    tools:text="@string/you_are_still_missing_the_following_email_alternative_nik_ktp_npwp_number_bpjs_number_bpjs_kesehatan_description_about_yourself_minimum_150_characters_city_or_town_of_your_location_cv_at_least_100_character_required_to_describe_about_your_work_experience_to_make_your_profile_100_completed" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_about_myself"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/bg_rounded_card_light"
+                android:backgroundTint="@color/white"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tv_title_about_myself"
+                    style="@style/text_bold_black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_myself"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_description_about_myself"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textAlignment="center"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_about_myself"
+                    tools:text="taff Enom Sumbagteng TO Pekanbaru PIC Cluster Kabupaten Siak and Kep.Meranti" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/title_overview"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="21dp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/name"
+                        style="@style/text_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:drawablePadding="35dp"
+                        android:gravity="start|center_vertical"
+                        android:lineHeight="18sp"
+                        android:text="@{basicInfo.fullname ?? `-`}"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_attention" />
+
+                    <TextView
+                        android:id="@+id/phone"
+                        style="@style/text_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="35dp"
+                        android:gravity="start|center_vertical"
+                        android:lineHeight="18sp"
+                        android:text="@{basicInfo.phone ?? `-`}"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_phone" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        style="@style/text_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="10dp"
+                        android:drawablePadding="35dp"
+                        android:gravity="start|center_vertical"
+                        android:lineHeight="18sp"
+                        android:text="@{basicInfo.email ?? `-`}"
+                        android:textSize="12sp"
+                        app:drawableStartCompat="@drawable/ic_email" />
+
+                    <TextView
+                        android:id="@+id/birthdate"
+                        style="@style/text_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        app:drawableStartCompat="@drawable/ic_birthdate"
+                        android:drawablePadding="35dp"
+                        android:gravity="start|center_vertical"
+                        android:lineHeight="18sp"
+                        android:text="@{basicInfo.birthday ?? `-`}"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/location"
+                        style="@style/text_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:drawableStartCompat="@drawable/ic_home"
+                        android:drawablePadding="35dp"
+                        android:gravity="start|center_vertical"
+                        android:lineHeight="18sp"
+                        android:text="@{basicInfo.location ?? `-`}"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/coverline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="11dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:src="@drawable/logo_triple_e">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="17dp"
+                        android:background="@drawable/logo_triple_e"
+                        android:contentDescription="@string/logo_triple_e"
+                        android:src="@drawable/logo_triple_e" />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/work_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="11dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+
+                        <TextView
+                            android:id="@+id/position"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineHeight="18sp"
+                            android:text="@{session.emp_position ?? `-`}"
+                            android:textColor="#6045E2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:lineHeight="18sp"
+                            android:text="at"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+
+                        <TextView
+                            android:id="@+id/triple_e"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:lineHeight="18sp"
+                            android:text="TRIPLE-E"
+                            android:textColor="#6045E2"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/jointeam"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:lineHeight="18sp"
+                            android:text="@{session.join_team}"
+                            android:textColor="#6045E2"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:lineHeight="18sp"
+                            android:text="as"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/as"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="5dp"
+                            android:lineHeight="18sp"
+                            android:text="@{session.project_name ?? `-`}"
+                            android:textColor="#6045E2"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/line_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginEnd="16dp">
+
+                    <TextView
+                        android:id="@+id/label_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Area"
+                        android:fontFamily="@font/poppins_regular"
+                        android:textSize="14sp"
+                        android:textColor="@color/black"
+                        android:layout_marginEnd="11dp"
+                        app:layout_constraintStart_toEndOf="@id/area_nscluster"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <TextView
+                        android:id="@+id/area_nscluster"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="12sp"
+                        android:textColor="#6045E2"
+                        android:gravity="center_vertical"
+                        android:layout_marginStart="60dp"
+                        app:layout_constraintHorizontal_bias="0"
+                        tools:text="test bhdbdhhdbed hbdebdede bdebded ubduebdue uduedue unuedbued unuebdue bduebdue bduwbduwdb jbdwbdw"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

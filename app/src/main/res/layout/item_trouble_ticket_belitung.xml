@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <carbon.widget.ConstraintLayout
+        android:id="@+id/background"
+        app:carbon_cornerRadius="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="5dp"
+        android:clickable="true"
+        app:carbon_elevation="2dp"
+        android:background="@color/white"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="16dp"
+        app:layout_constraintTop_toBottomOf="@id/alert_no_engineer">
+
+        <TextView
+            android:id="@+id/label_tt_number"
+            style="@style/text_bold_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="#"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/et_status"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/et_status" />
+
+        <TextView
+            android:id="@+id/txt_tt_number"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_bold"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingStart="0dp"
+            android:paddingEnd="5dp"
+            android:text="T01"
+            style="@style/text_bold_black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/label_tt_number"
+            app:layout_constraintTop_toTopOf="@id/label_tt_number" />
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/roboto_regular"
+            android:includeFontPadding="false"
+            android:text="3 Januri 2023"
+            android:textColor="#7D7D7D"
+            android:textSize="12sp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toEndOf="@id/txt_tt_number"
+            app:layout_constraintTop_toTopOf="@id/txt_tt_number"
+            app:layout_constraintBottom_toBottomOf="@id/txt_tt_number"/>
+
+        <TextView
+            android:id="@+id/bg_header"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:paddingHorizontal="10dp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textSize="12sp"
+            android:textColor="#FF4500"
+            android:background="@drawable/bg_status_trouble_ticket"
+            android:layout_marginEnd="9dp"
+            app:layout_constraintEnd_toStartOf="@id/et_status"
+            app:layout_constraintTop_toTopOf="@id/et_status"
+            app:layout_constraintBottom_toBottomOf="@id/et_status"
+            tools:text="Emergency" />
+
+        <TextView
+            android:id="@+id/et_status"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/roboto_regular"
+            android:gravity="center_vertical|center"
+            android:includeFontPadding="false"
+            android:text="@string/assigned"
+            android:textColor="#4169E1"
+            android:textSize="12sp"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/bg_status_trouble_ticket"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_clock_tb_ticket"
+            android:drawablePadding="6dp"
+            android:fontFamily="@font/roboto_regular"
+            android:hint="Timer"
+            android:textColor="#404040"
+            android:textStyle="normal"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_tt_number"/>
+
+        <TextView
+            android:id="@+id/txt_tower_name"
+            style="@style/text_bold_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:paddingStart="0dp"
+            android:paddingEnd="30dp"
+            android:text="@string/title_site"
+            android:textSize="14sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timer"
+            tools:text="TS Office Jakarta Selatan" />
+
+        <TextView
+            android:id="@+id/txt_technician_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:textSize="12sp"
+            android:layout_marginTop="1dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#7D7D7D"
+            app:layout_constraintStart_toStartOf="@id/txt_tower_name"
+            app:layout_constraintTop_toBottomOf="@id/txt_tower_name"
+            tools:text="PIC Name" />
+
+        <TextView
+            android:id="@+id/btn_checkin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"
+            android:maxWidth="150dp"
+            android:text="Check In"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_bottom"
+            android:padding="6dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_tower_name"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_technician_name"
+            />
+
+        <TextView
+            android:id="@+id/btn_approve_permit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"
+            android:maxWidth="150dp"
+            android:text="Request Approve"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/bg_bottom"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_tower_name"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_technician_name"
+            />
+
+        <FrameLayout
+            android:id="@+id/layout_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/txt_technician_name"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@id/txt_tower_name"
+            app:layout_constraintTop_toTopOf="@id/txt_tower_name">
+
+            <net.orandja.shadowlayout.ShadowLayout
+
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+
+                android:background="@drawable/bg_circle_alert"
+                android:padding="5dp"
+
+                app:shadow_cast_only_background="true"
+                app:shadow_color="@color/light_orange"
+                app:shadow_downscale="1"
+                app:shadow_radius="5"
+                app:shadow_with_color="false"
+                app:shadow_with_css_scale="true"
+                app:shadow_with_dpi_scale="true">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_alert"
+                    app:tint="@color/white" />
+            </net.orandja.shadowlayout.ShadowLayout>
+        </FrameLayout>
+
+    </carbon.widget.ConstraintLayout>
+
+</layout>

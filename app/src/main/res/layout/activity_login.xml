@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/layer_bg_login"
+            tools:context=".LoginActivity">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="80dp"
+                android:src="@drawable/logo_triplee_news"
+                />
+
+            <TextView
+                style="@style/welcome_to_"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="34dp"
+                android:gravity="center_horizontal"
+                android:text="@string/login"
+                android:fontFamily="@font/open_sauce_one_bold"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/email_addre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="40dp"
+                android:text="@string/email_address"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="19dp"
+                app:hintEnabled="false">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etmail"
+                    style="@style/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit_text_login"
+                    android:drawableStart="@drawable/ic_email_belitung"
+                    android:drawablePadding="17dp"
+                    android:hint="@string/enter_your_email"
+                    android:inputType="textPersonName"
+                    android:minHeight="50dp"
+                    android:paddingStart="12dp"
+                    app:validateEmpty="@{true}"
+                    tools:ignore="RtlSymmetry" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/txtpassword"
+                style="@style/email_addre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/password"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="19dp"
+                    android:layout_marginRight="19dp"
+                    app:hintEnabled="false"
+                    app:passwordToggleTint="#404040"
+                    app:passwordToggleEnabled="true">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etpassword"
+                        style="@style/email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_edit_text_login"
+                        android:drawableStart="@drawable/ic_lock_belitung"
+                        android:drawablePadding="17dp"
+                        android:hint="@string/enter_your_password"
+                        android:inputType="textPassword"
+                        android:minHeight="50dp"
+                        android:paddingStart="12dp"
+                        app:validateEmpty="@{true}" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <ImageView
+                    android:id="@+id/showpassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="34dp"
+                    android:src="@drawable/bt_visibility"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <CheckBox
+                    android:id="@+id/rememberme"
+                    style="@style/check_box"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="29dp"
+                    android:checked="false"
+                    android:text="@string/remember_me" />
+
+                <TextView
+                    android:id="@+id/id_forgot_pw"
+                    style="@style/forgot_pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="140dp"
+                    android:layout_marginTop="29dp"
+                    android:text="@string/forgot_password" />
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/login"
+                style="@style/Form.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="64dp"
+                android:layout_marginRight="18dp"
+                android:text="@string/login" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/id_sign_up"
+                    style="@style/sign_up"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sign_up" />
+
+                <TextView
+                    style="@style/if_you_have"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/if_you_have_no_account" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

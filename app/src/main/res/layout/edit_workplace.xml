@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:title="@string/edit_workplace">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+            <LinearLayout
+                android:background="@drawable/bg_rounded_card_medium"
+                android:layout_width="match_parent"
+                android:backgroundTint="@color/white"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/company" />
+
+                    <EditText
+                        android:id="@+id/txt_company"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:validateEmpty="@{true}"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/position" />
+
+                    <EditText
+                        android:id="@+id/txt_position"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:validateEmpty="@{true}"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/city_town" />
+
+                    <EditText
+                        android:id="@+id/txt_citytown"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:validateEmpty="@{true}"
+                        android:imeOptions="actionNext"
+                        android:inputType="text" />
+
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/description" />
+
+                    <EditText
+                        android:id="@+id/txt_description"
+                        style="@style/Form.EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        app:validateEmpty="@{true}"
+                        android:imeOptions="actionDone"
+                        android:inputType="textMultiLine" />
+
+                    <TextView
+                        style="@style/Form.Label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_regular"
+                        android:text="@string/time_periode" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    >
+                    <EditText
+                        android:id="@+id/fromdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Form.EditText"
+                        android:layout_weight="1"
+                        android:hint="@string/from"
+                        android:drawableEnd="@drawable/ic_datee"
+                        android:gravity="center"
+                        app:validateEmpty="@{true}"
+                        android:paddingStart="6dp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:background="@drawable/bg_edit_text"
+                        />
+                    <EditText
+                        android:id="@+id/untildate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/Form.EditText"
+                        android:hint="@string/until"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/ic_datee"
+                        android:gravity="center"
+                        android:paddingStart="6dp"
+                        android:inputType="none"
+                        app:validateEmpty="@{true}"
+                        android:focusable="false"
+                        android:clickable="false"
+                        android:background="@drawable/bg_edit_text"
+                        />
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/bt_save"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    style="@style/Form.Button"
+                    android:text="Save"
+
+                    />
+
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+
+</layout>

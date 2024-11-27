@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_blank_fragment">Halo fragmen kosong</string>
+    <string name="ilyasa_nur_">Ilyasa Nur Haafiz</string>
+    <string name="about_mysel">Tentang Diri Saya</string>
+    <string name="personal_information">Informasi Pribadi</string>
+    <string name="birthdate">Tanggal Lahir</string>
+    <string name="detail">Detail</string>
+    <string name="ticket">Tiket</string>
+    <string name="technician">Teknisi</string>
+    <string name="dashboard">Dasbor</string>
+    <string name="message">Pesan</string>
+    <string name="setting">Pengaturan</string>
+    <string name="activity">Aktivitas</string>
+    <string name="change_password">Ubah Kata Sandi</string>
+    <string name="change_log">Catatan Perubahan</string>
+    <string name="maps">PETA</string>
+    <string name="logout">Keluar</string>
+    <string name="all">Semua</string>
+    <string-array name="Spinner_Items">
+        <item>TT Site All</item>
+        <item>TT Map Me</item>
+        <item>TT Map All</item>
+    </string-array>
+    <string-array name="Spinner_Items_Severity">
+        <item>Major</item>
+        <item>Minor</item>
+        <item>Emergency</item>
+        <item>Low</item>
+    </string-array>
+    <string name="title_overview">Ikhtisar</string>
+    <string name="title_site">Situs</string>
+    <string name="title_work">Pekerjaan</string>
+    <string name="title_education">Pendidikan</string>
+    <string name="add">Add</string>
+    <string name="title_basic_info">Informasi Dasar</string>
+    <string name="title_skill">Keterampilan</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="position">Posisi <font color='red'>*</font></string>
+    <string name="city_town">Kota <font color='red'>*</font></string>
+    <string name="description">Deskripsi <font color='red'>*</font></string>
+    <string name="time_periode">Periode Waktu <font color='red'>*</font></string>
+    <string name="from">Dari</string>
+    <string name="until">Sampai</string>
+    <string name="add_collage">Tambah Pendidikan</string>
+    <string name="school">Sekolah <font color='red'>*</font></string>
+    <string name="edit_collage">Ubah Sekolah</string>
+    <string name="collage">Sekolah</string>
+    <string name="edit_college">Ubah Sekolah</string>
+    <string name="edit_workplace">Ubah Tempat Kerja</string>
+    <string name="location">Lokasi</string>
+    <string name="position_basic_info">Posisi</string>
+    <string name="phone">Telepon</string>
+    <string name="graduate">Lulus :</string>
+    <string name="connection">Koneksi</string>
+    <string name="attended_for">Hadir Untuk :</string>
+    <string name="email">Surel</string>
+    <string name="gender">Jenis Kelamin</string>
+    <string name="age">Usia</string>
+    <string name="joint">Gabung</string>
+    <string name="nik">NIK</string>
+    <string name="bpjs">BPJS</string>
+    <string name="add_workplace">Tambah Tempat Kerja</string>
+    <string name="workplace">Tempat Kerja</string>
+    <string name="logo_triple_e">Logo Triple E</string>
+    <string name="edit_me">Ubah Saya</string>
+    <string name="image_me">Gambar Saya</string>
+    <string name="bg_header_me">Latar Belakang Header Saya</string>
+    <string name="trouble_ticket">Trouble Ticket</string>
+    <string name="add_ticket">Tambah Tiket</string>
+    <string name="search">Cari</string>
+    <string name="assigned">Ditugaskan</string>
+    <string name="account_setting">Pengaturan Akun</string>
+    <string name="email_me_when_my_expense_claim_paid">Kirim email saat klaim pengeluaran saya dibayar</string>
+    <string name="email_me_when_my_cash_advance_approved_or_rejected">Kirim email saat uang muka saya disetujui atau ditolak</string>
+    <string name="send_me_email_any_updated_about_artificial_watson">Kirim email tentang pembaruan apa pun mengenai Artificial Watson</string>
+    <string name="activate_my_second_email_to_receive_email_from_artificial_watson">Aktifkan email kedua saya untuk menerima email dari Artificial Watson</string>
+    <string name="send_me_email_when_new_assignment_created_for_me">Kirim email saat penugasan baru dibuat untuk saya</string>
+    <string name="receive_an_email_when_new_trouble_ticket_assign_to_me">Terima email saat ticket masalah baru ditugaskan kepada saya</string>
+    <string name="email_me_with_my_trouble_ticket_closed">Kirim email saat ticket masalah saya ditutup</string>
+    <string name="old_password">Kata Sandi Lama</string>
+    <string name="date">Tanggal</string>
+    <string name="time">Waktu</string>
+    <string name="changed_items">Item yang Diubah</string>
+    <string name="welcome_to_artificial_watson">Selamat Datang di Artificial Watson</string>
+    <string name="email_address">Alamat Email</string>
+    <string name="password">Kata Sandi</string>
+    <string name="forgot_password">Lupa Kata Sandi?</string>
+    <string name="login">Masuk</string>
+    <string name="sign_up"><b>Daftar</b><font color='black'>, Jika Anda belum punya Akun.</font></string>
+    <string name="if_you_have_no_account">Jika Anda belum punya Akun.</string>
+    <string name="only_registration_with_valid_name_email_mobile_phone_and_birth_date_will_be_approved">Hanya pendaftaran dengan nama, email, nomor telepon seluler, dan tanggal lahir yang valid akan disetujui!</string>
+    <string name="email_triple_e_id_if_you_have">Email (@triple-e.id jika Anda punya)</string>
+    <string name="mobile">Seluler</string>
+    <string name="birthdate_">Tanggal Lahir</string>
+    <string name="retype_password">Ketik Ulang Kata Sandi</string>
+    <string name="if_you_already_have_an_account">, jika Anda sudah memiliki akun.</string>
+    <string name="triple_e_id">triple-e.id</string>
+    <string name="triple_e">Aplikasi Triple-E</string>
+    <string name="new_ticket">Tiket Baru</string>
+    <string name="ticket_number_command_center">Nomor Tiket Pusat Komando<font color='red'>*</font></string>
+    <string name="ticket_number_assigned">Nomor Tiket Ditugaskan</string>
+    <string name="asign_to">Ditugaskan kepada <font color='red'>*</font></string>
+    <string name="severity">Keparahan <font color='red'>*</font></string>
+    <string name="ticket_type">Jenis Tiket <font color='red'>*</font></string>
+    <string name="field_engineer">Teknisi Lapangan</string>
+    <string name="site_id_site_name">ID Situs - Nama Situs</string>
+    <string name="tower_provider">Menara</string>
+    <string name="area_ns_region">Area (Wilayah NS)</string>
+    <string name="triple_e_in_charge">Triple-E Bertanggung Jawab <font color='red'>*</font></string>
+    <string name="add_notes">Tambah Catatan <font color='red'>*</font></string>
+    <string name="status">Status <font color='red'>*</font></string>
+    <string name="all_folllow_up_status">Semua Status Tindak Lanjut <font color='red'>*</font></string>
+    <string name="severety">Keparahan <font color='red'>*</font></string>
+    <string name="request_spare_part">Permintaan Suku Cadang</string>
+    <string name="resolution_accepted_by_triple_e">Resolusi diterima oleh Triple-E</string>
+    <string name="closed_ticket_at_command_center">Tiket Ditutup di Pusat Komando</string>
+    <string name="upload_file">Unggah File</string>
+    <string name="choose_file">Pilih File</string>
+    <string name="submit">Kirim</string>
+    <string name="select_site">Pilih Situs</string>
+    <string name="the_information_below_will_be_treated_confidentially">Informasi di bawah akan diperlakukan secara rahasia</string>
+    <string name="add_a_collage">Tambah Kuliah</string>
+    <string name="verify_your_phone_number">Verifikasi nomor telepon Anda</string>
+    <string name="we_have_send_you_an_on_this_mobile_number">Kami telah mengirimkan ke nomor ponsel ini.</string>
+    <string name="return_form">Formulir Kembali</string>
+    <string name="site_info">Info Situs</string>
+    <string name="history">Riwayat</string>
+    <string name="return_spare_part">Kembalikan Suku Cadang</string>
+    <string name="_01_september_2017_01_september_2021_information_system">01 September 2017 – 01 September 2021 Sistem Informasi</string>
+    <string name="notification">Notifikasi</string>
+    <string name="Inbox">Kotak Masuk</string>
+    <string name="detail_ticket">Detail Tiket #%1$s</string>
+    <string name="timeline">Timeline</string>
+    <string name="log">Log</string>
+    <string name="sp_handling">Penanganan SP</string>
+    <string name="capture_image">Ambil Gambar</string>
+    <string name="you_are_still_missing_the_following_email_alternative_nik_ktp_npwp_number_bpjs_number_bpjs_kesehatan_description_about_yourself_minimum_150_characters_city_or_town_of_your_location_cv_at_least_100_character_required_to_describe_about_your_work_experience_to_make_your_profile_100_completed">Anda masih kekurangan hal berikut: email alternatif, NIK, nomor KTP, NPWP, nomor BPJS, BPJS Kesehatan, deskripsi tentang diri sendiri minimal 150 karakter, kota atau tempat lokasi Anda, CV, setidaknya 100 karakter diperlukan untuk menggambarkan pengalaman kerja Anda, agar profil Anda mencapai 100%.</string>
+    <string name="my_open_ticket">Tiket Terbuka Saya</string>
+    <string name="open_ticket_area">Daerah Tiket Terbuka</string>
+    <string name="my_ticket_handling_contribution">Kontribusi Penanganan Tiket Saya</string>
+    <string name="skill">Keterampilan</string>
+    <string name="installation">Instalasi</string>
+    <string name="commissioning">Komisioning</string>
+    <string name="integration">Integrasi</string>
+    <string name="project">Proyek</string>
+    <string name="business">Bisnis</string>
+    <string name="site_id_site_name_add">ID Site - Nama Site</string>
+    <string name="area_ns_region_add">Area (NS Region)</string>
+    <string name="my_closed_ticket">Tiket Tertutup Saya</string>
+    <string name="competence_development_status">Status Pengembangan Kompetensi</string>
+    <string name="program">Program</string>
+    <string name="progress_2023">Kemajuan 2023</string>
+    <string name="your_activity">Aktivitas Anda</string>
+    <string name="your_activity_description">Anda telah menghabiskan %1$s jam dan %2$s menit bekerja dengan Watson selama %3$s hari terakhir</string>
+    <string name="chronoly_of_this_ticket_based_on_notes_from_from_usesrs">Kronologi tiket ini berdasarkan catatan dari pengguna</string>
+    <string name="chronoly_of_this_ticket_based_on_notes_from_from_users_in_this_cluster">Kronologi tiket ini berdasarkan catatan dari pengguna di area ini</string>
+    <string name="active_users">Pengguna Aktif</string>
+    <string name="profile">Profil</string>
+    <string name="last_login">Login Terakhir</string>
+    <string name="view_all"><u>Lihat Semua</u></string>
+    <string name="tt_dashboard">Dasbor Trouble Ticket</string>
+    <string name="team_dashboard">Dasbor Tim</string>
+    <string name="my_dashboard">Dasbor Saya</string>
+    <string name="percentage_number_of_tickets_handled_by_me_towards_all_tickets_in_my_area">Persentase jumlah tiket yang ditangani oleh saya terhadap semua tiket di area saya.</string>
+    <string name="closed_ticket_area">Daerah Tiket Ditutup</string>
+    <string name="registered_users">Pengguna Terdaftar</string>
+    <string name="internal_users">Pengguna Internal</string>
+    <string name="external_users">Pengguna Eksternal</string>
+    <string name="usage_trend">Tren Penggunaan</string>
+    <string name="based_on_number_of_login">Berdasarkan jumlah login</string>
+    <string name="monthly">Bulanan</string>
+    <string name="yearly">Tahunan</string>
+    <string name="daily">Harian</string>
+    <string name="areas_usage">Penggunaan Area</string>
+    <string name="login_users_of_all_registered_users">Pengguna yang login dari semua pengguna terdaftar</string>
+    <string name="today">Hari Ini</string>
+    <string name="last_7_days">7 Hari Terakhir</string>
+    <string name="last_30_days">30 Hari Terakhir</string>
+    <string name="detail_tt_map_site">Detail Peta Situs Trouble Ticket</string>
+    <string name="number_of_login_each_hour">Jumlah login setiap jam</string>
+    <string name="daily_usage_trend">Tren Penggunaan Harian</string>
+    <string name="top_users">Pengguna Teratas</string>
+    <string name="user_who_is_speding_most_time_in_watson">Pengguna yang menghabiskan waktu paling lama di Watson</string>
+    <string name="percentage_underscore"><u>%1$s</u></string>
+    <string name="time_spent"><u>Waktu yang dihabiskan:</u></string>
+
+    <string name="top_ticket_creator">Pencipta Tiket Teratas</string>
+    <string name="progress">Kemajuan</string>
+    <string name="top_ticket_assignee">Penerima Tiket Teratas</string>
+    <string name="daily_ticket_trend">Tren Tiket Harian</string>
+    <string name="distribution_number_of_hours_spent_working_with_watson">Distribusi jumlah jam yang dihabiskan dalam bekerja dengan Watson</string>
+    <string name="number_header_label">#</string>
+    <string name="added_notes">Catatan Ditambahkan</string>
+    <string name="number_of_users_who_never_login">Jumlah pengguna yang tidak pernah login</string>
+    <string name="usage_rank">Peringkat Penggunaan</string>
+    <string name="list_of_users_based_on_their_activity_using_watson">Daftar pengguna, berdasarkan aktivitas mereka menggunakan Watson</string>
+    <string name="name">Nama</string>
+    <string name="header_profile">Profil</string>
+    <string name="idle_users">Pengguna Tidak Aktif</string>
+    <string name="there_are_635_tickets_for_114_team_member">Terdapat %1$s tiket, untuk %2$s anggota tim</string>
+    <string name="new_tt">Baru</string>
+    <string name="newly_open_tickets_this_week">Tiket yang baru dibuka minggu ini</string>
+    <string name="ongoing_tt">Berlangsung</string>
+    <string name="ongoing_tickets_this_week">Tiket yang sedang berlangsung</string>
+    <string name="closed_tt">Tutup</string>
+    <string name="closed_tickets_this_week">Masalah diselesaikan dan solusi diterima</string>
+    <string name="rate_tt">Beri Nilai</string>
+    <string name="rate_tickets_this_week">Tiket Ditutup vs Tiket Baru Dibuka</string>
+    <string name="new_open_vs_on_going_vs_closed_tickets">Tiket Baru Dibuka vs Sedang Berlangsung vs Ditutup</string>
+    <string name="photo_upload">Unggah Foto</string>
+    <string name="week">Minggu</string>
+    <string name="month">Bulan</string>
+    <string name="_100_char"><![CDATA[>100 karakter]]></string>
+    <string name="file_upload">Unggah Berkas</string>
+    <string name="number_of_upload">Jumlah Unggahan</string>
+    <string name="number_of_photo_upload_each_ticket">Jumlah unggahan foto tiap tiket</string>
+    <string name="number_of_notes">Jumlah Catatan</string>
+    <string name="how_many_notes_in_every_tickets">Berapa banyak catatan dalam setiap tiket</string>
+    <string name="area_benchmark">Perbandingan Area</string>
+    <string name="number_of_trouble_ticket_each_area_compare_to_number_of_team_and_bts_in_thousands">Jumlah ticket masalah tiap area dibandingkan dengan jumlah tim dan BTS dalam ribuan</string>
+    <string name="on_going">Sedang Berlangsung</string>
+    <string name="closed">Tutup</string>
+    <string name="tt_time_to_closed">Waktu Penyelesaian Tiket</string>
+    <string name="weekly_ticket_comparison">Perbandingan Tiket Mingguan</string>
+    <string name="new_ticket_on_progress_and_closed_ticket">Tiket baru, sedang berlangsung, dan tiket ditutup</string>
+    <string name="number_of_new_ticket_per_day_for_last_30_day">Jumlah tiket baru per hari selama 30 hari terakhir</string>
+    <string name="edit_text_hint_name">Nama</string>
+    <string name="check">Periksa</string>
+    <string name="percent_symbol">%</string>
+    <string name="of_tickets">Dari Tiket</string>
+    <string name="m_ago_">1 menit yang lalu.</string>
+    <string name="ticketCount">%1$s %2$d</string>
+    <string name="xLabelTitle">%1$s %2$s</string>
+    <string name="overall_rank_description">Daftar pengguna, diberi peringkat berdasarkan aktivitas mereka menggunakan Watson. Legenda: TT = Trouble Ticket, TT Image = jumlah unggahan gambar, TT File = jumlah unggahan berkas, TT Notes = jumlah kata dalam catatan waktu, TT time = rata-rata waktu yang dihabiskan untuk menerima solusi. Angka tersebut adalah skor setiap item relatif terhadap semua area.</string>
+    <string name="overall_rank">Peringkat Keseluruhan</string>
+    <string name="area_name_technician"><b>Area</b> - Nama Teknisi</string>
+    <string name="oops_you_don_t_have_a_trouble_ticket">Ups… Anda tidak memiliki Trouble Ticket</string>
+    <string name="artificial_watson">Watson \nArtificial</string>
+    <string name="unleash_your_freedom">Unleash your \nfreedom: Access\n<b>Anywhere\nEverywhere\nAnytime</b></string>
+    <string name="oops_you_don_t_have_a_notification">Ups… Anda tidak memiliki pemberitahuan</string>
+    <string name="oops_you_don_t_have_a_message">Ups… Anda tidak memiliki pesan</string>
+    <string name="click_button_resend_for_automatically_get_the_code">Klik tombol Kirim ulang untuk secara otomatis mendapatkan kode.</string>
+    <string name="list_ticket_of">Daftar Tiket dari</string>
+    <string name="list_ticket_of_tso_jakarta_selatan">Daftar Tiket dari</string>
+    <string name="you_have_to_fill_out_a_trouble_ticket_first">Anda harus menambah trouble ticket terlebih dahulu.</string>
+    <string name="site">SITUS</string>
+    <string name="site_name">Nama Situs</string>
+    <string name="no_file_chosen">Tidak ada file yang dipilih</string>
+    <string name="updated_by">Diperbarui Oleh</string>
+    <string name="technology">Teknologi</string>
+    <string name="system">Sistem</string>
+    <string name="contact_info">Info Kontak</string>
+    <string name="selected_file">File yang dipilih: %1$s</string>
+    <string name="file_name"><u>%1$s</u></string>
+    <string name="you_are_out_of_range">Anda berada di luar jangkauan, apakah Anda ingin melanjutkan pengunggahan?</string>
+    <string name="continue_upload">Lanjutkan Pengunggahan</string>
+    <string name="image_captured_is_not_within_the_site_radius">Gambar tidak ditangkap dalam radius situs!</string>
+    <string name="image_captured_is_not_within_the_site_radius_100_meters">Gambar/Video tidak diambil dalam radius situs seratus meter</string>
+    <string name="show_on_map">Tampilkan di peta</string>
+    <string name="system_fault">Kegagalan Sistem <font color='red'>*</font></string>
+    <string name="problem_type">Jenis Masalah <font color='red'>*</font></string>
+    <string name="since">Sejak %1$s</string>
+    <string name="_16_9">16:9</string>
+    <string name="_4_3">4:3</string>
+    <string name="image_captured">Gambar Ditangkap</string>
+    <string name="try_modify_the_filter_criteria">Coba ubah kriteria filter</string>
+    <string name="no_trouble_ticket_matching_the_criteria">Tidak ada Trouble Ticket yang\ncocok dengan kriteria yang diberikan</string>
+    <string name="you_dont_have_area_acces">Kamu tidak mempunyai area akses</string>
+    <string name="modify_criteria">Ubah Kriteria</string>
+    <string name="unread_notification_count">%1$d+</string>
+    <string name="on_going_trouble_ticket">%1$d On Going Trouble Ticket</string>
+    <string name="trouble_ticket_completed">%1$s Trouble Ticket Completed</string>
+    <string name="timeline_not_found">Timeline Tidak Ditemukan</string>
+    <string name="you_have_to_fill_out_a_trouble_ticket_first_add_ticket_is_in_the_upper_right_corner">Anda harus mengisi ticket masalah terlebih dahulu. <b>Tambahkan Tiket</b> berada di sudut kanan atas.</string>
+    <string name="notes_in_this_cluster">Catatan di area ini</string>
+    <string name="history_not_found">Tidak ditemukan riwayat</string>
+    <string name="send_message">Kirim Pesan</string>
+    <string name="usage_rank_n_27_213">Peringkat Penggunaan:\n<b>#27/#213</b></string>
+    <string name="total_time">Total Waktu:\n<b>%1$d jam %2$d menit</b></string>
+    <string name="refresh_engineer">Segarkan engineer</string>
+    <string name="requesting_engineer_latest_location">Meminta engineer memperbarui lokasi terakhir <b>%1$s</b></string>
+    <string name="cannot_proceed_with_this_engineer">Tidak dapat melanjutkan dengan engineer ini</string>
+    <string name="cancel">Batal</string>
+    <string name="about_myself">Tentang diri saya</string>
+    <string name="notes_locations">Catatan Lokasi</string>
+    <string name="account_settings">Pengaturan Akun</string>
+    <string name="my_profile">Profil Saya</string>
+    <string name="all_ticket">Semua Tiket</string>
+    <string name="delete">Hapus</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+    <string name="are_you_sure_want_reopen_ticket">Apakah anda yakin ingin membuka kembali tiket ini?</string>
+    <string name="create_ticket_for_this_site">Buat Tiket untuk \nSitus Ini</string>
+    <string name="you_denied_the_permission_permanently_go_to_app_settings_to_enable_it">Anda menolak izin secara permanen. Pergi ke pengaturan aplikasi untuk mengaktifkannya</string>
+    <string name="app_settings">Pengaturan Aplikasi</string>
+    <string name="you_need_to_enable_the_permission_in_order_the_app_to_operate_properly">Anda perlu mengaktifkan izin agar aplikasi dapat beroperasi dengan baik</string>
+
+    <string name="your_number_npwp">Nomor NPWP Anda</string>
+    <string name="bpjs_naker">BPJS Naker</string>
+    <string name="your_number_bpjs_naker">Nomor BPJS Naker Anda</string>
+    <string name="bpjs_kes">BPJS Kes</string>
+    <string name="your_number_bpjs_kes">Nomor BPJS Kes Anda</string>
+    <string name="linkedin">Linkedin</string>
+    <string name="your_link_linkedin">Tautan Linkedin Anda</string>
+    <string name="wib">WIB</string>
+    <string name="wit">WIT</string>
+    <string name="wita">WITA</string>
+    <string name="file_type">Jenis File</string>
+    <string name="ktp">KTP</string>
+    <string name="img">*img</string>
+    <string name="cv">CV</string>
+    <string name="pdf">*pdf</string>
+    <string name="file_ktp">File KTP</string>
+    <string name="file_cv">File CV</string>
+    <string name="edit_profile">Ubah Profil</string>
+    <string name="save">Simpan</string>
+    <string name="i_didn_t_receive_any_code">Saya tidak menerima kode apa pun.</string>
+    <string name="resend">Kirim Ulang</string>
+    <string name="send_code">Kirim Kode</string>
+    <string name="otp_verification">Verifikasi OTP</string>
+    <string name="managed">Dikelola</string>
+    <string name="pic_name">Nama PIC</string>
+    <string name="updated">Diperbarui</string>
+    <string name="assign_to">Tugaskan ke</string>
+    <string name="college">Kuliah</string>
+    <string name="graduate_school">Lulus Kuliah</string>
+    <string name="not_graduated_yet">belum lulus</string>
+    <string name="graduated">lulus</string>
+    <string name="request_return_spare_part">Permintaan / Pengembalian Suku Cadang</string>
+    <string name="article_name">Nama Artikel <font color='red'>*</font></string>
+    <string name="article_code">Kode Artikel <font color='red'>*</font></string>
+    <string name="quantity">Jumlah <font color='red'>*</font></string>
+    <string name="serial_number">Nomor Seri</string>
+    <string name="new_password">Kata Sandi Baru</string>
+    <string name="online">Online</string>
+    <string name="type_your_message">Ketik pesan Anda</string>
+    <string name="e_mail">Email</string>
+    <string name="selected_date">Tanggal Dipilih</string>
+    <string name="male">Laki-laki</string>
+    <string name="female">Perempuan</string>
+    <string name="address">Alamat</string>
+    <string name="fill_in_your_address">Isi alamat Anda</string>
+    <string name="phone_number">Nomor Telepon</string>
+    <string name="e_mail_alternative">Surel Alternatif</string>
+    <string name="your_alternative_mail">Surel alternatif Anda</string>
+    <string name="your_location">Lokasi Anda</string>
+    <string name="latitude">Garis Lintang</string>
+    <string name="your_latitude">Garis lintang Anda</string>
+    <string name="longtitude">Garis Bujur</string>
+    <string name="your_longtitude">Garis bujur Anda</string>
+    <string name="time_zone">Zona Waktu</string>
+    <string name="performance">Kinerja</string>
+    <string name="send_password">Kirim Kata Sandi</string>
+    <string name="next">Berikutnya</string>
+    <string name="please_check_your_email">Harap periksa surel Anda</string>
+    <string name="one_time_password_otp">Kata Sandi Satu Kali (OTP)</string>
+    <string name="enter_mobile_no">Masukkan nomor ponsel*</string>
+    <string name="enter_your_email">Masukkan surel Anda</string>
+    <string name="enter_your_password">Masukkan kata sandi Anda</string>
+    <string name="remember_me">Ingat Saya</string>
+    <string name="location_update_is_unavailable_enable_the_permission">Lokasi tidak tersedia. Aktifkan izin atau cek apakah GPS aktif!</string>
+    <string name="get_started">Mulai</string>
+    <string name="register">Daftar</string>
+    <string name="log_in">Masuk</string>
+    <string name="reset_password">Atur Ulang Kata Sandi</string>
+    <string name="confirm_password">Konfirmasi Kata Sandi</string>
+    <string name="code">Kode</string>
+    <string name="reset">Atur Ulang</string>
+    <string name="triple_e_is_running_in_the_background_in_working_hours">Triple-E sedang berjalan di latar belakang pada 8:00-19:00 Hari kerja</string>
+    <string name="triple_e_is_running">Triple-E sedang berjalan</string>
+    <string name="are_you_sure_you_want_to_delete_this">Apakah kamu yakin ingin mengapus ini?</string>
+    <string name="notes_successfully_deleted">Catatan berhasil dihapus!</string>
+    <string name="view_profile">Lihat Profil</string>
+    <string name="something_went_wrong">Ada yang salah!</string>
+    <string name="location_image">Lokasi Gambar</string>
+    <string name="are_you_sure_you_want_to_exit">Anda yakin ingin keluar?</string>
+    <string name="this_engineer_is_not_within_the_site_radius_you_can_still_proceed_but_not_advisable">Engineer ini tidak berada dalam radius situs. Anda masih bisa melanjutkan, tetapi tidak disarankan.</string>
+    <string name="proceed">Lanjutkan</string>
+    <string name="dismiss">Tutup</string>
+    <string name="this_engineer_had_not_updated_their_latest_location_yet_you_can_still_proceed_but_the_engineer_is_not_guarantee_to_be_within_the_site_radius_at_the_moment">Engineer ini belum memperbarui lokasi terakhir mereka. Anda masih bisa melanjutkan, tetapi tidak menjamin bahwa engineer tersebut berada dalam radius situs saat ini.</string>
+    <string name="location_expired_check_if_gps_is_active_or_restart_app">Lokasi kedaluwarsa, periksa apakah GPS aktif atau restart aplikasi</string>
+    <string name="location_unavailable_check_permission">Lokasi tidak tersedia. Periksa izin!</string>
+    <string name="reopen_ticket_successfully">Berhasil membuka kembali Tiket!</string>
+    <string name="notes_successfully_submitted">Catatan berhasil dikirim!</string>
+    <string name="something_went_wrong_check_gps_is_active">Ada yang salah! Periksa apakah lokasi diaktifkan!</string>
+    <string name="company">Perusahaan <font color='red'>*</font></string>
+    <string name="when_you_re_offline_you_cannot_request_any_spare_part">Ketika offline, kamu tidak bisa meminta suku cadang</string>
+    <string name="you_re_currently_offline">Kamu sedang offline!</string>
+    <string name="click_button_open_authenticator_app_to_get_otp_code">Klik tombol <b>Buka Google Autentikator</b> untuk mendapatkan kode OTP</string>
+    <string name="open_authenticator_app">Buka Google Autentikator</string>
+    <string name="ticket_is_not_found">Ticket tidak ditemukan!</string>
+    <string name="delete_message">Hapus Pesan</string>
+    <string name="mark_as_read">Tandai sudah dibaca</string>
+    <string name="message_action">Aksi Pesan</string>
+    <string name="undo">Batalkan</string>
+    <string name="your_message_was_sent">Pesan kamu \"%1$s\" sudah dikirim ke \"%2$s\"</string>
+    <string name="there_are_fields_that_are_still_empty">Terdapat field yang masih kosong</string>
+    <string name="your_trouble_ticket_quality">Kualitas Trouble Ticket Anda</string>
+
+
+    <string-array name="country_codes">
+        <item>+62</item>
+        <item>+44</item>
+        <item>+91</item>
+        <item>+62</item>
+        <item>+81</item>
+    </string-array>
+
+</resources>

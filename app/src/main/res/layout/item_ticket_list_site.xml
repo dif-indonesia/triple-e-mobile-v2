@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <carbon.widget.FlowLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/detil"
+        app:carbon_elevationShadowColor="#32000000"
+        app:carbon_elevation="5dp"
+        app:carbon_cornerRadius="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/bg_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                android:gravity="center"
+                android:textSize="12dp"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_status_trouble_ticket"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Emergency"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <TextView
+                android:id="@+id/label_tt_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:layout_marginLeft="17dp"
+                android:fontFamily="@font/roboto_bold"
+                android:includeFontPadding="false"
+                android:text="#"
+                android:textColor="#404040"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_tt_number"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/roboto_bold"
+                android:includeFontPadding="false"
+                android:text="1112321"
+                android:textColor="#404040"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toRightOf="@id/label_tt_number"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/et_status"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginRight="19dp"
+                android:drawablePadding="5dp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:paddingStart="4dp"
+                android:paddingEnd="8dp"
+                android:text="@string/assigned"
+                android:textColor="#027E38"
+                android:textSize="14sp"
+                app:drawableStartCompat="@drawable/ic_ellipse"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_logo"
+                android:layout_width="32dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_logo"
+                android:layout_marginLeft="17dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+            <TextView
+                android:id="@+id/txt_tower_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginTop="17dp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:text="@string/title_site"
+                android:textColor="#404040"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/img_logo"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+
+            <TextView
+                android:id="@+id/txt_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:textStyle="normal"
+                android:text="3 Januri 2023"
+                android:textColor="#7D7D7D"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_status" />
+
+
+            <TextView
+                android:id="@+id/txt_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginEnd="22dp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:textStyle="normal"
+                android:text="S6a45FV"
+                android:textColor="#7D7D7D"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_status" />
+
+            <ImageView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginEnd="11dp"
+                android:layout_marginTop="12dp"
+                android:shadowColor="#E6E6E6"
+                android:src="@drawable/line_black_tb_ticket"
+                app:layout_constraintTop_toBottomOf="@id/txt_date"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/txt_technician_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:textStyle="bold"
+                android:text="PIC Name"
+                android:textColor="#7D7D7D"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_logo" />
+
+            <TextView
+                android:id="@+id/txt_pic_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="22dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/roboto_regular"
+                android:includeFontPadding="false"
+                android:textStyle="bold"
+                android:text="PIC Name"
+                android:textColor="#7D7D7D"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_logo" />
+
+            <TextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Timer"
+                android:layout_marginEnd="24dp"
+                android:drawableStart="@drawable/ic_clock_tb_ticket"
+                android:drawablePadding="6dp"
+                android:fontFamily="@font/roboto_regular"
+                android:textColor="#404040"
+                android:textStyle="normal"
+                android:layout_marginTop="11dp"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_pic_name"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </carbon.widget.FlowLayout>
+
+</layout>

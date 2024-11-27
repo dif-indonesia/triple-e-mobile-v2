@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/arrow"
+            android:layout_width="12dp"
+            android:layout_height="8dp"
+            android:layout_marginStart="-3dp"
+            android:background="@drawable/bg_triangle_marker"
+            android:backgroundTint="@color/white"
+            app:layout_constraintEnd_toEndOf="@id/layout"
+            app:layout_constraintStart_toStartOf="@id/layout"
+            app:layout_constraintTop_toBottomOf="@id/layout" />
+
+        <FrameLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_card_light"
+            android:backgroundTint="@color/white"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            app:layout_constraintBottom_toTopOf="@id/arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="148dp"
+                android:text="Paste"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+        </FrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

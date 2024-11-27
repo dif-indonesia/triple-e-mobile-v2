@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        app:actionButtonIcon="@drawable/ic_btn_save_area_acces"
+        app:actionButtonTint="@color/purple"
+        app:title="Area Acces">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:paddingVertical="16dp"
+            android:layout_width="match_parent"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:animateLayoutChanges="true"
+            android:paddingHorizontal="16dp"
+            android:layout_height="wrap_content">
+
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/recycler_view"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:clipChildren="false"-->
+<!--                android:clipToPadding="false"-->
+<!--                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--                tools:listitem="@layout/item_area_acces"/>-->
+
+            <CheckBox
+                android:id="@+id/regionaL_sumbagsel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sumbagsel"
+                style="@style/check_box_label"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <LinearLayout
+                android:id="@+id/line_sumbagsel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:padding="10dp"
+                app:layout_constraintTop_toBottomOf="@id/regionaL_sumbagsel"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <CheckBox
+                    android:id="@+id/ns_nspalembang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Palembang" />
+
+                <CheckBox
+                    android:id="@+id/ns_sumbagsel_nsbengkulu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Bengkulu"/>
+                <CheckBox
+                    android:id="@+id/ns_nssumbagsel_nsjambi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Jambi"/>
+
+                <CheckBox
+                    android:id="@+id/ns_nslampung"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Lampung"/>
+
+                <CheckBox
+                    android:id="@+id/ns_nspangkalpinang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Pangkal Pinang"/>
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/regional_sumbagteng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sumbagteng"
+                style="@style/check_box_label"
+                app:layout_constraintTop_toBottomOf="@id/line_sumbagsel"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <LinearLayout
+                android:id="@+id/line_sumbagteng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/regional_sumbagteng"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <CheckBox
+                    android:id="@+id/ns_sumbagteng_batam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Batam"/>
+
+                <CheckBox
+                    android:id="@+id/ns_subagteng_dumai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Dumai"/>
+                <CheckBox
+                    android:id="@+id/ns_sumbagteng_padang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Padang"/>
+                <CheckBox
+                    android:id="@+id/ns_sumbagteng_pekanbaru"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Pekanbaru"/>
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/regional_sumbagut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sumbagut"
+                style="@style/check_box_label"
+                app:layout_constraintTop_toBottomOf="@id/line_sumbagteng"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <LinearLayout
+                android:id="@+id/line_sumbagut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/regional_sumbagut"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <CheckBox
+                    android:id="@+id/ns_sumbagut_ns_nsbengkulu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Aceh"/>
+                <CheckBox
+                    android:id="@+id/ns_sumbagut_nsjambig"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Binjai"/>
+
+                <CheckBox
+                    android:id="@+id/ns_sumbagut_nslampung"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Medan"/>
+                <CheckBox
+                    android:id="@+id/ns_sumbagut_nspalembang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Padang Sidempuan"/>
+                <CheckBox
+                    android:id="@+id/ns_sumbagut_nspangkalpinag"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/check_box_area"
+                    android:text="Ns Pematang Siantar"/>
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

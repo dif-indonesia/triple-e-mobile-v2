@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.fragment.NotificationFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/layout_on_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/id_message_frag"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coordinator_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_message_notification"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/item_message_notification" />
+
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_gravity="end|bottom"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="32dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="27dp"
+                app:cardElevation="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <FrameLayout
+                    android:clickable="true"
+                    android:id="@+id/add_messages"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_purple_gradient"
+                    android:foreground="?selectableItemBackgroundBorderless"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:src="@drawable/add_message" />
+                </FrameLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_empty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                app:layout_constrainedHeight="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+                <ImageView
+                    android:id="@+id/img_empty"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center"
+                    android:src="@mipmap/img_empty_message_foreground"
+                    app:layout_constraintBottom_toTopOf="@id/tv_empty"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/tv_empty"
+                    style="@style/text_bold_purple"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center_horizontal"
+                    android:text="@string/oops_you_don_t_have_a_message"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/img_empty" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</layout>

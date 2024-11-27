@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="11dp"
+            android:background="@drawable/bg_profile"
+            android:backgroundTint="#D9D9D9">
+
+            <ImageView
+                android:id="@+id/image_notif"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_notif"/>
+        </FrameLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1">
+
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                tools:text="dcl_gilang"
+                android:textColor="#000000"
+                app:layout_constraintTop_toTopOf="parent"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                tools:text="Lorem Ipsum Dollor sit amet"
+                android:textColor="#404040"
+                android:layout_marginTop="20dp"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="18dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="#D9D9D9">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:textColor="#9C9C9C"
+                android:textSize="11sp"
+                tools:text="1 m ago."/>
+
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

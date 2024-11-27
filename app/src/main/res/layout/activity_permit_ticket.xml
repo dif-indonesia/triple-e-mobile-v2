@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:actionButtonTint="@color/purple"
+        app:backButtonIcon="@drawable/ic_back_ticket_belitung"
+        app:backButtonTint="#3532C3"
+        app:title="Ticket Permit">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#EEF6FF"
+                android:padding="18dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imageResult"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:contentDescription="image_result_desc" />
+
+                    <TextView
+                        android:id="@+id/button_cam"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Open Camera"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/open_sauce_one_bold"
+                        android:drawablePadding="5dp"
+                        android:drawableBottom="@drawable/ic_camera"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/bg_edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="208dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="@id/layout1"
+                    app:layout_constraintEnd_toEndOf="@id/layout1"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/layout1">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/open_sauce_one_bold"
+                        android:text="Add Description"
+                        android:textColor="@color/black"
+                        android:textSize="12dp" />
+
+                    <EditText
+                    android:id="@+id/information"
+                    style="@style/Form.MultilineEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:minLines="7"
+                        android:gravity="top"
+                    />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_submit"
+                    style="@style/Form.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/submit"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

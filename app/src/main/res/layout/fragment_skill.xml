@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="@string/skill"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="22dp"
+            android:text="@string/installation"
+            style="@style/text_regular"
+            android:textSize="12sp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/skill_instalation"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:enabled="false"
+            android:theme="@style/Theme.MaterialComponents"
+            android:value="70"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:thumbColor="#FFBB5E"
+            app:thumbElevation="0dp"
+            app:thumbRadius="5dp"
+            app:trackColorActive="#FFBB5E"
+            app:trackColorInactive="#FFF4E6"
+            app:trackHeight="10dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            style="@style/text_regular"
+            android:text="@string/commissioning"
+            android:textSize="12sp" />
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/skill_commisionning"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:enabled="false"
+            android:theme="@style/Theme.MaterialComponents"
+            android:value="50"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:thumbColor="#E580FD"
+            app:thumbElevation="0dp"
+            app:thumbRadius="5dp"
+            app:trackColorActive="#E580FD"
+            app:trackColorInactive="#FEE7FF"
+            app:trackHeight="10dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:text="@string/integration"
+            style="@style/text_regular"
+            android:textSize="12sp" />
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/skill_integration"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:enabled="false"
+            android:theme="@style/Theme.MaterialComponents"
+            android:value="75"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:thumbColor="#67CF94"
+            app:thumbElevation="0dp"
+            app:thumbRadius="5dp"
+            app:trackColorActive="#67CF94"
+            app:trackColorInactive="#DBF7E8"
+            app:trackHeight="10dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:text="@string/project"
+            style="@style/text_regular"
+            android:textSize="12sp" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/skill_project"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:enabled="false"
+            android:theme="@style/Theme.MaterialComponents"
+            android:value="60"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:thumbColor="#4F9DF8"
+            app:thumbElevation="0dp"
+            app:thumbRadius="5dp"
+            app:trackColorActive="#4F9DF8"
+            app:trackColorInactive="#ECF3FD"
+            app:trackHeight="10dp" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:text="@string/business"
+            style="@style/text_regular"
+            android:textSize="12sp" />
+
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/skill_business"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:enabled="false"
+            android:theme="@style/Theme.MaterialComponents"
+            android:layout_marginBottom="45dp"
+            android:value="60"
+            android:valueFrom="0"
+            android:valueTo="100"
+            app:thumbColor="#8280FD"
+            app:thumbElevation="0dp"
+            app:thumbRadius="5dp"
+            app:trackColorActive="#8280FD"
+            app:trackColorInactive="#E9E7FF"
+            app:trackHeight="10dp" />
+
+        </LinearLayout>
+        </ScrollView>
+</layout>

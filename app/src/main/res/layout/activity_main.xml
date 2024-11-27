@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bottom_navigation"
+            app:elevation="3dp"
+            app:itemHorizontalTranslationEnabled="false"
+            app:itemIconTint="#9C9C9C"
+            app:itemPaddingBottom="12dp"
+            app:itemPaddingTop="15dp"
+            app:itemTextAppearanceActive="@style/BottomNavigationView.Active"
+            app:itemTextAppearanceInactive="@style/BottomNavigationView"
+            app:itemTextColor="#9C9C9C"
+            app:labelVisibilityMode="labeled"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:menu="@menu/menu_main" />
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragment_container_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="48dp"
+            app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/location_unavailable_alert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toTopOf="@id/layout_btn_map"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:visibility="visible">
+
+            <View
+                android:layout_width="16dp"
+                android:layout_height="12dp"
+                android:background="@drawable/bg_triangle_marker"
+                android:backgroundTint="@color/light_orange"
+                app:layout_constraintEnd_toEndOf="@id/layout"
+                app:layout_constraintStart_toStartOf="@id/layout"
+                app:layout_constraintTop_toBottomOf="@id/layout" />
+
+            <FrameLayout
+
+                android:id="@+id/layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded_card_medium"
+                android:backgroundTint="@color/light_orange"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxWidth="120dp"
+                    android:text="@string/location_update_is_unavailable_enable_the_permission"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="11sp" />
+            </FrameLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/layout_btn_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:elevation="0dp"
+            android:translationZ="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/bottom_navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1">
+
+            <FrameLayout
+                android:layout_width="84dp"
+                android:layout_height="84dp"
+                android:layout_gravity="center"
+                android:background="#EFEFEF"
+                android:backgroundTint="@color/white"
+                android:rotation="45"
+                android:transformPivotX="42dp"
+                android:transformPivotY="42dp"
+                app:layout_constraintBottom_toBottomOf="@id/on_off"
+                app:layout_constraintEnd_toEndOf="@id/on_off"
+                app:layout_constraintStart_toStartOf="@id/on_off"
+                app:layout_constraintTop_toTopOf="@id/on_off" />
+
+            <FrameLayout
+                android:id="@+id/on_off"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:background="#EFEFEF"
+                android:rotation="45"
+                android:transformPivotX="32dp"
+                android:transformPivotY="32dp">
+
+                <ImageView
+                    android:id="@+id/icon_home"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:rotation="-45"
+                    android:src="@drawable/ic_location_belitung" />
+            </FrameLayout>
+
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

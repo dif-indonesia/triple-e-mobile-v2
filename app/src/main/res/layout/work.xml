@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:text="@string/title_work"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="14dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/add_workplace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            android:text="@string/add_workplace"
+            android:drawableStart="@drawable/ic_button_add"
+            android:textSize="12sp"
+            android:textColor="@color/purple"
+            android:layout_marginLeft="14dp"
+            android:drawablePadding="15dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_work"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_work"
+            android:layout_marginBottom="45dp"/>
+
+    </LinearLayout>
+</layout>

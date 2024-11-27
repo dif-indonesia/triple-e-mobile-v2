@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp"
+        android:orientation="horizontal"
+        android:id="@+id/id_empty">
+
+        <FrameLayout
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="11dp"
+            android:background="@drawable/bg_profile"
+            android:backgroundTint="#D9D9D9">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/bg_work_icon"/>
+
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                tools:text="UKA"
+                android:textColor="#6045E2"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/txt_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_regular"
+                tools:text="Project Manager 1 Januari 2020 to\nBandung"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            android:layout_marginEnd="12dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</layout>

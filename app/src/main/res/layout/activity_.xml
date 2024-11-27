@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:backButtonIcon="@drawable/baseline_arrow_back_ios_new_24"
+        android:orientation="vertical"
+        app:title="@string/activity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:paddingHorizontal="16dp"
+            android:clipChildren="false"
+            android:paddingVertical="32dp"
+            android:layout_height="wrap_content"
+            tools:context=".presentation.activity.Activity">
+
+
+            <TextView
+                android:id="@+id/tx_1"
+                style="@style/email_me_wh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send_me_email_when_new_assignment_created_for_me"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintEnd_toStartOf="@id/swt_send_me_email_when_new_assignment_create_ticket_for_me"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_send_me_email_when_new_assignment_create_ticket_for_me"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tx_1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tx_1"
+                app:layout_constraintStart_toEndOf="@id/tx_1"
+                app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+            <TextView
+                android:id="@+id/tx_2"
+                style="@style/email_me_wh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="5dp"
+                android:text="@string/receive_an_email_when_new_trouble_ticket_assign_to_me"
+                app:layout_constraintStart_toEndOf="@id/swt_new_trouble_ticket_approve_or_rejected"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tx_1" />
+
+            <TextView
+                android:id="@+id/tx_3"
+                style="@style/email_me_wh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:layout_marginStart="5dp"
+                android:text="@string/email_me_with_my_trouble_ticket_closed"
+                app:layout_constraintStart_toEndOf="@id/swt_trouble_ticket_closed"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tx_2" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_new_trouble_ticket_approve_or_rejected"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tx_2"
+                app:layout_constraintEnd_toEndOf="@id/swt_send_me_email_when_new_assignment_create_ticket_for_me"
+                app:layout_constraintStart_toStartOf="@id/swt_send_me_email_when_new_assignment_create_ticket_for_me"
+                app:layout_constraintTop_toTopOf="@id/tx_2"
+                app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/swt_trouble_ticket_closed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/tx_3"
+                app:layout_constraintEnd_toEndOf="@id/swt_send_me_email_when_new_assignment_create_ticket_for_me"
+                app:layout_constraintStart_toStartOf="@id/swt_send_me_email_when_new_assignment_create_ticket_for_me"
+                app:layout_constraintTop_toTopOf="@id/tx_3"
+                app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                app:trackTint="@drawable/selector_switch_compat_track_tint" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+</layout>

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Request/Return Spare Part"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="#404040"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="31dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="14dp"
+            android:checked="true"
+            android:buttonTint="@color/purple"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID#"
+            style="@style/id_"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginLeft="206dp"
+            android:textStyle="bold"
+            />
+
+
+            <TextView
+                android:id="@+id/id_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="#12"
+                style="@style/id_"
+                android:layout_marginLeft="9dp"
+                android:fontFamily="@font/roboto_regular"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Update"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            android:layout_marginLeft="14dp"
+            style="@style/old_passwor" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Follow Up"
+            android:layout_marginLeft="152dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_last_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24-03-23, 20:57"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+
+        <TextView
+            android:id="@+id/id_follow_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24-03-23, 20:57"
+            android:layout_marginLeft="99dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ticket"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Created"
+            android:layout_marginLeft="196dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_ticket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TS91824103409"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+
+        <TextView
+            android:id="@+id/id_created"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24-03-23, 20:57"
+            android:layout_marginLeft="103dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Article Name"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Article Code"
+                android:layout_marginLeft="128dp"
+                android:fontFamily="@font/roboto_bold"
+                android:textStyle="bold"
+                style="@style/old_passwor"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_article_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Modem HT2300"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:id="@+id/id_article_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="118,7002"
+            android:layout_marginLeft="145dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serial Number"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantity"
+            android:layout_marginLeft="141dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_serial_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="543675"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:id="@+id/id_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:layout_marginLeft="237dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Balikpapan"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PIC"
+            android:layout_marginLeft="192dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Balikpapan"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:id="@+id/id_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="dev_ilyasa_dif"
+            android:layout_marginLeft="126dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="System"
+            android:layout_marginLeft="197dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/id_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+
+        <TextView
+            android:id="@+id/id_system"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="VSAT"
+            android:layout_marginLeft="206dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vendor"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Treatment"
+            android:layout_marginLeft="173dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textStyle="bold"
+            style="@style/old_passwor"
+            />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/id_vendor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teleglobal"
+            android:layout_marginLeft="14dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"
+            />
+
+        <TextView
+            android:id="@+id/id_treatment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Returnable"
+            android:layout_marginLeft="156dp"
+            android:fontFamily="@font/roboto_regular"
+            style="@style/old_passwor"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

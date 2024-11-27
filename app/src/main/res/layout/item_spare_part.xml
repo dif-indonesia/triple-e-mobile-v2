@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_rounded_card_medium"
+        android:backgroundTint="@color/white"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/tv_id"
+            style="@style/text_bold_black"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/id"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/delete" />
+
+        <LinearLayout
+            android:id="@+id/section_1"
+            android:layout_marginTop="16dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@id/section_2"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/delete">
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/last_update"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_last_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textSize="12sp"
+                tools:text="24-03-23, 20:57" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/ticket_title"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_ticket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="TS209382093" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/article_name"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_article_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Modem HT2300" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/serial_number"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_serial_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="239483209" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/location"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Balik Papan" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Status"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Request" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/vendor"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_vendor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Teleglobal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/section_2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="end"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/section_1"
+            app:layout_constraintTop_toBottomOf="@id/delete">
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/follow_up"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_follow_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="24-03-23, 20:57" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/created"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_created"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="23-02-23, 20:57" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/article_code"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_article_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="1209201" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/quantity"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_serial_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="10" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/faulty_unit"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_faulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Mirza My Humayung" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/system"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_system"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="VSAT" />
+
+            <TextView
+                style="@style/text_regular_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/treatment"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_value_treatment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                tools:text="Returnable" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:src="@drawable/baseline_more_vert_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:focusable="true" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

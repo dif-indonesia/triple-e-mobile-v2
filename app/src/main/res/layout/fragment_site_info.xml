@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="infosite"
+            type="id.co.dif.base_project.data.SiteDetails" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:padding="18dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/empty_small_divider"
+                android:orientation="vertical"
+                android:showDividers="middle">
+
+                <LinearLayout
+                    android:id="@+id/card_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    android:divider="@drawable/empty_item_divider"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:showDividers="middle"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/Form.Section1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:text="@string/site_info" />
+
+                    <TextView
+                        android:id="@+id/nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_person"
+                        app:drawableTint="@color/black"
+                        tools:text="Ilyasa Nur Haafiz" />
+
+                    <TextView
+                        android:id="@+id/kelurahan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_pinpoint"
+                        app:drawableTint="@color/black"
+                        tools:text="Desa Lorem Ipsum dolor, Blok B31" />
+
+                    <TextView
+                        android:id="@+id/kecamatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_house"
+                        app:drawableTint="@color/black"
+                        tools:text="Desa Lorem" />
+
+
+                    <TextView
+                        android:id="@+id/addres_kelurahan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_house_with_list"
+                        app:drawableTint="@color/black"
+                        tools:text="Batam" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    android:divider="@drawable/empty_item_divider"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:showDividers="middle"
+                    app:layout_constraintTop_toBottomOf="@id/card_1">
+
+                    <TextView
+                        style="@style/Form.Section1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/technology" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Site ID"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/siteid"
+                            style="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Area"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/area"
+                            style="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Cluster"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/cluster"
+                            style="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Latitude"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/latitude"
+                            style="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Longtitude"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/longtitude"
+                            style="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="@string/system"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/system"
+                            style="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_bold"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    android:divider="@drawable/empty_item_divider"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:showDividers="middle"
+                    app:layout_constraintTop_toBottomOf="@id/card_2">
+
+                    <TextView
+                        style="@style/Form.Section1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="0dp"
+                        android:text="@string/contact_info" />
+
+                    <TextView
+                        android:id="@+id/tv_provider"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_person"
+                        app:drawableTint="@color/black"
+                        tools:text="Desa Lorem" />
+
+                    <TextView
+                        android:id="@+id/contac_desa_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_pinpoint"
+                        app:drawableTint="@color/black"
+                        tools:text="Desa Lorem" />
+
+                    <TextView
+                        android:id="@+id/contac_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/ic_contact"
+                        app:drawableTint="@color/black"
+                        tools:text="Nurdin" />
+
+                    <TextView
+                        android:id="@+id/contac_phone_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="@font/roboto_regular"
+                        android:gravity="center_vertical"
+                        app:drawableStartCompat="@drawable/phone"
+                        app:drawableTint="@color/black"
+                        tools:text="08521214558" />
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+    </ScrollView>
+</layout>

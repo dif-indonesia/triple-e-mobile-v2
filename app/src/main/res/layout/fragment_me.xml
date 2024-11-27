@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <id.co.dif.base_project.custom_view.LinearLayoutWithAppBar
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:title="@string/my_profile">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/bg_header_me"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:contentDescription="@string/bg_header_me"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintDimensionRatio="1590:420"
+                        android:src="@drawable/cover_3e_default"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_profile"
+                        android:layout_width="124dp"
+                        android:layout_height="124dp"
+                        android:layout_marginStart="18dp"
+                        app:cardBackgroundColor="@color/grape"
+                        app:cardCornerRadius="14dp"
+                        app:layout_constraintBottom_toBottomOf="@id/bg_header_me"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/bg_header_me">
+
+                        <ImageView
+                            android:id="@+id/image_me"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/img_default_profile"
+                            android:contentDescription="@string/image_me"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_default_profile"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="14dp"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/roboto_regular"
+                        android:includeFontPadding="false"
+                        android:maxLines="1"
+                        android:paddingEnd="5dp"
+                        android:text="Name"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@id/card_profile"
+                        app:layout_constraintTop_toBottomOf="@id/bg_header_me" />
+
+                    <TextView
+                        android:id="@+id/user_position"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Position"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toRightOf="@id/card_profile"
+                        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+
+                    <ImageView
+                        android:id="@+id/btn_edit_profile"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/edit_me"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_edit_me"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/user_name" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@+id/tab_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tabGravity="center"
+                        app:tabIndicator="@drawable/bg_tab_indicator"
+                        app:tabIndicatorColor="#6045E2"
+                        app:tabIndicatorFullWidth="false"
+                        app:tabIndicatorHeight="5dp"
+                        app:tabMode="scrollable"
+                        app:tabSelectedTextColor="#6045E2"
+                        app:tabTextAppearance="@style/MyTablayoutItemStyle"
+                        app:tabTextColor="#404040" />
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/view_pager"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:paddingHorizontal="16dp"
+                        android:paddingTop="16dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tab_layout" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/layout_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="32dp"
+                android:orientation="vertical"
+                app:cardBackgroundColor="@color/purple"
+                app:cardCornerRadius="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/img_refresh"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:clickable="true"
+                        android:drawablePadding="4dp"
+                        android:focusable="true"
+                        android:gravity="center"
+                        android:includeFontPadding="false"
+                        android:padding="8dp"
+                        android:src="@drawable/ic_refresh"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </FrameLayout>
+
+    </id.co.dif.base_project.custom_view.LinearLayoutWithAppBar>
+
+</layout>
