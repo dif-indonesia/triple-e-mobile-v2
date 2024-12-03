@@ -160,6 +160,11 @@ class LocationService : Service(), KoinComponent {
         super.onDestroy()
     }
 
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        super.onTaskRemoved(rootIntent)
+        stop()
+    }
+
     companion object {
         var isServiceRunning = false
         const val ACTION_START = "ACTION_START"
