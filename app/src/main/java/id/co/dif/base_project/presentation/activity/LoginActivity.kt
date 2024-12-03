@@ -63,8 +63,18 @@ class LoginActivity : BaseActivity<LoginViewModel, ActivityLoginBinding>() {
 
         viewModel.responseLogin.observe(lifecycleOwner) {
             if (it.status == 200) {
+                preferences.rememberMe.value = binding.rememberme.isChecked
                 preferences.loginData.value = it.data
                 startActivity(Intent(this, InputOtpActivity::class.java))
+            } else {
+                it.data?.let { loginData ->
+                    loginData.emailMessage?.let { message ->
+                        binding.etmail.error = message
+                    }
+                    loginData.passwordMessage?.let { message ->
+                        binding.etpassword.error = message
+                    }
+                }
             }
         }
 

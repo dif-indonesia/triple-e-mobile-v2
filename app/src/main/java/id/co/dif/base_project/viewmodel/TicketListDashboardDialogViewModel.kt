@@ -21,11 +21,10 @@ class TicketListDashboardDialogViewModel : BaseViewModel() {
 
     var fromDate: String = ""
     var untilDate: String = ""
-    var status: String = ""
     var search: String = ""
     var severety: String = ""
 
-    fun getListTroubleTicket(page: Int, limit: Int = 10)
+    fun getListTroubleTicket(status: String, page: Int, limit: Int = 10)
     {
         if (!context.isDeviceOnline()) {
             if (page == 1) {

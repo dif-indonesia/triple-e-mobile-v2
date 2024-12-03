@@ -34,16 +34,20 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.BaseProject"
+        android:usesCleartextTraffic="true"
         tools:ignore="LockedOrientationActivity"
         tools:replace="android:allowBackup"
         tools:targetApi="33">
         <activity
+            android:name=".presentation.activity.SubmitTicketActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.activity.ProjectActivity"
             android:exported="false" />
-        <activity android:name=".presentation.activity.TicketPermitActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".presentation.activity.TicketPermitActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.activity.AreaAccesTeleglobalActivity"
             android:exported="false" />

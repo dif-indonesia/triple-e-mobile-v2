@@ -15,13 +15,13 @@ sealed class TicketStatus(
     )
 
     object OnProgress : TicketStatus(
-        label = "On-Progress",
+        label = "On Progress",
         background = R.color.dark_pink,
         foreground = R.color.dark_pink,
     )
 
     object OnGoing : TicketStatus(
-        label = "On-Going",
+        label = "On Going",
         background = R.color.dark_pink,
         foreground = R.color.dark_pink,
     )

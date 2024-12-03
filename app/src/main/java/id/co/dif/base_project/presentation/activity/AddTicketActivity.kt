@@ -621,7 +621,9 @@ class AddTicketActivity : BaseActivity<AddTicketViewModel, ActivityAddTicketBind
                 "tic_sparepart" to false,
                 "tic_system_sub" to if (viewModel.basiInfo?.asgn_project_id == "3") binding.problemType.text.toString() else binding.subSystemFault.text.toString()
                     .orDefault(""),
-                "tic_site" to viewModel.responseGetSiteDetails.value?.data?.info_site?.siteName.orDefault("")
+                "tic_site" to viewModel.responseGetSiteDetails.value?.data?.info_site?.siteName.orDefault(""),
+                "tic_description" to binding.ticDescription.text.toString().orDefault(""),
+                "tic_escalated" to binding.ticEscalated.isChecked
             )
         )
 

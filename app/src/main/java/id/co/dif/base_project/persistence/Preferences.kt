@@ -9,6 +9,7 @@ import id.co.dif.base_project.data.Location
 import id.co.dif.base_project.data.LocationScheduleCommand
 import id.co.dif.base_project.data.LoginData
 import id.co.dif.base_project.data.Note
+import id.co.dif.base_project.data.Rca
 import id.co.dif.base_project.data.Session
 import id.co.dif.base_project.data.SiteData
 import id.co.dif.base_project.data.SiteHistory
@@ -68,6 +69,12 @@ class Preferences(val method: PersistenceOperator) {
     val myDetailProfile by lazy {
         preferenceFactory.createPreference<BasicInfo>(
             "my_detailed_profile",
+            method
+        )
+    }
+    val rcaData by lazy {
+        preferenceFactory.createPreference<Rca>(
+            "rca_data",
             method
         )
     }

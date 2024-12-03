@@ -170,7 +170,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:includeFontPadding="false"
-                            android:text="@{ticketInfo.myClosedTicket + ``}"
+                            android:text="@{ticketInfo.closed + ``}"
                             android:textColor="@color/white"
                             android:textSize="32sp"
                             android:textStyle="bold"
@@ -219,7 +219,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:includeFontPadding="false"
-                            android:text="@{ticketInfo.myOpenTicket + ``}"
+                            android:text="@{ticketInfo.onProgress + ``}"
                             android:textColor="@color/white"
                             android:textSize="32sp"
                             android:textStyle="bold"
@@ -268,7 +268,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
                             android:includeFontPadding="false"
-                            android:text="@{ticketInfo.closedTicketArea + ``}"
+                            android:text="@{ticketInfo.open + ``}"
                             android:textColor="@color/white"
                             android:textSize="32sp"
                             android:textStyle="bold"
@@ -315,7 +315,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@{ticketInfo.openTicketArea + ``}"
+                            android:text="@{ticketInfo.totalTicket + ``}"
                             android:textColor="@color/white"
                             android:textSize="32sp"
                             android:textStyle="bold"
@@ -408,158 +408,15 @@
                         app:layout_constraintStart_toStartOf="@id/progress_my_ticket_handling_contribution"
                         app:layout_constraintTop_toBottomOf="@id/tv_title_progress_my_ticket_handling_contribution" />
 
-                    <TextView
-                        android:id="@+id/tv_skill_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="@string/skill"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/progress_my_ticket_handling_contribution" />
-
-
-                    <TextView
-                        android:id="@+id/tv_installation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/installation"
-                        android:textSize="12sp"
-                        app:layout_constraintTop_toBottomOf="@id/tv_skill_title" />
-
-                    <com.google.android.material.slider.Slider
-                        android:id="@+id/slider_skill_instalation"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:enabled="false"
-                        android:theme="@style/Theme.MaterialComponents"
-                        android:value="@{skill.installation}"
-                        android:valueFrom="0"
-                        android:valueTo="100"
-                        app:layout_constraintTop_toBottomOf="@id/tv_installation"
-                        app:thumbColor="@color/light_orange"
-                        app:thumbElevation="0dp"
-                        app:thumbRadius="5dp"
-                        app:trackColorActive="@color/light_orange"
-                        app:trackColorInactive="@color/alpha_10_light_orange"
-                        app:trackHeight="10dp"
-                        tools:value="60" />
-
-                    <TextView
-                        android:id="@+id/tv_commissioning"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/commissioning"
-                        android:textSize="12sp"
-                        app:layout_constraintTop_toBottomOf="@id/slider_skill_instalation" />
-
-                    <com.google.android.material.slider.Slider
-                        android:id="@+id/slider_skill_commissioning"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:enabled="false"
-                        android:theme="@style/Theme.MaterialComponents"
-                        android:value="@{skill.commissioning}"
-                        android:valueFrom="0"
-                        android:valueTo="100"
-                        app:layout_constraintTop_toBottomOf="@id/tv_commissioning"
-                        app:thumbColor="@color/pink"
-                        app:thumbElevation="0dp"
-                        app:thumbRadius="5dp"
-                        app:trackColorActive="@color/pink"
-                        app:trackColorInactive="@color/alpha_10_dark_pink"
-                        app:trackHeight="10dp"
-                        tools:value="30" />
-
-                    <TextView
-                        android:id="@+id/tv_integration"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/integration"
-                        android:textSize="12sp"
-                        app:layout_constraintTop_toBottomOf="@id/slider_skill_commissioning" />
-
-                    <com.google.android.material.slider.Slider
-                        android:id="@+id/slider_skill_integration"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:enabled="false"
-                        android:theme="@style/Theme.MaterialComponents"
-                        android:value="@{skill.integration}"
-                        android:valueFrom="0"
-                        android:valueTo="100"
-                        app:layout_constraintTop_toBottomOf="@id/tv_integration"
-                        app:thumbColor="@color/light_green"
-                        app:thumbElevation="0dp"
-                        app:thumbRadius="5dp"
-                        app:trackColorActive="@color/light_green"
-                        app:trackColorInactive="@color/alpha_10_light_green"
-                        app:trackHeight="10dp"
-                        tools:value="75" />
-
-                    <TextView
-                        android:id="@+id/tv_project"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/project"
-                        android:textSize="12sp"
-                        app:layout_constraintTop_toBottomOf="@id/slider_skill_integration"
-                        tools:layout_editor_absoluteX="16dp" />
-
-                    <com.google.android.material.slider.Slider
-                        android:id="@+id/slider_skill_project"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:enabled="false"
-                        android:theme="@style/Theme.MaterialComponents"
-                        android:value="@{skill.project}"
-                        android:valueFrom="0"
-                        android:valueTo="100"
-                        app:layout_constraintTop_toBottomOf="@id/tv_project"
-                        app:thumbColor="@color/light_blue"
-                        app:thumbElevation="0dp"
-                        app:thumbRadius="5dp"
-                        app:trackColorActive="@color/light_blue"
-                        app:trackColorInactive="@color/alpha_10_light_blue"
-                        app:trackHeight="10dp"
-                        tools:value="60" />
-
-                    <TextView
-                        android:id="@+id/tv_business"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/business"
-                        android:textSize="12sp"
-                        app:layout_constraintTop_toBottomOf="@id/slider_skill_project" />
-
-                    <com.google.android.material.slider.Slider
-                        android:id="@+id/slider_skill_business"
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:enabled="false"
-                        android:theme="@style/Theme.MaterialComponents"
-                        android:value="@{skill.business}"
-                        android:valueFrom="0"
-                        android:valueTo="100"
-                        app:layout_constraintTop_toBottomOf="@id/tv_business"
-                        app:thumbColor="@color/alpha_60_light_purple"
-                        app:thumbElevation="0dp"
-                        app:thumbRadius="5dp"
-                        app:trackColorActive="@color/alpha_60_light_purple"
-                        app:trackColorInactive="@color/alpha_10_light_purple"
-                        app:trackHeight="10dp"
-                        tools:value="60" />
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_mttr"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_rounded_card_light"
                     android:backgroundTint="@color/white"
+                    android:layout_marginBottom="60dp"
                     android:padding="14dp">
 
                     <TextView
@@ -567,52 +424,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="@string/your_trouble_ticket_quality"
+                        android:text="MTTR P90"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <com.google.android.material.progressindicator.CircularProgressIndicator
-                        android:id="@+id/progress_competence_development_status"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
-                        android:layout_marginTop="24dp"
-                        app:indicatorColor="@color/purple"
-                        app:indicatorSize="142dp"
-                        app:layout_constraintEnd_toStartOf="@id/progress_program_competence_development_status"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tv_competence_development_status"
-                        app:trackColor="@color/alpha_10_light_purple"
-                        app:trackCornerRadius="16dp"
-                        app:trackThickness="18dp"
-                        tools:progress="30" />
-
-                    <TextView
-                        android:id="@+id/tv_progress_competence_development_status"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:includeFontPadding="false"
-                        android:textAppearance="@style/text_progress_bar"
-                        android:textColor="@color/black"
-                        app:layout_constraintBottom_toBottomOf="@id/progress_competence_development_status"
-                        app:layout_constraintEnd_toEndOf="@id/progress_competence_development_status"
-                        app:layout_constraintStart_toStartOf="@id/progress_competence_development_status"
-                        app:layout_constraintTop_toTopOf="@id/progress_competence_development_status"
-                        tools:text="76%"
-                        android:text="@string/no_data"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:includeFontPadding="false"
-                        android:text="Photo/file Uploads"
-                        android:textColor="@color/black"
-                        app:layout_constraintEnd_toEndOf="@id/progress_competence_development_status"
-                        app:layout_constraintStart_toStartOf="@id/progress_competence_development_status"
-                        app:layout_constraintTop_toBottomOf="@id/progress_competence_development_status" />
 
 
                     <com.google.android.material.progressindicator.CircularProgressIndicator
@@ -624,9 +440,10 @@
                         app:indicatorColor="@color/dark_pink"
                         app:indicatorSize="142dp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/progress_competence_development_status"
+                        app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tv_competence_development_status"
                         app:trackColor="@color/alpha_10_dark_pink"
+                        android:layout_marginBottom="20dp"
                         app:trackCornerRadius="16dp"
                         app:trackThickness="18dp"
                         tools:progress="75" />
@@ -645,68 +462,11 @@
                         tools:text="48K"
                         android:text="No Data"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:includeFontPadding="false"
-                        android:text="Words Written"
-                        android:textColor="@color/black"
-                        app:layout_constraintEnd_toEndOf="@id/progress_program_competence_development_status"
-                        app:layout_constraintStart_toStartOf="@id/progress_program_competence_development_status"
-                        app:layout_constraintTop_toBottomOf="@id/progress_program_competence_development_status" />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_rounded_card_light"
-                    android:backgroundTint="@color/white"
-
-                    android:padding="14dp">
-
-                    <com.github.mikephil.charting.charts.BarChart
-                        android:id="@+id/chart_user_activity"
-                        android:layout_width="120dp"
-                        android:layout_height="0dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/tv_description_your_activity"
-                        app:layout_constraintVertical_bias="1" />
-
-
-                    <TextView
-                        android:id="@+id/tv_title_your_activity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="@string/your_activity"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@id/tv_description_your_activity"
-                        app:layout_constraintStart_toEndOf="@id/chart_user_activity"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_chainStyle="spread" />
-
-                    <TextView
-                        android:id="@+id/tv_description_your_activity"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="12dp"
-                        android:layout_marginTop="8dp"
-                        android:includeFontPadding="false"
-                        android:justificationMode="inter_word"
-                        android:text="@{@string/your_activity_description(totalHoursActivity ?? `-`, totalMinutesActivity ?? `-`, totalDaysActivity ?? `-`)}"
-                        android:textColor="@color/black"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_chainStyle="spread"
-                        app:layout_constraintStart_toEndOf="@+id/chart_user_activity"
-                        app:layout_constraintTop_toBottomOf="@id/tv_title_your_activity" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layout_active_user"
                     android:layout_width="match_parent"
                     android:paddingVertical="14dp"
                     android:layout_height="wrap_content"

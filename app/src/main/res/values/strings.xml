@@ -27,7 +27,7 @@
     <string-array name="Spinner_Items_Severity">
         <item>Major</item>
         <item>Minor</item>
-        <item>Emergency</item>
+        <item>Critical</item>
         <item>Low</item>
     </string-array>
     <string name="title_overview">Overview</string>
@@ -106,7 +106,9 @@
     <string name="triple_e">App Triple-E</string>
     <string name="new_ticket">New Ticket</string>
     <string name="ticket_number_command_center">Ticket Number Command Center <font color='red'>*</font></string>
+    <string name="ticket_number_inap">Ticket Number INAP <font color='red'>*</font></string>
     <string name="ticket_number_assigned">Ticket Number Assigned</string>
+    <string name="ticket_number_swfm">Ticket Number SWFM</string>
     <string name="ticket_number_assigned_edit">Ticket Number Assigned <font color='red'>*</font></string>
     <string name="asign_to">Assign to <font color='red'>*</font></string>
     <string name="severity">Severity <font color='red'>*</font></string>
@@ -144,6 +146,7 @@
     <string name="Inbox">Inbox</string>
     <string name="detail_ticket">Detail Ticket #%1$s</string>
     <string name="timeline">TIMELINE</string>
+    <string name="RCA">RCA</string>
     <string name="log">LOG</string>
     <string name="sp_handling">SP Handling</string>
     <string name="you_are_still_missing_the_following_email_alternative_nik_ktp_npwp_number_bpjs_number_bpjs_kesehatan_description_about_yourself_minimum_150_characters_city_or_town_of_your_location_cv_at_least_100_character_required_to_describe_about_your_work_experience_to_make_your_profile_100_completed">You are still missing the following: email alternative, NIK, KTP, NPWP number, BPJS number, BPJS Kesehatan, description about yourself minimum 150 characters, city or town of your location, CV, at least 100 character required to describe about your work experience, to make your profile 100% completed!</string>
@@ -269,6 +272,10 @@
     <string name="image_captured_is_not_within_the_site_radius_100_meters">Image/Video is not captured within one hundred meters site radius</string>
     <string name="show_on_map">Show on map</string>
     <string name="system_fault">System Fault <font color='red'>*</font></string>
+    <string name="responsible_party">Responsible Party</string>
+    <string name="root_cause_tier_1">Root Cause Tier 1</string>
+    <string name="root_cause_tier_2">Root Cause Tier 2</string>
+    <string name="root_cause_category">Root Cause Category</string>
     <string name="system_fault_edit">System Fault <font color='red'>*</font></string>
     <string name="problem_type">Problem Type <font color='red'>*</font></string>
     <string name="problem_type_edit">Problem Type <font color='red'>*</font></string>

@@ -8,8 +8,8 @@ sealed class TicketSeverity(
     @ColorRes val background: Int,
     @ColorRes val foreground: Int
 ) {
-    object Emergency : TicketSeverity(
-        label = "Emergency",
+    object Critical : TicketSeverity(
+        label = "Critical",
         background = R.color.red,
         foreground = R.color.red
     )
@@ -41,7 +41,7 @@ sealed class TicketSeverity(
     companion object {
         fun fromLabel(label: String): TicketSeverity {
             return when (label) {
-                "Emergency" -> Emergency
+                "Critical" -> Critical
                 "Major" -> Major
                 "Minor" -> Minor
                 "Low" -> Low
@@ -50,7 +50,7 @@ sealed class TicketSeverity(
         }
 
         fun getAll(): List<TicketSeverity> {
-            return listOf(Emergency, Major, Minor, Low)
+            return listOf(Critical, Major, Minor, Low)
         }
     }
 }

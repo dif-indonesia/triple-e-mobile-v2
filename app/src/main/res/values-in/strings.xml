@@ -25,7 +25,7 @@
     <string-array name="Spinner_Items_Severity">
         <item>Major</item>
         <item>Minor</item>
-        <item>Emergency</item>
+        <item>Critical</item>
         <item>Low</item>
     </string-array>
     <string name="title_overview">Ikhtisar</string>
@@ -38,7 +38,6 @@
     <string name="full_name">Nama Lengkap</string>
     <string name="position">Posisi <font color='red'>*</font></string>
     <string name="city_town">Kota <font color='red'>*</font></string>
-    <string name="description">Deskripsi <font color='red'>*</font></string>
     <string name="time_periode">Periode Waktu <font color='red'>*</font></string>
     <string name="from">Dari</string>
     <string name="until">Sampai</string>
@@ -100,6 +99,7 @@
     <string name="new_ticket">Tiket Baru</string>
     <string name="ticket_number_command_center">Nomor Tiket Pusat Komando<font color='red'>*</font></string>
     <string name="ticket_number_assigned">Nomor Tiket Ditugaskan</string>
+    <string name="ticket_number_swfm">Nomor Tiket SWFM</string>
     <string name="asign_to">Ditugaskan kepada <font color='red'>*</font></string>
     <string name="severity">Keparahan <font color='red'>*</font></string>
     <string name="ticket_type">Jenis Tiket <font color='red'>*</font></string>
@@ -109,6 +109,8 @@
     <string name="area_ns_region">Area (Wilayah NS)</string>
     <string name="triple_e_in_charge">Triple-E Bertanggung Jawab <font color='red'>*</font></string>
     <string name="add_notes">Tambah Catatan <font color='red'>*</font></string>
+    <string name="description">Deskripsi</string>
+    <string name="ticket_number_inap">Nomor Tiket INAP <font color='red'>*</font></string>
     <string name="status">Status <font color='red'>*</font></string>
     <string name="all_folllow_up_status">Semua Status Tindak Lanjut <font color='red'>*</font></string>
     <string name="severety">Keparahan <font color='red'>*</font></string>
@@ -132,6 +134,7 @@
     <string name="Inbox">Kotak Masuk</string>
     <string name="detail_ticket">Detail Tiket #%1$s</string>
     <string name="timeline">Timeline</string>
+    <string name="RCA">RCA</string>
     <string name="log">Log</string>
     <string name="sp_handling">Penanganan SP</string>
     <string name="capture_image">Ambil Gambar</string>

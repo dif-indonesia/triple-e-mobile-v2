@@ -101,28 +101,6 @@
                         app:drawableStartCompat="@drawable/ic_house_with_list"
                         tools:text="Lorem@gmail.com" />
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/card_2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_rounded_card_medium"
-                    android:backgroundTint="@color/white"
-                    android:divider="@drawable/empty_item_divider"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:showDividers="middle"
-                    app:layout_constraintTop_toBottomOf="@id/card_1">
-
-                    <TextView
-                        style="@style/Form.SectionBelitung"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="0dp"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="@string/technology" />
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -238,28 +216,29 @@
                             android:textSize="12sp" />
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/card_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    android:divider="@drawable/empty_item_divider"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    android:showDividers="middle"
+                    app:layout_constraintTop_toBottomOf="@id/card_1">
+
+                    <TextView
+                        style="@style/Form.SectionBelitung"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_marginStart="0dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@string/technology" />
 
-                        <TextView
-                            android:layout_width="60dp"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_regular"
-                            android:text="@string/system"
-                            android:textSize="12sp"
-                            android:textColor="#404040"/>
 
-                        <TextView
-                            android:id="@+id/system"
-                            style="bold"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/roboto_bold"
-                            android:text="@{siteInfo.siteId.toString()}"
-                            android:textSize="12sp" />
-                    </LinearLayout>
                 </LinearLayout>
 
                 <LinearLayout

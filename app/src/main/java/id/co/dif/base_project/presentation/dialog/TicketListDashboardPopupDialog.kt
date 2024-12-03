@@ -101,7 +101,7 @@ class TicketListDashboardPopupDialog (
         val filterCriteria = listOf(
             viewModel.fromDate,
             viewModel.untilDate,
-            viewModel.status,
+            type_ticket,
             viewModel.search,
             viewModel.severety
         )
@@ -146,11 +146,11 @@ class TicketListDashboardPopupDialog (
     fun loadNextPage() {
         isLoading = true;
         currentPage++;
-        viewModel.getListTroubleTicket(page = currentPage)
+        viewModel.getListTroubleTicket(status = type_ticket, page = currentPage)
     }
 
     private fun loadFirstPage() {
-        viewModel.getListTroubleTicket(page = pageStart)
+        viewModel.getListTroubleTicket(status = type_ticket, page = pageStart)
 
         if (!requireContext().isDeviceOnline()) {
             currentActivity.showAlert(
@@ -161,6 +161,13 @@ class TicketListDashboardPopupDialog (
                 iconId = R.drawable.baseline_info_24
             )
         }
+    }
+
+    private fun resetTroubleTicketList() {
+        isLoading = false
+        currentPage = 1
+        isLastPage = false
+        setupTroubleTicketList()
     }
 
 }

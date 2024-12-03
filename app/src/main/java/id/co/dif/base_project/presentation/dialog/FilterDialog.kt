@@ -100,14 +100,28 @@ class FilterDialog(
         binding.btnClose.setOnClickListener {
             dismiss()
         }
+//        binding.status.setOnClickListener {
+//            PickerDialog.newInstance(
+//                arrayListOf<String>().also { it.addAll(myArray) }
+//            ) { index, value ->
+//                binding.status.setText(value)
+//                binding.status.error = null
+//            }.show(childFragmentManager, getString(R.string.status))
+//        }
+
         binding.status.setOnClickListener {
-            PickerDialog.newInstance(
-                arrayListOf<String>().also { it.addAll(myArray) }
-            ) { index, value ->
+            val statusList = arrayListOf(
+                "Assigned",
+                "On Progress",
+                "Completed",
+                "Pending"
+            )
+            PickerDialog.newInstance(statusList) { index, value ->
                 binding.status.setText(value)
                 binding.status.error = null
             }.show(childFragmentManager, getString(R.string.status))
         }
+
 
         binding.severity.setOnClickListener {
             PickerDialog.newInstance(

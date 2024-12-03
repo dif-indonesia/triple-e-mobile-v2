@@ -23,6 +23,8 @@ import id.co.dif.base_project.databinding.FragmentMyDashboardBinding
 import id.co.dif.base_project.databinding.ItemChartSelectedPopupBinding
 import id.co.dif.base_project.presentation.activity.ActiveUserActivity
 import id.co.dif.base_project.presentation.adapter.ActiveUsersAdapter
+import id.co.dif.base_project.presentation.dialog.TicketListDashboardPopupDialog
+import id.co.dif.base_project.presentation.dialog.approvedReqSubmitTicketDialog
 import id.co.dif.base_project.utils.LinearSpacingItemDecoration
 import id.co.dif.base_project.utils.StatusCode
 import id.co.dif.base_project.utils.base64ImageToBitmap
@@ -106,16 +108,38 @@ class MyDashboardFragment :
                 binding.rvActiveUsers.adapter = ActiveUsersAdapter(response.data.list)
             }
         }
-        viewModel.responseUserActivityLog.observe(this.lifecycleOwner) {
-            if (it.status in StatusCode.SUCCESS) {
-                populateUserActivityLogChart(it.data.list)
-            }
-        }
+//        viewModel.responseUserActivityLog.observe(this.lifecycleOwner) {
+//            if (it.status in StatusCode.SUCCESS) {
+//                populateUserActivityLogChart(it.data.list)
+//            }
+//        }
         binding.tvViewAll.setOnClickListener {
             startActivity(Intent(context, ActiveUserActivity::class.java))
         }
-//        binding.progressBar1.progress = 50
-//        binding.progressBar2.progress = 30
+
+        session?.let { session ->
+            val visibility = (session.emp_security ?: 0) >= 2
+            binding.layoutActiveUser.isVisible = visibility
+        }
+
+        session?.let { session ->
+            val visibility = (session.emp_security ?: 0) <= 2 && (session.emp_security ?: 0) != 0
+            binding.layoutMttr.isVisible = visibility
+        }
+
+        binding.icTicketEntry1.setOnClickListener {
+            TicketListDashboardPopupDialog("Closed").show(childFragmentManager, "TicketListDashboardDialog")
+        }
+        binding.icTicketEntry2.setOnClickListener {
+            TicketListDashboardPopupDialog("On Progress").show(childFragmentManager, "TicketListDashboardDialog")
+        }
+        binding.icTicketEntry3.setOnClickListener {
+            TicketListDashboardPopupDialog("").show(childFragmentManager, "TicketListDashboardDialog")
+        }
+        binding.icTicketEntry4.setOnClickListener {
+            TicketListDashboardPopupDialog("All").show(childFragmentManager, "TicketListDashboardDialog")
+        }
+
 
 
     }
@@ -135,46 +159,44 @@ class MyDashboardFragment :
             val numberFormat = NumberFormat.getNumberInstance(Locale.US)
             val formattedNumber = numberFormat.format(numericValue)
             val formattedWithK = "$formattedNumber\u006B"
-            binding.progressCompetenceDevelopmentStatus.progress = it.progress
-            binding.tvProgressCompetenceDevelopmentStatus.text = "${it.progress}%"
             binding.tvProgressProgramCompetenceDevelopmentStatus.text = formattedWithK
             binding.progressProgramCompetenceDevelopmentStatus.progress = it.program
         }
     }
 
-    private fun populateUserActivityLogChart(userActivitiesLog: List<PlainValueLabel>) {
-        val labels = userActivitiesLog.map { it.label }
-        val values = userActivitiesLog.map { it.count }
-        binding.chartUserActivity.populateNakedBarChart(values)
-        val totalMinutes = values.sum()
-        val hours = totalMinutes / 60
-        val minutes = totalMinutes % 60
-        binding.totalHoursActivity = hours.toString()
-        binding.totalMinutesActivity = minutes.toString()
-        binding.totalDaysActivity = userActivitiesLog.size.toString()
-
-        binding.chartUserActivity.setOnChartValueSelectedListener(object :
-            OnChartValueSelectedListener {
-            override fun onValueSelected(e: Entry?, h: Highlight?) {
-                val minutes = e!!.y.roundToInt()
-                val totalHours = minutes / 60
-                val totalMinutes = minutes % 60
-                showChartChipPopup(
-                    highlight = h,
-                    anchor = binding.chartUserActivity,
-                    xLabel = labels,
-                    value = "$totalHours hours $totalMinutes minutes"
-                )
-
-            }
-
-            override fun onNothingSelected() {
-                chartSelectedChip.dismiss()
-            }
-
-        })
-
-    }
+//    private fun populateUserActivityLogChart(userActivitiesLog: List<PlainValueLabel>) {
+//        val labels = userActivitiesLog.map { it.label }
+//        val values = userActivitiesLog.map { it.count }
+//        binding.chartUserActivity.populateNakedBarChart(values)
+//        val totalMinutes = values.sum()
+//        val hours = totalMinutes / 60
+//        val minutes = totalMinutes % 60
+//        binding.totalHoursActivity = hours.toString()
+//        binding.totalMinutesActivity = minutes.toString()
+//        binding.totalDaysActivity = userActivitiesLog.size.toString()
+//
+//        binding.chartUserActivity.setOnChartValueSelectedListener(object :
+//            OnChartValueSelectedListener {
+//            override fun onValueSelected(e: Entry?, h: Highlight?) {
+//                val minutes = e!!.y.roundToInt()
+//                val totalHours = minutes / 60
+//                val totalMinutes = minutes % 60
+//                showChartChipPopup(
+//                    highlight = h,
+//                    anchor = binding.chartUserActivity,
+//                    xLabel = labels,
+//                    value = "$totalHours hours $totalMinutes minutes"
+//                )
+//
+//            }
+//
+//            override fun onNothingSelected() {
+//                chartSelectedChip.dismiss()
+//            }
+//
+//        })
+//
+//    }
 
     private fun setupChartSelectedChip() {
         chartSelectedChipBinding =

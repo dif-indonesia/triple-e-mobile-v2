@@ -27,7 +27,6 @@
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
                 android:clipToPadding="false"
-                android:background="#EEF6FF"
                 android:padding="18dp">
 
                 <LinearLayout
@@ -247,17 +246,69 @@
                             <AutoCompleteTextView
                                 android:id="@+id/et_tic_field_engineer"
                                 style="@style/Form.EditText_grey"
-                                android:layout_width="match_parent"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:focusable="true"
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
                                 app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/btn_select_engineer"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:validateEmpty="@{true}" />
 
+                            <ImageView
+                                android:id="@+id/btn_select_engineer"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/bg_rounded_card_light"
+                                android:backgroundTint="@color/purple"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:padding="8dp"
+                                android:src="@mipmap/ic_open_maps_foreground"
+                                app:layout_constraintBottom_toBottomOf="@id/et_tic_field_engineer"
+                                app:layout_constraintEnd_toStartOf="@id/btn_remove_engineer"
+                                app:layout_constraintStart_toEndOf="@id/et_tic_field_engineer"
+                                app:layout_constraintTop_toTopOf="@id/et_tic_field_engineer" />
+
+                            <ImageView
+                                android:id="@+id/btn_remove_engineer"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_marginEnd="12dp"
+                                android:background="@drawable/bg_rounded_card_light"
+                                android:backgroundTint="@color/red"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:padding="8dp"
+                                android:src="@drawable/baseline_remove_24"
+                                app:layout_constraintBottom_toBottomOf="@id/et_tic_field_engineer"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/btn_select_engineer"
+                                app:layout_constraintTop_toTopOf="@id/et_tic_field_engineer"
+                                app:tint="@color/white" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/description" />
+
+                        <EditText
+                            android:id="@+id/tic_description"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:imeOptions="actionDone"
+                            android:inputType="textShortMessage|textMultiLine"
+                            android:minLines="4"
+                            android:clickable="false"/>
 
                     </LinearLayout>
 
@@ -394,6 +445,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
+                            android:focusable="false"
+                            android:clickable="false"
                             android:imeOptions="actionDone"
                             android:inputType="textShortMessage|textMultiLine"
                             android:minLines="4"
@@ -413,6 +466,21 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Is Escalated" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/tic_escalated"
+                            style="@style/Form.Switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                            app:trackTint="@drawable/selector_switch_compat_track_tint" />
 
                         <TextView
                             android:id="@+id/title_accepted_by_triple_e"

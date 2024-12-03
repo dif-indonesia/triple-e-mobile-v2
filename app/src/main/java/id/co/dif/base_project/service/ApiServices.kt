@@ -1,5 +1,6 @@
 package id.co.dif.base_project.service
 
+import id.co.dif.base_project.base.BaseRca
 import id.co.dif.base_project.base.BaseResponse
 import id.co.dif.base_project.base.BaseResponseList
 import id.co.dif.base_project.data.*
@@ -731,6 +732,59 @@ interface ApiServices {
         @Path("id") id: String?,
         @Header("Authorization") bearerToken: String?,
         @Body param: MutableMap<String, Any?>
+    ): BaseResponse<Any?>
+
+    @GET("master_rca/owner")
+    suspend fun getMasterOwner(
+        @Header("Authorization") bearerToken: String?
+    ): BaseRca
+
+    @GET("master_rca/category")
+    suspend fun getMasterCategory(
+        @Header("Authorization") bearerToken: String?,
+        @Query("owner") owner: String?
+    ): BaseRca
+
+    @GET("master_rca/rc1")
+    suspend fun getMasterRc1(
+        @Header("Authorization") bearerToken: String?,
+        @Query("owner") owner: String?,
+        @Query("category") category: String?
+    ): BaseRca
+
+    @GET("master_rca/rc2")
+    suspend fun getMasterRc2(
+        @Header("Authorization") bearerToken: String?,
+        @Query("owner") owner: String?,
+        @Query("category") category: String?,
+        @Query("rc1") rc1: String?
+    ): BaseRca
+
+    @GET("master_rca/resolution-action")
+    suspend fun getMasterResolutionAction(
+        @QueryMap param: MutableMap<String, Any?>,
+        @Header("Authorization") bearerToken: String?
+    ): BaseResponse<Any?>
+
+    @PUT("ops_ticket/submit-rca/{id}")
+    suspend fun submitRca(
+        @Path("id") id: String?,
+        @Header("Authorization") bearerToken: String?,
+        @Body param: MutableMap<String, Any?>
+    ): BaseResponse<Any?>
+
+    @GET("ops_ticket/get-rca/{id}")
+    suspend fun getRca(
+        @Path("id") id: String?,
+        @Header("Authorization") bearerToken: String?
+    ): BaseResponse<RcaResponse>
+
+    @Multipart
+    @PUT("ops_ticket/submit-rca/photo/{id}")
+    suspend fun submitRcaPhoto(
+        @Header("Authorization") bearerToken: String?,
+        @Path("id") id: String?,
+        @Part param: MutableList<MultipartBody.Part?>
     ): BaseResponse<Any?>
 
 }

@@ -35,7 +35,6 @@
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
                 android:clipToPadding="false"
-                android:background="#EEF6FF"
                 android:padding="18dp">
 
                 <LinearLayout
@@ -61,7 +60,7 @@
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ticket_number_command_center" />
+                            android:text="@string/ticket_number_inap" />
 
                         <EditText
                             android:id="@+id/txt_ticket_number_command"
@@ -76,7 +75,7 @@
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ticket_number_assigned" />
+                            android:text="@string/ticket_number_swfm" />
 
                         <EditText
                             android:id="@+id/txt_ticket_number_assigned"
@@ -234,8 +233,6 @@
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
-
-
                             <ImageView
                                 android:id="@+id/btn_select_engineer"
                                 android:layout_width="32dp"
@@ -271,6 +268,23 @@
                                 app:layout_constraintTop_toTopOf="@id/txt_field_engineer"
                                 app:tint="@color/white" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/description" />
+
+                        <EditText
+                            android:id="@+id/tic_description"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="start"
+                            android:imeOptions="actionDone"
+                            android:inputType="textShortMessage|textMultiLine"
+                            android:minLines="4"
+                            app:validateEmpty="@{true}" />
 
                     </LinearLayout>
 
@@ -573,6 +587,20 @@
                         <!--                                android:imeOptions="actionDone"-->
                         <!--                                android:inputType="text" />-->
                         <!--                        </LinearLayout>-->
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Is Escalated" />
+
+                        <androidx.appcompat.widget.SwitchCompat
+                            android:id="@+id/tic_escalated"
+                            style="@style/Form.Switch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:thumbTint="@drawable/selector_switch_compat_thumb_tint"
+                            app:trackTint="@drawable/selector_switch_compat_track_tint" />
 
                         <TextView
                             style="@style/Form.Label"

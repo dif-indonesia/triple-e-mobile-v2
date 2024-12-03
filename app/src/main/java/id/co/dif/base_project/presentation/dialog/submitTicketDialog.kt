@@ -1,11 +1,13 @@
 package id.co.dif.base_project.presentation.dialog
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import id.co.dif.base_project.R
 import id.co.dif.base_project.base.BaseBottomSheetDialog
 import id.co.dif.base_project.databinding.FragmentDialogCheckinBinding
 import id.co.dif.base_project.databinding.FragmentDialogSubmitTicketBinding
+import id.co.dif.base_project.presentation.activity.TicketPermitActivity
 import id.co.dif.base_project.viewmodel.PermitViewModel
 
 class submitTicketDialog (

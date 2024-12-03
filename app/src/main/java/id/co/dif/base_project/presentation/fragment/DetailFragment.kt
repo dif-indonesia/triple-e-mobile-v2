@@ -80,6 +80,12 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
         ticketDetails = preferences.ticketDetails.value?.copy()
         setupData()
 
+        session?.let { session ->
+            val enable = (session.emp_security ?: 0) >= 2
+            binding.btnSelectEngineer.isEnabled = enable
+            binding.btnRemoveEngineer.isEnabled = enable
+        }
+
         binding.etTicAssignTo.setOnClickListener {
             val optionsList = when (session?.asgn_project_id) {
                 1.toString() -> {
@@ -397,10 +403,10 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
         setAutoCompleteSite(preferences.savedAllSite.value ?: listOf())
         setupAutoCompleteEngineers(preferences.savedEngineers.value ?: listOf())
 
-//        binding.btnRemoveEngineer.setOnClickListener {
-//            viewModel.selectedEngineer.value = null
-//        }
-//
+        binding.btnRemoveEngineer.setOnClickListener {
+            viewModel.selectedEngineer.value = null
+        }
+
 //        binding.btnRemoveSite.setOnClickListener {
 //            viewModel.selectedSite.value = null
 //            ticketDetails?.site_info?.siteName = null
@@ -420,11 +426,11 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                 viewModel.selectedSite.value?.site_id_customer = it.data.info_site.siteIdCustomer
             }
         }
-//        binding.btnSelectEngineer.setOnClickListener {
-//            val intent = SelectEngineerActivity.newInstance(requireContext())
-//            intent.putExtra("selected_site", viewModel.selectedSite.value)
-//            startActivityForResult(intent, SELECT_ENGINEER_REQUEST_CODE)
-//        }
+        binding.btnSelectEngineer.setOnClickListener {
+            val intent = SelectEngineerActivity.newInstance(requireContext())
+            intent.putExtra("selected_site", viewModel.selectedSite.value)
+            startActivityForResult(intent, SELECT_ENGINEER_REQUEST_CODE)
+        }
 //        binding.btnSelectSite.setOnClickListener {
 //            val intent = SelectSiteActivity.newInstance(requireContext())
 //            startActivityForResult(intent, SELECT_SITE_REQUEST_CODE)
@@ -648,14 +654,17 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
             binding.systemFaultTeleglobal.setText(ticketDetails.tic_system.orDefault(""))
             binding.problemType.setText(ticketDetails.tic_system_sub.orDefault(""))
             binding.tvTicId.setText("#" + ticketDetails.tic_id.orDefault(""))
+            binding.ticDescription.setText(ticketDetails.tic_description.orDefault(""))
             binding.etStatus.setText(TicketStatus.fromLabel(ticketDetails.tic_status.orDefault("")).label)
             val ticStatus = ticketDetails.tic_status
             val role = session?.emp_security ?: 0
             val ticIsAccepted = ticketDetails.tic_accepted
             val ticIsClosed = ticketDetails.tic_closed
             val ticIsMine = ticketDetails.status_ticket
+            val ticEscalated = ticketDetails.tic_escalated
             binding.acceptedByTripleE.isChecked = ticIsAccepted == true
             binding.closedTicket.isChecked = ticIsClosed == true
+            binding.ticEscalated.isChecked = ticEscalated == "1"
 
 
             if (ticketDetails.tic_accepted == false){
@@ -830,7 +839,9 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                 "tic_assign_to" to binding.etTicAssignTo.text.toString(),
                 "tic_field_engineer" to binding.etTicFieldEngineer.text.toString(),
                 "file" to viewModel.file,
-                "tic_type" to binding.etTicType.text.toString()
+                "tic_type" to binding.etTicType.text.toString(),
+                "tic_description" to binding.ticDescription.text.toString().orDefault(""),
+                "tic_escalated" to binding.ticEscalated.isChecked
             ).apply {
                 val site_name = (viewModel.selectedSite.value?.site_name ?: ticketDetails.site_info?.siteName ?: "")
                 val site_id = (viewModel.selectedSite.value?.site_id ?: ticketDetails.site_info?.siteId ?: "")

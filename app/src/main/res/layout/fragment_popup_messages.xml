@@ -62,7 +62,6 @@
                 app:validateEmpty="@{true}"
                 android:drawablePadding="12dp"
                 android:hint="Receiver"
-                android:completionThreshold="1"
                 android:imeOptions="actionDone"
                 android:inputType="text"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:background="#EEF6FF"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_card_medium"
+                    android:backgroundTint="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RH Start Time" />
+
+                        <EditText
+                            android:id="@+id/rh_start_time"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            android:focusable="false"
+                            android:clickable="false"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RH Stop Time" />
+
+                        <EditText
+                            android:id="@+id/rh_stop_time"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:focusable="false"
+                            android:clickable="false"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Running Hour Start" />
+
+                        <EditText
+                            android:id="@+id/running_hour_start"
+                            style="@style/Form.EditText"
+                            android:textColor="#9C9C9C"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal|number"
+                            android:imeOptions="actionNext"
+                            app:validateEmpty="@{true}" />
+
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Running Hour Stop" />
+
+                        <EditText
+                            android:id="@+id/running_hour_stop"
+                            style="@style/Form.EditText"
+                            android:textColor="#9C9C9C"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="numberDecimal|number"
+                            android:imeOptions="actionNext"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Responsible Party" />
+
+                        <EditText
+                            android:id="@+id/responsible_party"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionNext"
+                            android:inputType="none"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:clickable="true"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Root Cause Category" />
+
+                        <EditText
+                            android:id="@+id/rootcausecategory"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:imeOptions="actionDone"
+                            android:inputType="none"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:clickable="true"
+                            tools:ignore="TextFields" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Root Cause Tier 1" />
+
+                        <EditText
+                            android:id="@+id/rootcausetier1"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="12dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="none"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:clickable="true"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Root Cause Tier 2" />
+
+                        <EditText
+                            android:id="@+id/rootcausetier2"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none"
+                            android:focusable="true"
+                            android:focusableInTouchMode="true"
+                            android:clickable="true"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Note" />
+
+                        <EditText
+                            android:id="@+id/note"
+                            style="@style/Form.EditText_grey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minLines="3"
+                            android:gravity="start"
+                            android:textColor="#9C9C9C"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Resolution Action" />
+
+                        <EditText
+                            android:id="@+id/resolution_action"
+                            style="@style/Form.Spinner1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="12dp"
+                            android:imeOptions="actionNext"
+                            android:inputType="text"
+                            app:validateEmpty="@{true}" />
+
+                        <TextView
+                            style="@style/Form.Label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remark" />
+
+                        <EditText
+                            android:id="@+id/remark"
+                            style="@style/Form.Message"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minLines="4"
+                            android:gravity="start"
+                            android:textColor="#9C9C9C"
+                            app:validateEmpty="@{true}" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv_running_hour"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:background="@color/blue_belitung"
+                                android:text="Running Hour"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_running_hour_start"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_running_hour"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/img_running_hour_stop"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="RUNNING HOUR\nSTART"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_running_hour_start"
+                                app:layout_constraintStart_toStartOf="@id/img_running_hour_start"
+                                app:layout_constraintEnd_toEndOf="@id/img_running_hour_start"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_running_hour_stop"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_running_hour"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/img_running_hour_start"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="RUNNING HOUR\nSTOP"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_running_hour_stop"
+                                app:layout_constraintStart_toStartOf="@id/img_running_hour_stop"
+                                app:layout_constraintEnd_toEndOf="@id/img_running_hour_stop"
+                                />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv_kwh_foto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:background="@color/blue_belitung"
+                                android:text="KHW Foto"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_kwh_foto_before"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_kwh_foto"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/img_kwh_foto_after"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BEFORE"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_kwh_foto_before"
+                                app:layout_constraintStart_toStartOf="@id/img_kwh_foto_before"
+                                app:layout_constraintEnd_toEndOf="@id/img_kwh_foto_before"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_kwh_foto_after"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_kwh_foto"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/img_kwh_foto_before"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AFTER"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_kwh_foto_after"
+                                app:layout_constraintStart_toStartOf="@id/img_kwh_foto_after"
+                                app:layout_constraintEnd_toEndOf="@id/img_kwh_foto_after"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv_rectifier_foto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:background="@color/blue_belitung"
+                                android:text="Rectifier Foto"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_rectifier_before"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_rectifier_foto"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/img_rectifier_after"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BEFORE"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_rectifier_before"
+                                app:layout_constraintStart_toStartOf="@id/img_rectifier_before"
+                                app:layout_constraintEnd_toEndOf="@id/img_rectifier_before"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_rectifier_after"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_rectifier_foto"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/img_rectifier_before"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AFTER"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_rectifier_after"
+                                app:layout_constraintStart_toStartOf="@id/img_rectifier_after"
+                                app:layout_constraintEnd_toEndOf="@id/img_rectifier_after"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv_bts_foto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:background="@color/blue_belitung"
+                                android:text="BTS Foto"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_bts_before"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_bts_foto"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/img_bts_after"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BEFORE"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_bts_before"
+                                app:layout_constraintStart_toStartOf="@id/img_bts_before"
+                                app:layout_constraintEnd_toEndOf="@id/img_bts_before"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_bts_after"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_bts_foto"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/img_bts_before"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AFTER"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_bts_after"
+                                app:layout_constraintStart_toStartOf="@id/img_bts_after"
+                                app:layout_constraintEnd_toEndOf="@id/img_bts_after"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginEnd="12dp"
+                            android:layout_marginTop="10dp">
+
+                            <TextView
+                                android:id="@+id/tv_maintenance_progress"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent"
+                                android:background="@color/blue_belitung"
+                                android:text="Maintenance Progress"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_maintenance_progress_before"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_maintenance_progress"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintEnd_toStartOf="@id/img_maintenance_progress_after"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="BEFORE"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_maintenance_progress_before"
+                                app:layout_constraintStart_toStartOf="@id/img_maintenance_progress_before"
+                                app:layout_constraintEnd_toEndOf="@id/img_maintenance_progress_before"
+                                />
+
+                            <ImageView
+                                android:id="@+id/img_maintenance_progress_after"
+                                android:layout_width="74dp"
+                                android:layout_height="74dp"
+                                android:src="@drawable/ic_file"
+                                android:layout_marginTop="10dp"
+                                app:layout_constraintTop_toBottomOf="@id/tv_maintenance_progress"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/img_maintenance_progress_before"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="AFTER"
+                                android:textSize="10dp"
+                                android:gravity="center"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/open_sauce_one_bold"
+                                android:layout_marginTop="5dp"
+                                app:layout_constraintTop_toBottomOf="@id/img_maintenance_progress_after"
+                                app:layout_constraintStart_toStartOf="@id/img_maintenance_progress_after"
+                                app:layout_constraintEnd_toEndOf="@id/img_maintenance_progress_after"
+                                />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/id_submit"
+                        style="@style/Form.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/submit" />
+
+
+                </LinearLayout>
+            </FrameLayout>
+
+        </androidx.core.widget.NestedScrollView>
+</layout>

@@ -118,12 +118,10 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:tabGravity="center"
-                        app:tabIndicator="@drawable/bg_tab_indicator"
-                        app:tabIndicatorColor="#6045E2"
                         app:tabIndicatorFullWidth="false"
-                        app:tabIndicatorHeight="5dp"
+                        app:tabIndicatorHeight="0dp"
                         app:tabMode="scrollable"
-                        app:tabSelectedTextColor="#6045E2"
+                        app:tabSelectedTextColor="@color/blue_belitung"
                         app:tabTextAppearance="@style/MyTablayoutItemStyle"
                         app:tabTextColor="#404040" />
 

@@ -16,6 +16,7 @@ import id.co.dif.base_project.R
 import id.co.dif.base_project.base.BaseBottomSheetDialog
 import id.co.dif.base_project.data.Employee
 import id.co.dif.base_project.databinding.FragmentPopupMessagesBinding
+import id.co.dif.base_project.utils.log
 import id.co.dif.base_project.utils.trimAllEditText
 import id.co.dif.base_project.viewmodel.InboxViewModel
 
@@ -47,6 +48,14 @@ class PopupMessagesDialog(var onSuccess: (message: String, receiver: String, mes
 
         binding.receiver.setOnClickListener {
             dialogBuilder
+        }
+
+        binding.receiver.setOnTouchListener { v, event ->
+            "dsdsd".log("jjgjggj")
+            if(!binding.receiver.isPopupShowing) {
+                binding.receiver.showDropDown()
+            }
+            false
         }
 
         binding.messages.addTextChangedListener(object : TextWatcher {

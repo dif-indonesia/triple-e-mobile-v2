@@ -10,6 +10,7 @@ import id.co.dif.base_project.presentation.adapter.TitledViewPagerAdapter
 import id.co.dif.base_project.presentation.fragment.ChangeLogFragment
 import id.co.dif.base_project.presentation.fragment.DetailFragment
 import id.co.dif.base_project.presentation.fragment.MapsTicketFragment
+import id.co.dif.base_project.presentation.fragment.RcaFragment
 import id.co.dif.base_project.presentation.fragment.SiteFragment
 import id.co.dif.base_project.presentation.fragment.SparePartListFragment
 import id.co.dif.base_project.presentation.fragment.TimelineFragment
@@ -26,6 +27,7 @@ class DetilTicketActivity : BaseActivity<DetilTicketViewModel, ActivityDetilTick
     private val detailFragment = DetailFragment()
     private val siteFragment: SiteFragment by inject()
     private val timelineFragment: TimelineFragment by inject()
+    private val rcaFragment by lazy{ RcaFragment()}
     private val changeLogFragment: ChangeLogFragment by inject()
     private lateinit var viewPagerAdapter: TitledViewPagerAdapter
     private val pageTitles = listOf(
@@ -33,6 +35,7 @@ class DetilTicketActivity : BaseActivity<DetilTicketViewModel, ActivityDetilTick
         R.string.ticket,
         R.string.site,
         R.string.timeline,
+        R.string.RCA,
         R.string.log,
         )
     private val fragments =
@@ -41,6 +44,7 @@ class DetilTicketActivity : BaseActivity<DetilTicketViewModel, ActivityDetilTick
             detailFragment,
             siteFragment,
             timelineFragment,
+            rcaFragment,
             changeLogFragment,
             )
     var shouldGoToTimeline = false
