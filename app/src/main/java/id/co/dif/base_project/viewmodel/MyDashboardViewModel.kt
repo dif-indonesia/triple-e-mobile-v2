@@ -8,6 +8,7 @@ import id.co.dif.base_project.base.BaseViewModel
 import id.co.dif.base_project.data.ActiveUser
 import id.co.dif.base_project.data.BasicInfo
 import id.co.dif.base_project.data.CompletedProfile
+import id.co.dif.base_project.data.Mttr90Data
 import id.co.dif.base_project.data.PlainValueLabel
 import id.co.dif.base_project.data.TicketHandling
 import id.co.dif.base_project.data.TicketInfo
@@ -24,6 +25,7 @@ class MyDashboardViewModel : BaseViewModel() {
     var responseTicketHandling = MutableLiveData<BaseResponse<TicketHandling>>()
     var responseUserActivityLog = MutableLiveData<BaseResponseList<PlainValueLabel>>()
     var responseDetailedProfile = MutableLiveData<BaseResponse<BasicInfo>>()
+    var responseMttr90 = MutableLiveData<BaseResponse<Mttr90Data>>()
 
     fun getDetailProfile(id: Int?) {
         viewModelJob = viewModelScope.launch(CoroutineExceptionHandler { _, t ->
@@ -111,6 +113,17 @@ class MyDashboardViewModel : BaseViewModel() {
                 id = id
             )
             responseTicketQuality.postValue(response)
+        }
+    }
+
+    fun getMttr90() {
+        viewModelJob = viewModelScope.launch(CoroutineExceptionHandler { _, t ->
+            handleApiError(t)
+        }) {
+            val response = apiServices.getMttr90(
+                "Bearer ${session?.token_access}"
+            )
+            responseMttr90.postValue(response)
         }
     }
 

@@ -33,6 +33,9 @@
         <variable
             name="totalDaysActivity"
             type="String" />
+        <variable
+            name="mttr90"
+            type="String" />
     </data>
 
 
@@ -415,8 +418,58 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_rounded_card_light"
+                    android:backgroundTint="#E82C35"
+                    android:paddingVertical="24dp"
+                    android:paddingStart="26dp"
+                    android:paddingEnd="16dp"
+                    android:layout_marginBottom="80dp">
+
+                    <TextView
+                        android:id="@+id/tv_mttr_p90"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="MTTR P90"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@id/tv_value_mttr_p90"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_chainStyle="packed" />
+
+                    <TextView
+                        android:id="@+id/tv_value_mttr_p90"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="@{mttr90}"
+                        android:textColor="@color/white"
+                        android:textSize="32sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_mttr_p90"
+                        tools:text="0" />
+
+                    <ImageView
+                        android:id="@+id/ic_mttr_p90"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/ic_clock_check"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_card_light"
                     android:backgroundTint="@color/white"
                     android:layout_marginBottom="60dp"
+                    android:visibility="gone"
                     android:padding="14dp">
 
                     <TextView

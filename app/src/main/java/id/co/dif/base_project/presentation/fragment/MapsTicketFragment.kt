@@ -74,7 +74,7 @@ class MapsTicketFragment : BaseFragment<MapsTicketViewModel, FragmentMapsTicketB
                 loadMarkerOffline()
             } else {
                 viewModel.getNearestTechnician(
-                    data.site_info?.siteId,
+                    data.tic_id,
                     onError = { dismissMapLoading() },
                     onLoading = { showMapLoading() },
                     onResult = { dismissMapLoading() },

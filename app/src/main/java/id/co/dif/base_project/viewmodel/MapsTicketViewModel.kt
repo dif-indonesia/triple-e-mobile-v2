@@ -24,15 +24,15 @@ class MapsTicketViewModel : BaseViewModel() {
     lateinit var map: GoogleMap
     lateinit var clusterManager: ClusterManager<Location>
 
-    fun getNearestTechnician(idSite: Int? = 0, onError: () -> Unit, onResult: () -> Unit, onLoading: () -> Unit) {
+    fun getNearestTechnician(ticId: String?, onError: () -> Unit, onResult: () -> Unit, onLoading: () -> Unit) {
         viewModelScope.launch(CoroutineExceptionHandler { _, _ ->
             onError()
             viewModelJob?.cancel()
         }) {
             onLoading()
-            val response = apiServices.getNearestTechnician(
+            val response = apiServices.getNearestTechnicianV2(
                 "Bearer ${session?.token_access}",
-                idSite = idSite
+                ticId = ticId
             )
             responseNearestTechnician.postValue(response)
             onResult()

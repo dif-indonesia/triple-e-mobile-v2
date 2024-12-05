@@ -46,15 +46,9 @@ class PopupMessagesDialog(var onSuccess: (message: String, receiver: String, mes
             dismiss()
         }
 
-        binding.receiver.setOnClickListener {
-            dialogBuilder
-        }
-
         binding.receiver.setOnTouchListener { v, event ->
             "dsdsd".log("jjgjggj")
-            if(!binding.receiver.isPopupShowing) {
-                binding.receiver.showDropDown()
-            }
+            viewModel.getListName(requireContext(), binding.receiver.text.toString())
             false
         }
 
@@ -83,9 +77,9 @@ class PopupMessagesDialog(var onSuccess: (message: String, receiver: String, mes
                     it.data.list
                 )
                 binding.receiver.setAdapter(adapter)
-                if (binding.receiver.text.isNotEmpty() && adapter.count != 1) {
-                    binding.receiver.showDropDown()
-                }
+//                if (binding.receiver.text.isNotEmpty() && adapter.count != 1) {
+                binding.receiver.showDropDown()
+//                }
             }
         }
         binding.receiver.doOnTextChanged { text, start, before, count ->

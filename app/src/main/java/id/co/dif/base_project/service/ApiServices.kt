@@ -26,6 +26,12 @@ interface ApiServices {
         @Query("id_site") idSite: Int?,
     ): BaseResponseList<Location>
 
+    @GET("ops_ticket/maps-detail-ticket")
+    suspend fun getNearestTechnicianV2(
+        @Header("Authorization") bearerToken: String?,
+        @Query("tic_id") ticId: String?,
+    ): BaseResponseList<Location>
+
     @GET("project?category=TT Map Me")
     suspend fun mapmedetil(
         @Header("Authorization") bearerToken: String?,
@@ -629,6 +635,11 @@ interface ApiServices {
         @Header("Authorization") bearerToken: String?,
         @Query("id") id: Int?,
     ): BaseResponse<TicketQuality>
+
+    @GET("dashboard/tt-dashboard/mttr-90")
+    suspend fun getMttr90(
+        @Header("Authorization") bearerToken: String?
+    ): BaseResponse<Mttr90Data>
 
     @GET("employee/ticket_handling")
     suspend fun getTicketHandling(

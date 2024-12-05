@@ -2,6 +2,8 @@ package id.co.dif.base_project.presentation.fragment
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.ColorStateList
+import android.graphics.PorterDuff
 import android.graphics.Rect
 import android.os.Build
 import android.os.Bundle
@@ -9,6 +11,7 @@ import android.view.View
 import android.widget.FrameLayout
 import android.widget.PopupWindow
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import com.github.mikephil.charting.charts.Chart
 import com.github.mikephil.charting.data.Entry
@@ -60,6 +63,7 @@ class  MyDashboardFragment :
         viewModel.getSavedBasicInfo()
         viewModel.getCompletedProfile()
         viewModel.getTicketQuality()
+        viewModel.getMttr90()
         viewModel.getTicketHandling()
         setupChartSelectedChip()
 
@@ -76,6 +80,11 @@ class  MyDashboardFragment :
         viewModel.responseTicketQuality.observe(lifecycleOwner) {
             if (it.status in StatusCode.SUCCESS) {
                 consumeCompetenceDevelopmentProgressBars(it.data)
+            }
+        }
+        viewModel.responseMttr90.observe(lifecycleOwner) {
+            if (it.status in StatusCode.SUCCESS) {
+                binding.mttr90 = it.data.list.mttr
             }
         }
 
