@@ -35,7 +35,10 @@ class SiteDetails(
     @SerializedName("technology_longtitude", alternate = ["site_longtitude"]) val technologyLongitude: String? = null,
     @SerializedName("technology_site_id") val technologySiteId: String? = null,
     @SerializedName("technology_system") val technologySystem: String? = null,
-    @SerializedName("image", alternate = ["images"]) val image: String? = null
+    @SerializedName("image", alternate = ["images"]) val image: String? = null,
+    @SerializedName("site_info_address_kabupaten") val siteInfoAddressKabupaten: String? = null,
+    @SerializedName("site_info_address_kecamatan") val siteInfoAddressKecamatan: String? = null,
+    @SerializedName("site_info_address_propinsi") val siteInfoAddressPropinsi: String? = null
 ) : BaseData() {
     fun toSiteLocation(): Location {
         return Location(
@@ -78,6 +81,9 @@ class SiteDetails(
                 "contactPhone=$contactPhone, " +
                 "siteInfoAddressKelurahan=$siteInfoAddressKelurahan, " +
                 "siteInfoAddressStreet=$siteInfoAddressStreet, " +
+                "siteInfoAddressKabupaten=$siteInfoAddressKabupaten, " +
+                "siteInfoAddressKecamatan=$siteInfoAddressKecamatan, " +
+                "siteInfoAddressPropinsi=$siteInfoAddressPropinsi, " +
                 "siteInfoEmail=$siteInfoEmail, " +
                 "technologyArea=$technologyArea, " +
                 "technologyCluster=$technologyCluster, " +

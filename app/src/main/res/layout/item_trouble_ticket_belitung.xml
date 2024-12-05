@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="isRead"
+            type="Boolean" />
+    </data>
+
     <carbon.widget.ConstraintLayout
         android:id="@+id/background"
         app:carbon_cornerRadius="20dp"
@@ -13,7 +20,7 @@
         android:layout_marginTop="5dp"
         android:clickable="true"
         app:carbon_elevation="2dp"
-        android:background="@color/white"
+        android:background="@{isRead ? @color/white :  @color/extra_light_blue}"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackground"
         android:orientation="vertical"

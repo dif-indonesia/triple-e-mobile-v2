@@ -7,6 +7,13 @@ data class RcaResponse(
     val total: Int
 )
 
+data class RcaResponseImage(
+    val limit: Int,
+    val list: List<Rca>,
+    val page: Int,
+    val total: Int
+)
+
 class Rca (
     val mrca_owner: String,
     val mrca_rc_category: String,
@@ -22,5 +29,8 @@ class Rca (
     val rca_rh_start: String,
     val rca_rh_start_time: String,
     val rca_rh_stop: String,
-    val rca_rh_stop_time: String
+    val rca_rh_stop_time: String,
+    val category: String,
+    val label: String,
+    val photo: String
 ) : BaseData()

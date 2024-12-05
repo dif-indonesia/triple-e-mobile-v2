@@ -14,7 +14,7 @@ android {
         applicationId "id.co.dif.base_project"
         minSdk 21
         targetSdk 33
-        versionCode 123
+        versionCode 124
         versionName "1.2.3"
 
         multiDexEnabled = true
@@ -48,8 +48,8 @@ android {
         staging {
             flavorDimensions "main"
 //            buildConfigField 'String', 'BASE_URL', "\"https://private-178c7c-album5.apiary-mock.com/\""
-//            buildConfigField 'String', 'BASE_URL', "\"https://api-be.belitung.org:5010/api/v1/\""
-            buildConfigField 'String', 'BASE_URL', "\"https://triple-e-api.ukt.co.id/api/v1/\""
+            buildConfigField 'String', 'BASE_URL', "\"https://api-be.belitung.org:5010/api/v1/\""
+//            buildConfigField 'String', 'BASE_URL', "\"https://triple-e-api.ukt.co.id/api/v1/\""
             versionNameSuffix = ".staging"
             applicationIdSuffix = ".staging"
             buildConfigField 'String', 'TAG', "\"Triple-E\""

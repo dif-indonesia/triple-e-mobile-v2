@@ -28,60 +28,6 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/layout_completed_profile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_rounded_card_light"
-                android:backgroundTint="@color/light_blue"
-                android:padding="16dp">
-
-
-                <com.google.android.material.progressindicator.CircularProgressIndicator
-                    android:id="@+id/progress_bar_1"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:max="100"
-                    android:progress="@{completedProfile.score}"
-                    app:indicatorColor="@color/white"
-                    app:indicatorSize="80dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:trackColor="@color/alpha_10_white"
-                    app:trackCornerRadius="11dp"
-                    app:trackThickness="9dp"
-                    tools:progress="60" />
-
-                <TextView
-                    android:id="@+id/tv_progress_bar_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:includeFontPadding="false"
-                    android:text="@{completedProfile.score + `%`}"
-                    android:textAppearance="@style/text_progress_bar"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@id/progress_bar_1"
-                    app:layout_constraintEnd_toEndOf="@id/progress_bar_1"
-                    app:layout_constraintStart_toStartOf="@id/progress_bar_1"
-                    app:layout_constraintTop_toTopOf="@id/progress_bar_1"
-                    tools:text="60%" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:includeFontPadding="false"
-                    android:justificationMode="inter_word"
-                    android:text="@{completedProfile.text ?? `-`}"
-                    android:textColor="@color/white"
-                    android:textSize="11sp"
-                    app:layout_constraintTop_toBottomOf="@id/progress_bar_1"
-                    tools:text="@string/you_are_still_missing_the_following_email_alternative_nik_ktp_npwp_number_bpjs_number_bpjs_kesehatan_description_about_yourself_minimum_150_characters_city_or_town_of_your_location_cv_at_least_100_character_required_to_describe_about_your_work_experience_to_make_your_profile_100_completed" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_about_myself"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

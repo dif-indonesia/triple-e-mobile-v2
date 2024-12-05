@@ -83,7 +83,7 @@
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ticket_number_command_center" />
+                            android:text="Ticket Number Command Center" />
 
                         <EditText
                             android:id="@+id/et_tic_number"
@@ -91,13 +91,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:imeOptions="actionNext"
+                            android:enabled="false"
                             app:validateEmpty="@{true}" />
 
                         <TextView
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ticket_number_assigned_edit" />
+                            android:text="Ticket Number Assigned" />
 
                         <EditText
                             android:id="@+id/et_ticket_number_assigned"
@@ -107,48 +108,52 @@
                             android:imeOptions="actionDone"
                             android:inputType="text"
                             app:validateEmpty="@{true}"
+                            android:enabled="false"
                             tools:ignore="TextFields" />
 
                         <TextView
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/asign_to" />
+                            android:text="Assign to" />
 
                         <EditText
                             android:id="@+id/et_tic_assign_to"
-                            style="@style/Form.Spinner1"
+                            style="@style/Form.EditText_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawablePadding="12dp"
                             android:imeOptions="actionNext"
                             android:inputType="text"
+                            android:enabled="false"
                             app:validateEmpty="@{true}" />
 
                         <TextView
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/severity" />
+                            android:text="Severity" />
 
                         <EditText
                             android:id="@+id/et_tic_severity"
-                            style="@style/Form.Spinner1"
+                            style="@style/Form.EditText_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="false"
                             app:validateEmpty="@{true}" />
 
                         <TextView
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ticket_type" />
+                            android:text="Ticket Type" />
 
                         <EditText
                             android:id="@+id/et_tic_type"
-                            style="@style/Form.Spinner1"
+                            style="@style/Form.EditText_grey"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:enabled="false"
                             app:validateEmpty="@{true}" />
 
                         <LinearLayout
@@ -162,32 +167,34 @@
                                 style="@style/Form.Label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/system_fault" />
+                                android:text="System Fault" />
 
                             <EditText
                                 android:id="@+id/system_fault"
-                                style="@style/Form.Spinner1"
+                                style="@style/Form.EditText_grey"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:drawablePadding="12dp"
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
+                                android:enabled="false"
                                 app:validateEmpty="@{validationStatus}" />
 
                             <TextView
                                 style="@style/Form.Label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/sub_system_fault" />
+                                android:text="Sub System Fault" />
 
                             <EditText
                                 android:id="@+id/sub_system_fault"
-                                style="@style/Form.Spinner1"
+                                style="@style/Form.EditText_grey"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:drawablePadding="12dp"
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
+                                android:enabled="false"
                                 app:validateEmpty="@{validationStatus}" />
 
                         </LinearLayout>
@@ -203,30 +210,32 @@
                                 style="@style/Form.Label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/system_fault" />
+                                android:text="System Fault" />
 
                             <EditText
                                 android:id="@+id/system_fault_teleglobal"
-                                style="@style/Form.Spinner1"
+                                style="@style/Form.EditText_grey"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:drawablePadding="12dp"
                                 android:imeOptions="actionNext"
+                                android:enabled="false"
                                 android:inputType="text" />
 
                             <TextView
                                 style="@style/Form.Label"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/problem_type" />
+                                android:text="Problem Type" />
 
                             <EditText
                                 android:id="@+id/problem_type"
-                                style="@style/Form.Spinner1"
+                                style="@style/Form.EditText_grey"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:drawablePadding="12dp"
                                 android:imeOptions="actionNext"
+                                android:enabled="false"
                                 android:inputType="text" />
 
                         </LinearLayout>
@@ -297,7 +306,7 @@
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/description" />
+                            android:text="Description" />
 
                         <EditText
                             android:id="@+id/tic_description"
@@ -307,6 +316,7 @@
                             android:gravity="start"
                             android:imeOptions="actionDone"
                             android:inputType="textShortMessage|textMultiLine"
+                            android:enabled="false"
                             android:minLines="4"
                             android:clickable="false"/>
 
@@ -384,44 +394,11 @@
                             android:imeOptions="actionNext"
                             android:inputType="text" />
 
-                        <!--                        <TextView-->
-                        <!--                            style="@style/Form.Label"-->
-                        <!--                            android:layout_width="wrap_content"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:text="@string/system_fault_edit" />-->
-
-                        <!--                        <EditText-->
-                        <!--                            android:id="@+id/et_tic_system_fault"-->
-                        <!--                            style="@style/Form.Spinner1"-->
-                        <!--                            android:layout_width="match_parent"-->
-                        <!--                            app:validateEmpty="@{true}"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:focusable="false"-->
-                        <!--                            android:imeOptions="actionNext"-->
-                        <!--                            android:inputType="text" />-->
-
-
-                        <!--                        <TextView-->
-                        <!--                            style="@style/Form.Label"-->
-                        <!--                            android:layout_width="wrap_content"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:text="@string/sub_system_fault" />-->
-
-                        <!--                        <EditText-->
-                        <!--                            android:id="@+id/sub_system_fault"-->
-                        <!--                            style="@style/Form.Spinner1"-->
-                        <!--                            android:layout_width="match_parent"-->
-                        <!--                            android:layout_height="wrap_content"-->
-                        <!--                            android:focusable="false"-->
-                        <!--                            app:validateEmpty="@{true}"-->
-                        <!--                            android:imeOptions="actionNext"-->
-                        <!--                            android:inputType="text" />-->
-
                         <TextView
                             style="@style/Form.Label"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/triple_e_in_charge" />
+                            android:text="Triple-E In Charge" />
 
                         <EditText
                             android:id="@+id/et_tic_person_in_charge"
@@ -429,6 +406,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:focusable="false"
+                            android:enabled="false"
                             android:imeOptions="actionNext"
                             android:inputType="text"
                             app:validateEmpty="@{true}" />

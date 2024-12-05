@@ -17,6 +17,14 @@ class SiteFragment : BaseFragment<SiteViewModel, FragmentSiteBinding>() {
     fun setupData(){
         val data = preferences.ticketDetails.value
         binding.siteInfo = data?.site_info
+        binding.street.text = listOfNotNull(
+            data?.site_info?.siteInfoAddressPropinsi,
+            data?.site_info?.siteInfoAddressKabupaten,
+            data?.site_info?.siteInfoAddressKecamatan,
+            data?.site_info?.siteInfoAddressKelurahan,
+            data?.site_info?.siteInfoAddressStreet
+        ).joinToString(", ").ifEmpty { "-" }
+
     }
     override fun refresh() {
         setupData()

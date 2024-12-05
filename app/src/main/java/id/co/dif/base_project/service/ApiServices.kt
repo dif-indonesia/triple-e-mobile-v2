@@ -787,4 +787,10 @@ interface ApiServices {
         @Part param: MutableList<MultipartBody.Part?>
     ): BaseResponse<Any?>
 
+    @GET("ops_ticket/get-rca-image/{id}")
+    suspend fun getRcaImage(
+        @Path("id") id: String?,
+        @Header("Authorization") bearerToken: String?
+    ): BaseResponse<RcaResponseImage>
+
 }

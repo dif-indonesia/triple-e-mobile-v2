@@ -86,6 +86,13 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
             binding.btnRemoveEngineer.isEnabled = enable
         }
 
+        session?.let { session ->
+            val visible = (session.emp_security ?: 0) >= 2
+            binding.btnSelectEngineer.visibility = if (visible) View.VISIBLE else View.GONE
+            binding.btnRemoveEngineer.visibility = if (visible) View.VISIBLE else View.GONE
+        }
+
+
         binding.etTicAssignTo.setOnClickListener {
             val optionsList = when (session?.asgn_project_id) {
                 1.toString() -> {

@@ -8,6 +8,11 @@ class PercentValueFormatter: ValueFormatter() {
 
     override fun getPieLabel(value: Float, pieEntry: PieEntry?): String {
 
-        return "${(value * 10).roundToInt() / 10f}%"
+        return runCatching {
+            "${(value * 10).roundToInt() / 10f}%"
+        }.getOrNull().orDash()
     }
+
+    fun String?.orDash(): String = this ?: "-"
+
 }

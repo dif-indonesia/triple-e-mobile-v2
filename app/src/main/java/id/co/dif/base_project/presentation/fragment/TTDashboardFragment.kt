@@ -125,11 +125,6 @@ class TTDashboardFragment() :
             populateUserOverallRank(it)
         }
 
-        viewModel.progressBarConclusion.observe(lifecycleOwner) { res ->
-            evaluateResponse(res, null) {
-                populateProgressBars(it)
-            }
-        }
 
         viewModel.areaBenchmarkData.observe(lifecycleOwner) { res ->
             evaluateResponse(res, listOf(binding.shimmerAreaBenchmark)) {
@@ -140,21 +135,6 @@ class TTDashboardFragment() :
         viewModel.ttTicketInfo.observe(lifecycleOwner) { res ->
             evaluateResponse(res, null) {
                 consumeTtTicketInfo(it)
-            }
-        }
-
-        viewModel.ticketNumbers.observe(lifecycleOwner) { res ->
-            evaluateResponse(
-                res, listOf(
-                    binding.shimmerNumberOfNotes,
-                    binding.shimmerNumberOfUpload
-                )
-            ) {
-                val uploadsTrend = it.list.map { ticket -> ticket.numUpload }
-                val addedNotesTrend = it.list.map { ticket -> ticket.numNotes }
-                val labels = it.list.map { ticket -> ticket.idTicket }
-                populateNumberOfUploadChart(uploadsTrend, labels)
-                populateNumberOfAddedNotes(addedNotesTrend, labels)
             }
         }
 
@@ -275,34 +255,6 @@ class TTDashboardFragment() :
             }
 
             else -> Unit
-        }
-    }
-
-    @SuppressLint("SetTextI18n")
-    private fun populateProgressBars(conclusion: ProgressBarConclusion) {
-        conclusion.photoUploads.let {
-            binding.progressPhotoUpload.progress = it.allTicket
-            binding.tvValueProgressPhotoUpload.text = "${it.allTicket}%"
-            binding.tvValueMonthPhotoUpload.text = "${it.month.numPercent}%"
-            binding.tvValueWeekPhotoUpload.text = "${it.week.numPercent}%"
-            binding.imgTrendMonthPhotoUpload.isChecked = it.month.icon == "up"
-            binding.imgTrendWeekPhotoUpload.isChecked = it.week.icon == "up"
-        }
-        conclusion.fileUploads.let {
-            binding.progressFileUpload.progress = it.allTicket
-            binding.tvValueProgressFileUpload.text = "${it.allTicket}%"
-            binding.tvValueMonthFileUpload.text = "${it.month.numPercent}%"
-            binding.tvValueWeekFileUpload.text = "${it.week.numPercent}%"
-            binding.imgTrendMonthFileUpload.isChecked = it.month.icon == "up"
-            binding.imgTrendWeekFileUpload.isChecked = it.week.icon == "up"
-        }
-        conclusion.addedNotes.let {
-            binding.progressAddedNotes.progress = it.greaterThan100
-            binding.tvValueProgressAddedNotes.text = "${it.greaterThan100}%"
-            binding.tvValueMonthAddedNotes.text = "${it.month.numPercent}%"
-            binding.tvValueWeekAddedNotes.text = "${it.week.numPercent}%"
-            binding.imgTrendMonthAddedNotes.isChecked = it.month.icon == "up"
-            binding.imgTrendWeekAddedNotes.isChecked = it.week.icon == "up"
         }
     }
 
@@ -598,63 +550,6 @@ class TTDashboardFragment() :
                     anchor = binding.chartWeeklyTicketComparison,
                     chipColor = dotColor,
                     xLabel = formattedLabels
-                )
-
-            }
-
-            override fun onNothingSelected() {
-                chartSelectedChip.dismiss()
-            }
-
-        })
-
-    }
-
-    private fun populateNumberOfUploadChart(data: List<Int>, labels: List<Int>) {
-        binding.chartNumberOfUpload.populateDottedCurvedLine(
-            rawData = listOf(data),
-            dotColors = listOf(R.color.light_orange),
-            lineColors = listOf(R.color.teal_200)
-        )
-        binding.chartNumberOfUpload.setOnChartValueSelectedListener(object :
-            OnChartValueSelectedListener {
-            override fun onValueSelected(e: Entry?, h: Highlight?) {
-                showChartChipPopup(
-                    entry = e,
-                    highlight = h,
-                    anchor = binding.chartNumberOfUpload,
-                    chipColor = R.color.light_orange,
-                    xLabel = labels.map { it.toString() },
-                    xLabelTitle = "Ticket: %s",
-                    yLabelTitle = "%s photo/file"
-                )
-
-            }
-
-            override fun onNothingSelected() {
-                chartSelectedChip.dismiss()
-            }
-
-        })
-    }
-
-    private fun populateNumberOfAddedNotes(data: List<Int>, labels: List<Int>) {
-        binding.chartNumberOfNotes.populateDottedCurvedLine(
-            rawData = listOf(data),
-            dotColors = listOf(R.color.pink),
-            lineColors = listOf(R.color.darker_blue)
-        )
-        binding.chartNumberOfNotes.setOnChartValueSelectedListener(object :
-            OnChartValueSelectedListener {
-            override fun onValueSelected(e: Entry?, h: Highlight?) {
-                showChartChipPopup(
-                    entry = e,
-                    highlight = h,
-                    anchor = binding.chartNumberOfNotes,
-                    chipColor = R.color.light_orange,
-                    xLabel = labels.map { it.toString() },
-                    yLabelTitle = "> %s Characters",
-                    xLabelTitle = "Ticket: %s"
                 )
 
             }

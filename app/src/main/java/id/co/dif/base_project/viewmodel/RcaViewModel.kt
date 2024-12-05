@@ -9,6 +9,7 @@ import id.co.dif.base_project.base.BaseResponseList
 import id.co.dif.base_project.base.BaseViewModel
 import id.co.dif.base_project.data.Rca
 import id.co.dif.base_project.data.RcaResponse
+import id.co.dif.base_project.data.RcaResponseImage
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
 import okhttp3.MultipartBody
@@ -27,6 +28,7 @@ class RcaViewModel : BaseViewModel() {
     var responseMasterResolutionAction = MutableLiveData<BaseRca>()
     var responseSubmitRca = MutableLiveData<BaseResponse<Any?>>()
     var responseGetRca = MutableLiveData<BaseResponse<RcaResponse>>()
+    var responseGetRcaImage = MutableLiveData<BaseResponse<RcaResponseImage>>()
     var responseSubmitRcaPhoto = MutableLiveData<BaseResponse<Any?>>()
 
     var filter: String = ""
@@ -71,6 +73,23 @@ class RcaViewModel : BaseViewModel() {
                 id = id
             )
             responseGetRca.postValue(response)
+            dissmissLoading()
+        }
+    }
+
+    fun getRcaImage(id: String?) {
+        viewModelJob = viewModelScope.launch(CoroutineExceptionHandler { _, e ->
+            handleApiError(e)
+            e.printStackTrace()
+            dissmissLoading()
+            viewModelJob?.cancel()
+        }) {
+            showLoading()
+            val response = apiServices.getRcaImage(
+                bearerToken = "Bearer ${session?.token_access}",
+                id = id
+            )
+            responseGetRcaImage.postValue(response)
             dissmissLoading()
         }
     }

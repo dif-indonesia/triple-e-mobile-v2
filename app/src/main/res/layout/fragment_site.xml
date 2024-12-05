@@ -12,7 +12,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#EEF6FF">
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -48,58 +49,6 @@
                         android:layout_marginStart="0dp"
                         android:text="@string/site_info" />
 
-                    <TextView
-                        android:id="@+id/nama"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
-                        android:gravity="center_vertical"
-                        android:text="@{siteInfo.siteName ?? `-`}"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
-                        app:drawableStartCompat="@drawable/ic_person"
-                        tools:text="Ilyasa Nur Haafiz" />
-
-                    <TextView
-                        android:id="@+id/street"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
-                        android:gravity="center_vertical"
-                        android:text="@{siteInfo.siteInfoAddressStreet ?? `-`}"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
-                        app:drawableStartCompat="@drawable/ic_pinpoint"
-                        tools:text="Desa Lorem Ipsum dolor, Blok B31" />
-
-                    <TextView
-                        android:id="@+id/kelurahan"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
-                        android:gravity="center_vertical"
-                        android:text="@{siteInfo.siteInfoAddressKelurahan}"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
-                        app:drawableStartCompat="@drawable/ic_house"
-                        tools:text="Desa Lorem" />
-
-
-                    <TextView
-                        android:id="@+id/email_site"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
-                        android:gravity="center_vertical"
-                        android:text="@{siteInfo.siteInfoEmail ?? `-`}"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
-                        app:drawableStartCompat="@drawable/ic_house_with_list"
-                        tools:text="Lorem@gmail.com" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -107,12 +56,11 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="60dp"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
                             android:text="Site ID"
-                            android:textColor="#404040"
-                            android:textSize="12sp" />
+                            android:textColor="#404040" />
 
                         <TextView
                             android:id="@+id/siteid"
@@ -120,8 +68,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@{siteInfo.technologySiteId ?? `-`}"
-                            android:textSize="12sp" />
+                            android:text="@{siteInfo.technologySiteId ?? `-`}" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -130,12 +77,11 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="60dp"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
-                            android:text="Area"
-                            android:textColor="#404040"
-                            android:textSize="12sp" />
+                            android:text="NOP"
+                            android:textColor="#404040" />
 
                         <TextView
                             android:id="@+id/area"
@@ -143,8 +89,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@{siteInfo.technologyArea ?? `-`}"
-                            android:textSize="12sp" />
+                            android:text="@{siteInfo.technologyArea ?? `-`}"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -153,11 +98,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="60dp"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
                             android:text="Cluster"
-                            android:textSize="12sp"
                             android:textColor="#404040"/>
 
                         <TextView
@@ -166,8 +110,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@{siteInfo.technologyCluster ?? `-`}"
-                            android:textSize="12sp" />
+                            android:text="@{siteInfo.technologyCluster ?? `-`}"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -176,11 +119,58 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="60dp"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Site Name"
+                            android:textColor="#404040"/>
+
+                    <TextView
+                        android:id="@+id/nama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center_vertical"
+                        android:text="@{siteInfo.siteName ?? `-`}"
+                        style="bold"
+                        tools:text="Ilyasa Nur Haafiz" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Alamat"
+                            android:textColor="#404040"/>
+
+                    <TextView
+                        android:id="@+id/street"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto_bold"
+                        android:gravity="center_vertical"
+                        style="bold"
+                        tools:text="Desa Lorem Ipsum dolor, Blok B31" />
+                    </LinearLayout>
+
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
                             android:text="Latitude"
-                            android:textSize="12sp"
                             android:textColor="#404040"/>
 
                         <TextView
@@ -189,8 +179,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@{siteInfo.technologyLatitude ?? `-`}"
-                            android:textSize="12sp" />
+                            android:text="@{siteInfo.technologyLatitude ?? `-`}"/>
                     </LinearLayout>
 
                     <LinearLayout
@@ -199,11 +188,10 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="60dp"
+                            android:layout_width="80dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_regular"
                             android:text="@string/longitude"
-                            android:textSize="12sp"
                             android:textColor="#404040"/>
 
                         <TextView
@@ -212,8 +200,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_bold"
-                            android:text="@{siteInfo.technologyLongitude ?? `-`}"
-                            android:textSize="12sp" />
+                            android:text="@{siteInfo.technologyLongitude ?? `-`}" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -260,57 +247,97 @@
                         android:layout_marginStart="0dp"
                         android:text="@string/contact_info" />
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Provider"
+                            android:textColor="#404040"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
+                        android:fontFamily="@font/roboto_bold"
                         android:gravity="center_vertical"
+                        style="bold"
                         android:text="@{siteInfo.siteProvider ?? `-`}"
-                        app:drawableStartCompat="@drawable/ic_person"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
                         tools:text="Desa Lorem" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Building Type"
+                            android:textColor="#404040"/>
 
                     <TextView
                         android:id="@+id/contac_desa_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
+                        android:fontFamily="@font/roboto_bold"
                         android:gravity="center_vertical"
+                        style="bold"
                         android:text="@{siteInfo.contactLocation ?? `-`}"
-                        app:drawableStartCompat="@drawable/ic_pinpoint"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
                         tools:text="Desa Lorem" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Contact Name"
+                            android:textColor="#404040"/>
 
                     <TextView
                         android:id="@+id/contac_email_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
+                        android:fontFamily="@font/roboto_bold"
                         android:gravity="center_vertical"
+                        style="bold"
                         android:text="@{siteInfo.contactEmail ?? `-`}"
-                        app:drawableStartCompat="@drawable/ic_contact"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
                         tools:text="Lorem@gmail.com" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_regular"
+                            android:text="Contact Phone"
+                            android:textColor="#404040"/>
 
                     <TextView
                         android:id="@+id/contac_phone_info"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="16dp"
-                        android:fontFamily="@font/roboto_regular"
+                        android:fontFamily="@font/roboto_bold"
                         android:gravity="center_vertical"
+                        style="bold"
                         android:text="@{siteInfo.contactPhone ?? `-`}"
-                        app:drawableStartCompat="@drawable/phone"
-                        android:textColor="#404040"
-                        app:drawableTint="@color/gray_belitung"
                         tools:text="08521214558" />
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </FrameLayout>

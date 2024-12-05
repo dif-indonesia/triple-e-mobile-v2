@@ -37,7 +37,7 @@ import java.text.NumberFormat
 import java.util.Locale
 import kotlin.math.roundToInt
 
-class MyDashboardFragment :
+class  MyDashboardFragment :
     BaseFragment<MyDashboardViewModel, FragmentMyDashboardBinding>() {
     override val layoutResId: Int = R.layout.fragment_my_dashboard
     private lateinit var chartSelectedChip: PopupWindow

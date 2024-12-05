@@ -1,11 +1,13 @@
 package id.co.dif.base_project.presentation.fragment
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.BitmapFactory
 import android.net.Uri
 import android.os.Bundle
@@ -17,21 +19,46 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toFile
+import androidx.core.net.toUri
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
+import com.squareup.picasso.Picasso
+import com.stfalcon.imageviewer.StfalconImageViewer
+import id.co.dif.base_project.MAX_IMAGE_SIZE_MEGABYTES
 import id.co.dif.base_project.R
 import id.co.dif.base_project.base.BaseFragment
+import id.co.dif.base_project.data.Location
+import id.co.dif.base_project.data.Rca
 import id.co.dif.base_project.data.TicketDetails
 import id.co.dif.base_project.databinding.FragmentRcaBinding
 import id.co.dif.base_project.presentation.dialog.PickerDialog
+import id.co.dif.base_project.presentation.fragment.DetailFragment.Companion.CHOOSE_FILE_REQUEST_CODE
+import id.co.dif.base_project.presentation.fragment.DetailFragment.Companion.OPEN_CAMERA_REQUEST_CODE
+import id.co.dif.base_project.presentation.fragment.DetailFragment.Companion.SELECT_ENGINEER_REQUEST_CODE
+import id.co.dif.base_project.presentation.fragment.DetailFragment.Companion.SELECT_SITE_REQUEST_CODE
 import id.co.dif.base_project.utils.Resource
 import id.co.dif.base_project.utils.StatusCode
+import id.co.dif.base_project.utils.colorRes
+import id.co.dif.base_project.utils.compressImageFileToDefinedSize
+import id.co.dif.base_project.utils.copyImageToFile
+import id.co.dif.base_project.utils.findViewsByType
+import id.co.dif.base_project.utils.getFileFromUri
+import id.co.dif.base_project.utils.getFileNameFromUri
+import id.co.dif.base_project.utils.getMimeType
+import id.co.dif.base_project.utils.isImageMimeType
 import id.co.dif.base_project.utils.isNotNullOrEmpty
+import id.co.dif.base_project.utils.loadImage
 import id.co.dif.base_project.utils.log
 import id.co.dif.base_project.utils.makeMultipartData
+import id.co.dif.base_project.utils.megaBytes
 import id.co.dif.base_project.utils.orDefault
+import id.co.dif.base_project.utils.shimmerDrawable
 import id.co.dif.base_project.utils.str
 import id.co.dif.base_project.viewmodel.RcaViewModel
+import kotlinx.coroutines.launch
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
@@ -56,6 +83,22 @@ class RcaFragment : BaseFragment<RcaViewModel, FragmentRcaBinding>() {
 
     override fun onViewBindingCreated(savedInstanceState: Bundle?) {
         ticketDetails = preferences.ticketDetails.value?.copy()
+
+        if (ticketDetails?.permit_status?.permitApproved == null && ticketDetails?.permit_status?.permitInformation == null && ticketDetails?.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()) {
+            val listOfEdt = findViewsByType(binding.root, EditText::class.java)
+            val listOfImg = findViewsByType(binding.root, ImageView::class.java)
+            listOfEdt.forEach {
+                it.isEnabled = false
+                it.backgroundTintList =
+                    ColorStateList.valueOf(R.color.light_grey.colorRes(requireContext()))
+            }
+            listOfImg.forEach {
+                it.isEnabled = false
+                it.alpha = 0.5f // Dim the image to indicate disabled state
+            }
+            binding.idSubmit.isEnabled = false
+            binding.idSubmit.backgroundTintList = ColorStateList.valueOf(R.color.light_grey.colorRes(requireContext()))
+        }
 
         viewModel.responseGetRca.observe(viewLifecycleOwner) { response ->
             if (response != null && response.status == 200) { // Periksa status API
@@ -665,11 +708,127 @@ class RcaFragment : BaseFragment<RcaViewModel, FragmentRcaBinding>() {
         viewModel.responseSubmitRca.observe(lifecycleOwner) {
             if (it.status == 200) {
                 Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
-                requireActivity().supportFragmentManager.popBackStack()
+                viewModel.getRca(ticketDetails?.tic_id)
             } else {
                 Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
             }
         }
+
+        viewModel.responseSubmitRcaPhoto.observe(lifecycleOwner) {
+            if (it.status == 200) {
+                Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
+                requireActivity().supportFragmentManager.popBackStack()
+                viewModel.getRcaImage(ticketDetails?.tic_id)
+            } else {
+                Toast.makeText(context, it.message, Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        viewModel.responseGetRcaImage.observe(viewLifecycleOwner) { response ->
+            "awal 12354".log(response.toString())
+            response?.let {
+                if (it.status == 200) {
+                    it.data?.list?.forEach { item ->
+                        when (item.category) {
+                            "RUNNING HOUR" -> {
+                                "running hour 12345".log(item.photo)
+                                if (item.label == "BEFORE") {
+                                    binding.imgRunningHourStart.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgRunningHourStart.loadImage(item.photo, shimmerDrawable())
+
+                                } else if (item.label == "AFTER") {
+                                    binding.imgRunningHourStop.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgRunningHourStop.loadImage(item.photo, shimmerDrawable())
+                                }
+                            }
+                            "KWH FOTO" -> {
+                                "maintean progrees 12345".log(item.photo)
+                                if (item.label == "BEFORE") {
+                                    binding.imgKwhFotoBefore.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgKwhFotoBefore.loadImage(item.photo, shimmerDrawable())
+                                } else if (item.label == "AFTER") {
+                                    binding.imgKwhFotoAfter.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgKwhFotoAfter.loadImage(item.photo, shimmerDrawable())
+                                }
+                            }
+                            "RECTIFIER" -> {
+                                "maintean progrees 12345".log(item.photo)
+                                if (item.label == "BEFORE") {
+                                    binding.imgRectifierBefore.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgRectifierBefore.loadImage(item.photo, shimmerDrawable())
+                                } else if (item.label == "AFTER") {
+                                    binding.imgRectifierAfter.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgRectifierAfter.loadImage(item.photo, shimmerDrawable())
+                                }
+                            }
+                            "MAINTENANCE PROGRES" -> {
+                                "maintean progrees 12345".log(item.photo)
+                                if (item.label == "BEFORE") {
+                                    binding.imgMaintenanceProgressBefore.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgMaintenanceProgressBefore.loadImage(item.photo, shimmerDrawable())
+                                } else if (item.label == "AFTER") {
+                                    binding.imgMaintenanceProgressAfter.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgMaintenanceProgressAfter.loadImage(item.photo, shimmerDrawable())
+                                }
+                            }
+                            "BTS FOTO" -> {
+                                "bts foto 12345".log(item.photo)
+                                if (item.label == "BEFORE") {
+                                    binding.imgBtsBefore.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgBtsBefore.loadImage(item.photo, shimmerDrawable())
+                                } else if (item.label == "AFTER") {
+                                    binding.imgBtsAfter.setOnClickListener {
+                                        StfalconImageViewer.Builder<String>(context, arrayOf(item.photo)) { view, image ->
+                                            Picasso.get().load(image).into(view)
+                                        }.show()
+                                    }
+                                    binding.imgBtsAfter.loadImage(item.photo, shimmerDrawable())
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    showError(it.message ?: "Failed to fetch data")
+                }
+            }
+        }
+
 
         setupClickListeners()
 
@@ -712,6 +871,7 @@ class RcaFragment : BaseFragment<RcaViewModel, FragmentRcaBinding>() {
         super.onResume()
         val id = ticketDetails?.tic_id
         viewModel.getRca(id)
+        viewModel.getRcaImage(id)
     }
 
     private fun setupClickListeners() {
@@ -771,46 +931,61 @@ class RcaFragment : BaseFragment<RcaViewModel, FragmentRcaBinding>() {
         }
     }
 
-    private fun openGallery() {
-        val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-        intent.type = "image/*"
-        startActivityForResult(intent, REQUEST_IMAGE_PICK)
-    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_IMAGE_PICK && resultCode == Activity.RESULT_OK) {
-            data?.data?.let { uri ->
-                imageUri = uri
-                submitPhoto()
+        if (resultCode == AppCompatActivity.RESULT_OK && data != null) {
+            when (requestCode) {
+                REQUEST_IMAGE_PICK -> {
+                    lifecycleScope.launch {
+                        val fileUri = data.data
+                        fileUri?.let { fileUri ->
+                            val file = requireContext().getFileFromUri(requireContext(), fileUri)
+                            val fileSize = java.lang.String.valueOf(file.length() / 1024).toInt()
+                            val mimeType = getMimeType(currentActivity, fileUri)
+                            Log.d("TAG", "FileUpload - File Size : $fileSize")
+                            Log.d("TAG", "FileUpload - Mime Type : $mimeType")
+                            if (mimeType?.startsWith("video") == true && fileSize > (50 * 1024)) {
+                                showToast("The video can't be more than 50Mb !")
+                                return@let
+                            } else if (mimeType?.startsWith("application/pdf") == true && fileSize > (10 * 1024)) {
+                                showToast("The pdf can't be more than 10Mb !")
+                                return@let
+                            }
+                            val isImage = isImageMimeType(mimeType)
+                            var uri = fileUri
+                            if (isImage) {
+                                uri = currentActivity.copyImageToFile(uri).toUri()
+                                uri = currentActivity.compressImageFileToDefinedSize(MAX_IMAGE_SIZE_MEGABYTES.megaBytes, uri).toUri()
+                            }
+                            viewModel.file = uri.let { requireContext().getFileFromUri(requireContext(), uri) }
+
+                            val params = hashMapOf<String, Any?>(
+                                "rcaimg_category" to currentCategory,
+                                "rcaimg_before" to currentBefore,
+                                "rca_image" to viewModel.file
+                            )
+                            viewModel.submitRcaPhoto(
+                                ticketDetails?.tic_id,
+                                params.map { makeMultipartData(it.key, it.value) }.toMutableList()
+                            )
+                        }
+                    }
+                }
             }
         }
     }
 
-    private fun submitPhoto() {
-        imageUri?.let { uri ->
-            var fileUri = uri
-            viewModel.file = fileUri.toFile()
-            val params = hashMapOf<String, Any?>(
-                "rcaimg_category" to currentCategory,
-                "rcaimg_before" to currentBefore,
-                "rca_image" to viewModel.file
-            )
-            viewModel.submitRcaPhoto(
-                ticketDetails?.tic_id,
-                params.map { makeMultipartData(it.key, it.value) }.toMutableList()
-            )
-        }
+    private fun openGallery() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.type = "image/*" // Anda bisa mengganti ke `*/*` jika ingin memungkinkan tipe file lainnya.
+        startActivityForResult(intent, REQUEST_IMAGE_PICK)
     }
 
-    private fun getPathFromUri(uri: Uri): String {
-        val cursor = requireActivity().contentResolver.query(uri, null, null, null, null)
-        cursor?.moveToFirst()
-        val index = cursor?.getColumnIndex(MediaStore.Images.ImageColumns.DATA)
-        val path = cursor?.getString(index ?: 0)
-        cursor?.close()
-        return path ?: throw IllegalArgumentException("Invalid URI")
+    private fun showError(message: String) {
+        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
     }
+
 
 
 }

@@ -20,15 +20,6 @@ class OverviewFragment () : BaseFragment<OverviewViewModel, OverviewBinding>() {
     override val layoutResId = R.layout.overview
 
     override fun onViewBindingCreated(savedInstanceState: Bundle?) {
-        viewModel.responseCompletedProfile.observe(lifecycleOwner) {
-            if (it.status in StatusCode.SUCCESS) {
-                if (it.data.score == 100) {
-                    binding.layoutCompletedProfile.isVisible = false
-                }
-                binding.completedProfile = it.data
-            }
-        }
-
         viewModel.responseBasicInfoList.observe(lifecycleOwner) {
             if (it.status == 200) {
                 var info = preferences.myDetailProfile.value

@@ -36,6 +36,7 @@ import id.co.dif.base_project.utils.colorRes
 import id.co.dif.base_project.utils.formatDate
 import id.co.dif.base_project.utils.formatDateBelitung
 import id.co.dif.base_project.utils.ifFalse
+import id.co.dif.base_project.utils.isNotNullOrEmpty
 import id.co.dif.base_project.utils.loadImage
 import id.co.dif.base_project.utils.log
 import id.co.dif.base_project.utils.orDefault
@@ -178,6 +179,7 @@ class TroubleTicketAdapter(
                     binding as ItemTroubleTicketBelitungBinding
                     val item = data[position]
 
+                    binding.isRead = item.ticReadAt.isNotNullOrEmpty()
                     item.permitStatus?.let { permitStatus ->
                         when {
                             item.ticCheckinAt == null && item.checkinStatus != null && item.checkinStatus?.checkinApproved == null  && item.ticPersonInChargeEmpId != myProfile?.id && item.permitStatus?.permitApproved == true -> {

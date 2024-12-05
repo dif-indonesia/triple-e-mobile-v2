@@ -36,7 +36,8 @@ data class TroubleTicket(
     @SerializedName("submit_status") var submitStatus: SubmitTickettatus? = null,
     @SerializedName("tic_checkin_at") var ticCheckinAt: String? = null,
     @SerializedName("tic_checkout_at") var ticCheckoutAt: String? = null,
-    @SerializedName("checkin_status") var checkinStatus: CheckinStatus? = null
+    @SerializedName("checkin_status") var checkinStatus: CheckinStatus? = null,
+    @SerializedName("tic_read_at") var ticReadAt: String? = null
 ) : BaseData()
 
 data class TicketPermitStatus(
