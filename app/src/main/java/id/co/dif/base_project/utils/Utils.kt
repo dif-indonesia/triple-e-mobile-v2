@@ -127,6 +127,29 @@ fun base64ImageToBitmap(encodedImage: String): Bitmap {
     return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
 }
 
+fun base64ImageToBitmapHandle(encodedImage: String): Bitmap? {
+    return try {
+        val cleanEncodedImage = if (encodedImage.contains(",")) {
+            encodedImage.substring(encodedImage.indexOf(",") + 1)
+        } else {
+            encodedImage
+        }
+        val decodedString = Base64.decode(cleanEncodedImage.trim(), Base64.DEFAULT)
+        Log.d("Base64Image", "Decoded Byte Array Length: ${decodedString.size}")
+        // Jika ukuran terlalu besar, kembalikan null atau tangani sesuai kebutuhan
+        if (decodedString.size > 10_000_000) { // Contoh batas ukuran 10MB
+            Log.e("Base64ImageError", "Image too large to decode")
+            return null
+        }
+        BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
+    } catch (e: IllegalArgumentException) {
+        Log.e("Base64ImageError", "Error decoding Base64 string: ${e.message}")
+        null
+    }
+}
+
+
+
 @RequiresApi(Build.VERSION_CODES.N)
 suspend fun rotateImageCorrectly(context: Context, photoFile: File): File {
     val sourceBitmap =

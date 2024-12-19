@@ -1,5 +1,6 @@
 package id.co.dif.base_project.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import id.co.dif.base_project.base.BaseResponse
@@ -29,6 +30,7 @@ class DetailViewModel : BaseViewModel() {
     var responseGetSiteDetails = MutableLiveData<BaseResponse<SiteData>>()
     var responseNearestTechnician = MutableLiveData<BaseResponseList<Location>>()
     var responseSiteLocation = MutableLiveData<BaseResponseList<Location>>()
+    var responseRequestPending = MutableLiveData<BaseResponse<Any?>>()
 
     var selectedSite = MutableLiveData<Location?>()
     var selectedEngineer = MutableLiveData<Location?>()
@@ -37,6 +39,7 @@ class DetailViewModel : BaseViewModel() {
     var articleName = ""
     var engineerIsWithinRadius = false
     var sparepart: String? = null
+    var requestPending: Boolean? = false
 
     fun editTicket(id: Int?, param: MutableMap<String, Any?>) {
         showLoading()
@@ -203,6 +206,46 @@ class DetailViewModel : BaseViewModel() {
             )
             println(response)
             responseSiteLocation.postValue(response)
+        }
+    }
+
+    fun requestPending(id: String?, param: MutableMap<String, Any?>) {
+        viewModelScope.launch(CoroutineExceptionHandler { _, e ->
+            dissmissLoading()
+            responseRequestPending.postValue(
+                BaseResponse(
+                    status = 500,
+                    message = "Request Pending failed",
+                    data = null
+                )
+            ) // Menangani kegagalan dengan data null
+        }) {
+            showLoading()
+            try {
+                val response = apiServices.requestPending(
+                    bearerToken = "Bearer ${session?.token_access}",
+                    id = id,
+                    param = param
+                )
+                responseRequestPending.postValue(
+                    BaseResponse(
+                        status = response.status,
+                        message = response.message,
+                        data = response.data
+                    )
+                ) // Menggunakan data respons API
+            } catch (e: Exception) {
+                Log.e("PermitViewModel", "Request Pending failed: ${e.message}")
+                responseRequestPending.postValue(
+                    BaseResponse(
+                        status = 500,
+                        message = "Request Pending failed",
+                        data = null
+                    )
+                ) // Menggunakan data null untuk error
+            } finally {
+                dissmissLoading()
+            }
         }
     }
 

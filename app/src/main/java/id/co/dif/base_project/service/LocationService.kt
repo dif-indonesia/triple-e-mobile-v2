@@ -28,6 +28,7 @@ import id.co.dif.base_project.utils.log
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
@@ -48,6 +49,7 @@ class LocationService : Service(), KoinComponent {
     private val database = Firebase.database
     private var job: Job? = null
     private var userRef: DatabaseReference? = null
+    private var hasLoggedOut = false
     private val locationPingListener = object : ValueEventListener {
         override fun onDataChange(snapshot: DataSnapshot) {
             Timber.d("PingLocation: " + preferences.myDetailProfile.value?.id + " " + snapshot)
@@ -157,12 +159,40 @@ class LocationService : Service(), KoinComponent {
         Timber.d("stop: Service Destroyed")
         stopForeground(true)
         serviceScope.cancel()
+        performLogoutIfNeeded("onDestroy")
         super.onDestroy()
     }
 
     override fun onTaskRemoved(rootIntent: Intent?) {
         super.onTaskRemoved(rootIntent)
         stop()
+        performLogoutIfNeeded("onTaskRemoved")
+    }
+
+    private fun performLogoutIfNeeded(caller: String) {
+        if (hasLoggedOut) {
+            Timber.d("Logout sudah dilakukan, skip untuk $caller")
+            return
+        }
+        hasLoggedOut = true // Tandai bahwa logout telah dilakukan
+
+        preferences.session.value?.let { session ->
+            GlobalScope.launch(CoroutineExceptionHandler { _, throwable ->
+                throwable.printStackTrace()
+                Timber.e("Logout gagal di $caller: ${throwable.message}")
+            }) {
+                try {
+                    Timber.d("Logout request dimulai di $caller")
+                    val response = apiServices.postSesionLog(
+                        bearerToken = "Bearer ${session.token_access}",
+                        "logout"
+                    )
+                    Timber.d("Logout berhasil di $caller: $response")
+                } catch (e: Exception) {
+                    Timber.e("Logout gagal di $caller: ${e.message}")
+                }
+            }
+        }
     }
 
     companion object {

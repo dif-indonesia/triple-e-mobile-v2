@@ -28,6 +28,7 @@ import id.co.dif.base_project.presentation.dialog.CheckinDialog
 import id.co.dif.base_project.presentation.dialog.CheckoutDialog
 import id.co.dif.base_project.presentation.dialog.FilterDialog
 import id.co.dif.base_project.presentation.dialog.PickerDialog
+import id.co.dif.base_project.presentation.dialog.RequestPendingDialog
 import id.co.dif.base_project.presentation.dialog.approveCheckinDialog
 import id.co.dif.base_project.presentation.dialog.approvePermitDialog
 import id.co.dif.base_project.presentation.dialog.approvedReqSubmitTicketDialog
@@ -302,7 +303,27 @@ class TroubleTicketFragment : BaseFragment<TroubleTicketViewModel, FragmentTroub
         val latitude = tt.site?.siteLatitude
         val longtitud = tt.site?.siteLangtitude
         val checkID = tt.checkinStatus?.checkinId
+        val pendingId = tt.pendingStatus?.pndId
         when {
+            tt.pendingStatus?.pdnRequestAt != null && tt.pendingStatus?.issuer == null -> {
+                RequestPendingDialog(
+                    pendingId,
+                    tt.ticId,
+                    tt.pendingStatus?.pdnReason
+                ){
+                    setupTroubleTicketList()
+                }.show(childFragmentManager, "PendingRequestDialog")
+            }
+            tt.pendingStatus?.pdnRequestAt != null && tt.pendingStatus?.issuer != null -> {
+                RequestPendingDialog(
+                    pendingId,
+                    tt.ticId,
+                    tt.pendingStatus?.pdnReason,
+                    tt.pendingStatus?.pdnInformation
+                ){
+                    setupTroubleTicketList()
+                }.show(childFragmentManager, "PendingRequestDialogApprove")
+            }
             tt.permitStatus?.permitApproved == true && tt.ticCheckinAt == null && tt.checkinStatus != null -> {
                 approveCheckinDialog(
                     checkID,

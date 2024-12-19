@@ -76,13 +76,13 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".service.LocationServiceStarterRebootReceiver"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
+<!--        <receiver-->
+<!--            android:name=".service.LocationServiceStarterRebootReceiver"-->
+<!--            android:exported="false">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.BOOT_COMPLETED" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
         <receiver
             android:name=".utils.DownloadCompletedReceiver"
             android:exported="true">
@@ -90,10 +90,10 @@
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
             </intent-filter>
         </receiver>
-        <receiver
-            android:name=".service.LocationServiceStarterScheduleReceiver"
-            android:enabled="true"
-            android:exported="true" />
+<!--        <receiver-->
+<!--            android:name=".service.LocationServiceStarterScheduleReceiver"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true" />-->
 
         <service
             android:name=".service.LocationService"

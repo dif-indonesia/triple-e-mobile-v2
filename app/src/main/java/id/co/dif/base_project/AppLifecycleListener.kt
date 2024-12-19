@@ -27,7 +27,7 @@ class AppLifecycleListener(mainApp: MainApp) : DefaultLifecycleObserver, KoinCom
 
         val dateNow = DateTime.now().toString("YYYYMMdd")
 
-        if (session != null && lastLogin != dateNow) {
+        if (session != null) {
             owner.lifecycleScope.launch {
                 try {
                     val response = apiServices.postSesionLog(
@@ -42,21 +42,21 @@ class AppLifecycleListener(mainApp: MainApp) : DefaultLifecycleObserver, KoinCom
         }
     }
 
-    override fun onStop(owner: LifecycleOwner) {
-        super.onStop(owner)
-        if (session != null)
-            owner.lifecycleScope.launch {
-                try {
-                    val response = apiServices.postSesionLog(
-                        bearerToken = "Bearer ${session?.token_access}",
-                        "logout"
-                    )
-                } catch (e: Exception) {
-
-                }
-            }
-
-    }
+//    override fun onStop(owner: LifecycleOwner) {
+//        super.onStop(owner)
+//        if (session != null)
+//            owner.lifecycleScope.launch {
+//                try {
+//                    val response = apiServices.postSesionLog(
+//                        bearerToken = "Bearer ${session?.token_access}",
+//                        "logout"
+//                    )
+//                } catch (e: Exception) {
+//
+//                }
+//            }
+//
+//    }
 
 
 }

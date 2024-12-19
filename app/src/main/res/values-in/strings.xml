@@ -112,6 +112,7 @@
     <string name="description">Deskripsi</string>
     <string name="ticket_number_inap">Nomor Tiket INAP <font color='red'>*</font></string>
     <string name="status">Status <font color='red'>*</font></string>
+    <string name="reason_pending">Alasan Pending <font color='red'>*</font></string>
     <string name="all_folllow_up_status">Semua Status Tindak Lanjut <font color='red'>*</font></string>
     <string name="severety">Keparahan <font color='red'>*</font></string>
     <string name="request_spare_part">Permintaan Suku Cadang</string>

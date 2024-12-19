@@ -804,4 +804,18 @@ interface ApiServices {
         @Header("Authorization") bearerToken: String?
     ): BaseResponse<RcaResponseImage>
 
+    @PUT("ops_ticket/request-pending/{id}")
+    suspend fun requestPending(
+        @Path("id") id: String?,
+        @Header("Authorization") bearerToken: String?,
+        @Body param: MutableMap<String, Any?>
+    ): BaseResponse<Any?>
+
+    @PUT("ops_ticket/request-pending/approve/{id}")
+    suspend fun approvePending(
+        @Path("id") id: Int?,
+        @Header("Authorization") bearerToken: String?,
+        @Body param: MutableMap<String, Any?>
+    ): BaseResponse<Any?>
+
 }

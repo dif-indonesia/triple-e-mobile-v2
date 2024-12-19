@@ -432,7 +432,7 @@ class AddTicketActivity : BaseActivity<AddTicketViewModel, ActivityAddTicketBind
         }
 
 
-        binding.etStatus.setText(TicketStatus.Pending.label)
+        binding.etStatus.setText("Pending")
         binding.etStatus.setOnClickListener {
             PickerDialog.newInstance(
                 arrayListOf("Assigned", "On Progress", "Pending", "Escalated", "Completed")

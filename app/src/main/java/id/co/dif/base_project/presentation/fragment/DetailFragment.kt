@@ -79,6 +79,7 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
     override fun onViewBindingCreated(savedInstanceState: Bundle?) {
         ticketDetails = preferences.ticketDetails.value?.copy()
         setupData()
+        requestPending()
 
         session?.let { session ->
             val enable = (session.emp_security ?: 0) >= 2
@@ -386,7 +387,7 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
 
         binding.etStatus.setOnClickListener {
             PickerDialog.newInstance(
-                TicketStatus.getAll(except = listOf(TicketStatus.Closed)).map { it.label }
+                TicketStatus.getAll(except = listOf(TicketStatus.CLOSED)).map { it.label }
             ) { index, value ->
                 binding.etStatus.setText(value)
             }.show(childFragmentManager, getString(R.string.status))
@@ -402,6 +403,25 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
             if (it.status in StatusCode.SUCCESS) {
                 preferences.savedAllSite.value = it.data.list
                 setAutoCompleteSite(it.data.list)
+            }
+        }
+
+        viewModel.responseRequestPending.observe(lifecycleOwner) {
+            if (it.status == 200) {
+                Toast.makeText(context, "Succusfully submit!", Toast.LENGTH_SHORT).show()
+                requireActivity().supportFragmentManager.popBackStack()
+                viewModel.dissmissLoading()
+                val status = it.status in StatusCode.SUCCESS
+                onSubmit(status)
+                if (status) {
+                    clearNotesData()
+                    showSuccessMessage(
+                        requireContext(),
+                        it.message ?: getString(R.string.notes_successfully_submitted)
+                    )
+                }
+            } else {
+                Toast.makeText(context, "Something went wrong!", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -523,7 +543,7 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                             requireContext(),
                             getString(R.string.reopen_ticket_successfully)
                         )
-                        binding.etStatus.setText(TicketStatus.Completed.label)
+                        binding.etStatus.setText(TicketStatus.SUBMITTED.label)
                         binding.txtAddNotes.setText("")
                         binding.closedTicket.isChecked = false
 
@@ -674,8 +694,9 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
             binding.ticEscalated.isChecked = ticEscalated == "1"
 
 
-            if (ticketDetails.tic_accepted == false){
+            if (ticketDetails.tic_accepted == false && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
                 binding.btnReqPermit.isVisible = false
+                binding.btnSubmitPending.isVisible = false
                 binding.save.isVisible = false
             } else {
                 if (ticketDetails.permit_status?.permitApproved == null && ticketDetails.permit_status?.permitInformation == null && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()) {
@@ -719,6 +740,57 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                 )
             }
 
+            if (ticketDetails.permit_status?.permitApproved != null && ticketDetails.permit_status?.permitInformation != null && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()) {
+                binding.btnReqPending.isVisible = true
+            }
+
+            if (ticketDetails.pending_status?.pdnRequestAt != null && ticketDetails.pending_status?.issuer == null  && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
+                binding.btnReqPending.text = "Waiting Approve Request Pending"
+                binding.btnReqPending.isEnabled = false
+            }
+            if (ticketDetails.pending_status?.pdnApproved != null && ticketDetails.pending_status?.pdnApproved == false  && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
+                binding.btnReqPending.text = "Request Pending Decline"
+                binding.btnReqPending.isEnabled = false
+                binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
+                    ContextCompat.getColor(context, R.color.pending)
+                )
+            }
+            if (ticketDetails.pending_status?.pdnApproved != null && ticketDetails.pending_status?.pdnApproved == true  && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
+                binding.btnReqPending.text = "Request Pending Approved"
+                binding.btnReqPending.isEnabled = false
+                binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
+                    ContextCompat.getColor(context, R.color.request_approve)
+                )
+            }
+
+
+
+            binding.btnReqPending.setOnClickListener {
+                // Balikkan nilai dari requestPending
+                val isPending = viewModel.requestPending ?: false
+                viewModel.requestPending = !isPending
+
+                if (viewModel.requestPending == true) {
+                    // Jika status berubah menjadi true, buka form
+                    binding.formPending.isVisible = true
+                    binding.btnReqPending.text = "Cancel"
+                    binding.btnReqPending.setTextColor(ContextCompat.getColor(context, R.color.black))
+                    binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
+                        ContextCompat.getColor(context, R.color.white)
+                    )
+                    binding.save.isVisible = false // Sembunyikan tombol Save
+                } else {
+                    // Jika status berubah menjadi false, tutup form
+                    binding.formPending.isVisible = false
+                    binding.btnReqPending.text = "Request Pending"
+                    binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
+                        ContextCompat.getColor(context, R.color.pending)
+                    )
+                    binding.save.isVisible = true // Tampilkan tombol Save kembali
+                }
+            }
+
+
             setFragmentResultListener("requestPermitKey") { _, bundle ->
                 val isSuccess = bundle.getBoolean("isSuccess")
                 if (isSuccess) {
@@ -740,12 +812,12 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                 binding.btnTicketReopen.isVisible = false
             } else {
                 binding.acceptedByTripleE.isEnabled =
-                    ticStatus?.lowercase() == TicketStatus.Completed.label.lowercase()
+                    ticStatus?.lowercase() == TicketStatus.SUBMITTED.label.lowercase()
                 binding.closedTicket.isEnabled = ticIsAccepted == true
             }
 
             binding.closedTicket.setOnCheckedChangeListener { buttonView, isChecked ->
-                binding.etStatus.setText(if (isChecked) TicketStatus.Closed.label else TicketStatus.Completed.label)
+                binding.etStatus.setText(if (isChecked) TicketStatus.CLOSED.label else TicketStatus.SUBMITTED.label)
             }
 
             binding.btnTicketReopen.isVisible =
@@ -1022,5 +1094,22 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
 
     private fun onRequestApprovePermit(tt: TicketDetails){
         requestPermitDialog().show(childFragmentManager, "requestPermitDialog")
+    }
+
+    private fun requestPending (){
+        binding.btnSubmitPending.setOnClickListener {
+            if (binding.txtReasonPending.text.isNullOrEmpty()){
+                Toast.makeText(context, "Reason is required!", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            } else {
+            viewModel.requestPending(
+                id = ticketDetails?.tic_id,
+                mutableMapOf(
+                    "reason" to binding.txtReasonPending.text.toString(),
+                )
+            )
+                }
+        }
+
     }
 }

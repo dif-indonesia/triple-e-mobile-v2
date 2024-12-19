@@ -31,6 +31,7 @@ import id.co.dif.base_project.presentation.dialog.approvedReqSubmitTicketDialog
 import id.co.dif.base_project.utils.LinearSpacingItemDecoration
 import id.co.dif.base_project.utils.StatusCode
 import id.co.dif.base_project.utils.base64ImageToBitmap
+import id.co.dif.base_project.utils.base64ImageToBitmapHandle
 import id.co.dif.base_project.utils.loadImage
 import id.co.dif.base_project.utils.populateNakedBarChart
 import id.co.dif.base_project.utils.shimmerDrawable
@@ -97,7 +98,7 @@ class  MyDashboardFragment :
                     binding.header.loadImage(it, shimmerDrawable())
                 }
                 it.photo_profile?.let { encoded ->
-                    binding.imgProfile.setImageBitmap(base64ImageToBitmap(encoded))
+                    binding.imgProfile.setImageBitmap(base64ImageToBitmapHandle(encoded))
                 }
             }
         }

@@ -124,6 +124,7 @@
     <string name="studied_at"><font color='black'>Studied at</font></string>
     <string name="add_notes">Add Notes <font color='red'>*</font></string>
     <string name="status">Status <font color='red'>*</font></string>
+    <string name="reason_pending">Reason Pending <font color='red'>*</font></string>
     <string name="all_folllow_up_status">All Follow Up Status <font color='red'>*</font></string>
     <string name="severety">Severety <font color='red'>*</font></string>
     <string name="request_spare_part">Request Spare Part</string>
@@ -385,7 +386,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="code">Code</string>
     <string name="reset">Reset</string>
-    <string name="triple_e_is_running_in_the_background_in_working_hours">Triple-E is running in the background 08:00-19:00 Weekdays</string>
+    <string name="triple_e_is_running_in_the_background_in_working_hours">Triple-E is running in the background</string>
     <string name="triple_e_is_running">Triple-E is running</string>
     <string name="are_you_sure_you_want_to_exit">Are you sure you want to exit?</string>
     <string name="something_went_wrong">Something went wrong!</string>

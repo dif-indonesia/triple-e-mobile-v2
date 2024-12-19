@@ -14,6 +14,7 @@ import id.co.dif.base_project.databinding.ItemActiveUserBinding
 import id.co.dif.base_project.databinding.ItemActiveUserLoadingBinding
 import id.co.dif.base_project.presentation.activity.EngineerProfileActivity
 import id.co.dif.base_project.utils.base64ImageToBitmap
+import id.co.dif.base_project.utils.base64ImageToBitmapHandle
 import id.co.dif.base_project.utils.gravatar
 import id.co.dif.base_project.utils.loadImage
 import id.co.dif.base_project.utils.shimmerDrawable
@@ -104,11 +105,23 @@ class ActiveUsersAdapter(data: List<ActiveUser> = listOf()) :
                     viewProfile(activeUser)
                 }
 
+//                activeUser.image?.let { encoded ->
+//                    binding.imgProfilePic.setImageBitmap(base64ImageToBitmap(encoded))
+//                } ?: kotlin.run {
+//                    binding.imgProfilePic.setImageResource(R.drawable.img_default_profile)
+//                }
+
                 activeUser.image?.let { encoded ->
-                    binding.imgProfilePic.setImageBitmap(base64ImageToBitmap(encoded))
+                    val bitmap = base64ImageToBitmapHandle(encoded)
+                    if (bitmap != null) {
+                        binding.imgProfilePic.setImageBitmap(bitmap)
+                    } else {
+                        binding.imgProfilePic.setImageResource(R.drawable.img_default_profile)
+                    }
                 } ?: kotlin.run {
                     binding.imgProfilePic.setImageResource(R.drawable.img_default_profile)
                 }
+
 
                 binding.activeUser = activeUser
                 binding.viewModel = viewModel

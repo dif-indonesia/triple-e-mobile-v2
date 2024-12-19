@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/id_pop_messages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_bottom_sheet"
+        android:clipToPadding="false"
+        android:fitsSystemWindows="true"
+        android:layoutDirection="ltr"
+        tools:context=".presentation.dialog.PopupMessagesDialog">
+
+        <ImageView
+            android:id="@+id/btn_hide"
+            android:layout_width="0dp"
+            android:layout_height="6dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/bg_bt_hide_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="19dp"
+            android:layout_marginTop="22dp"
+            android:drawableStart="@drawable/ic_clock_pending"
+            android:drawablePadding="19dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="#404040"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_hide" />
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/line_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_ticket" />
+
+        <TextView
+            android:id="@+id/tv_reason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:text="Reason"
+            android:textColor="@color/black"
+            android:fontFamily="@font/open_sauce_one_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/line"/>
+
+        <EditText
+            android:id="@+id/reason"
+            style="@style/Form.Message"
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:drawablePadding="12dp"
+            android:gravity="start"
+            android:clickable="false"
+            android:focusable="false"
+            android:backgroundTint="@color/gray"
+            android:hint="Pending Information..."
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_reason" />
+
+
+        <TextView
+            android:id="@+id/tv_approve_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="16dp"
+            android:text="Approve Information"
+            android:textColor="@color/black"
+            android:fontFamily="@font/open_sauce_one_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reason"/>
+
+        <EditText
+            android:id="@+id/pnd_information"
+            style="@style/Form.Message"
+            android:layout_width="match_parent"
+            android:layout_height="106dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:drawablePadding="12dp"
+            android:gravity="start"
+            android:hint="Approve Information..."
+            android:imeOptions="actionDone"
+            android:inputType="textMultiLine"
+            android:minLines="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_approve_information" />
+
+        <TextView
+            android:id="@+id/btn_decline"
+            style="@style/Form.EditText"
+            android:layout_width="161dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto_bold"
+            android:backgroundTint="@color/pending"
+            android:gravity="center"
+            android:hint="Decline"
+            android:paddingStart="6dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pnd_information"/>
+
+
+        <TextView
+            android:id="@+id/btn_approve"
+            android:layout_width="161dp"
+            android:layout_height="36dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="1"
+            style="@style/Form.EditText"
+            android:backgroundTint="#2692FD"
+            android:fontFamily="@font/roboto_bold"
+            android:gravity="center"
+            android:paddingStart="6dp"
+            android:paddingEnd="0dp"
+            android:text="Approve"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pnd_information"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

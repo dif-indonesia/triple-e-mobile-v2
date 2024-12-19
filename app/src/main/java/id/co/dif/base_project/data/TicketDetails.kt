@@ -42,7 +42,8 @@ data class TicketDetails(
     var tic_update_at: String? = null,
     var permit_status: PermitStatus? = null,
     var tic_description: String? = null,
-    var tic_escalated: String? = null
+    var tic_escalated: String? = null,
+    var pending_status: PendingStatus? = null
 
 
 ) : BaseData()

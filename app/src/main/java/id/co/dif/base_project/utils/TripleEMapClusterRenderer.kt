@@ -75,7 +75,7 @@ class TripleEMapClusterRenderer(
                     loadImage(context, item.image)
                 } else {
                     item.image?.let { encoded ->
-                        base64ImageToBitmap(encoded)
+                        base64ImageToBitmapHandle(encoded)
                     }
                 }
                 if (loaded != null) BitmapDescriptorFactory.fromBitmap(context.makeClusterItemMarker(loaded.circularCrop(), item)) else person

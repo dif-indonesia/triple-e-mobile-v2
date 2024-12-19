@@ -15,6 +15,7 @@ import id.co.dif.base_project.presentation.fragment.SkillFragment
 import id.co.dif.base_project.presentation.fragment.WorkFragment
 import id.co.dif.base_project.utils.StatusCode
 import id.co.dif.base_project.utils.base64ImageToBitmap
+import id.co.dif.base_project.utils.base64ImageToBitmapHandle
 import id.co.dif.base_project.utils.loadImage
 import id.co.dif.base_project.utils.orDefault
 import id.co.dif.base_project.utils.shimmerDrawable
@@ -64,7 +65,7 @@ class EngineerProfileActivity : BaseActivity<MeViewModel, ActivityEngineerProfil
                 binding.userPosition.setText(it.data?.position.orDefault(""))
 
                 it.data.photo_profile?.let { encoded ->
-                    binding.imageMe.setImageBitmap(base64ImageToBitmap(encoded))
+                    binding.imageMe.setImageBitmap(base64ImageToBitmapHandle(encoded))
                 }
                 it.data.cover?.let { image ->
                     binding.bgHeaderMe.loadImage(image, shimmerDrawable(), default = R.drawable.cover_3e_default)

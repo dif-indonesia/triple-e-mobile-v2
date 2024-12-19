@@ -78,12 +78,12 @@ class CheckinDialog(
                 dismiss()
             }
 
-
         }
 
-        binding.btnNo.setOnClickListener {
+        binding.btnPending.setOnClickListener {
             dismiss()
         }
+
 
         binding.btnClose.setOnClickListener {
             dismiss()

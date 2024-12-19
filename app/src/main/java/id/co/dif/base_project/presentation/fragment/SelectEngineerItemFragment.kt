@@ -12,6 +12,7 @@ import id.co.dif.base_project.base.BaseFragment
 import id.co.dif.base_project.data.Location
 import id.co.dif.base_project.databinding.FragmentSelectEngineerItemBinding
 import id.co.dif.base_project.utils.base64ImageToBitmap
+import id.co.dif.base_project.utils.base64ImageToBitmapHandle
 import id.co.dif.base_project.utils.colorRes
 import id.co.dif.base_project.utils.orDefault
 import id.co.dif.base_project.utils.loadImage
@@ -39,7 +40,7 @@ class SelectEngineerItemFragment(private val engineer: Location) :
         binding.txtLocation.text = engineer.address.orDefault("-")
 
         engineer.image?.let { encoded ->
-            binding.imgProfile.setImageBitmap(base64ImageToBitmap(encoded))
+            binding.imgProfile.setImageBitmap(base64ImageToBitmapHandle(encoded))
         }
         binding.viewArrow.isVisible = shouldShowArrow
         binding.viewArrow.startAnimation(

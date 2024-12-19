@@ -182,6 +182,46 @@ class TroubleTicketAdapter(
                     binding.isRead = item.ticReadAt.isNotNullOrEmpty()
                     item.permitStatus?.let { permitStatus ->
                         when {
+                            item.pendingStatus?.pdnRequestAt != null && item.pendingStatus?.issuer == null && item.ticPersonInChargeEmpId == myProfile?.id -> {
+                                binding.btnCheckin.isVisible = true
+                                binding.btnCheckin.isEnabled = true
+                                binding.btnApprovePermit.isVisible = false
+                                binding.btnCheckin.text = "Request Approve Pending"
+                                binding.btnCheckin.alpha = 1.0f
+                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
+                                    ContextCompat.getColor(context, R.color.request_approve)
+                                )
+                            }
+                            item.pendingStatus?.pdnRequestAt != null && item.pendingStatus?.issuer == null && item.ticPersonInChargeEmpId != myProfile?.id -> {
+                                binding.btnCheckin.isVisible = true
+                                binding.btnCheckin.isEnabled = false
+                                binding.btnApprovePermit.isVisible = false
+                                binding.btnCheckin.text = "Waiting Approve Pending"
+                                binding.btnCheckin.alpha = 1.0f
+                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
+                                    ContextCompat.getColor(context, R.color.pending)
+                                )
+                            }
+                            item.pendingStatus?.pdnApproved == true && item.pendingStatus?.issuer != null -> {
+                                binding.btnCheckin.isVisible = true
+                                binding.btnCheckin.isEnabled = true
+                                binding.btnApprovePermit.isVisible = false
+                                binding.btnCheckin.text = "Pending Approved"
+                                binding.btnCheckin.alpha = 1.0f
+                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
+                                    ContextCompat.getColor(context, R.color.request_approve)
+                                )
+                            }
+                            item.pendingStatus?.pdnApproved == false && item.pendingStatus?.issuer != null -> {
+                                binding.btnCheckin.isVisible = true
+                                binding.btnCheckin.isEnabled = true
+                                binding.btnApprovePermit.isVisible = false
+                                binding.btnCheckin.text = "Request Pending Decline"
+                                binding.btnCheckin.alpha = 1.0f
+                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
+                                    ContextCompat.getColor(context, R.color.checkout)
+                                )
+                            }
                             item.ticCheckinAt == null && item.checkinStatus != null && item.checkinStatus?.checkinApproved == null  && item.ticPersonInChargeEmpId != myProfile?.id && item.permitStatus?.permitApproved == true -> {
                                 binding.btnCheckin.isVisible = true
                                 binding.btnCheckin.isEnabled = false
@@ -506,7 +546,13 @@ class TroubleTicketAdapter(
                         onAlertClicked(it, permitInformation)
                     }
 
-                    binding.timer.text = parseTimeToDayAndHour(item.ticReceived.toString(), item.ticClosedTime)
+//                    binding.timer.text = parseTimeToDayAndHour(item.ticReceived.toString(), item.ticClosedTime)
+                    binding.timer.text = item.ticReceived?.let { received ->
+                        item.ticClosedTime?.let { closed ->
+                            parseTimeToDayAndHour(received.toString(), closed)
+                        }
+                    } ?: "No data available"
+
                 }
             }
         }

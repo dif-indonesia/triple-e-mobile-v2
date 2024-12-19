@@ -51,7 +51,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_checkin"/>
 
             <TextView
-                android:id="@+id/btn_no"
+                android:id="@+id/btn_pending"
                 style="@style/Form.EditText"
                 android:layout_width="161dp"
                 android:layout_height="36dp"
@@ -60,7 +60,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto_bold"
                 android:gravity="center"
-                android:hint="No"
+                android:hint="Cancel"
                 android:paddingStart="6dp"
                 android:textColor="#404040"
                 android:textStyle="bold"
