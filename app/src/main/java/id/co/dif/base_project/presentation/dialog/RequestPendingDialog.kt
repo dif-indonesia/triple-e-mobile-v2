@@ -2,6 +2,7 @@ package id.co.dif.base_project.presentation.dialog
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.res.ColorStateList
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,6 +10,7 @@ import android.view.View
 import android.view.WindowManager
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.DialogFragment
@@ -28,6 +30,9 @@ class RequestPendingDialog (
     var ticketNumber: String? = null,
     var reasonPending: String? = null,
     var pndInformationText: String? = null,
+    var emp_pic_id: Int? = null,
+    var pndCanceled: Boolean? = null,
+    var pndApproved: Boolean? = null,
     private val onActionComplete: (() -> Unit)? = null // Callback untuk refresh
 
 ) : BaseBottomSheetDialog<PermitViewModel, FragmentPopupRequestPendingBinding, Any>() {
@@ -45,13 +50,48 @@ class RequestPendingDialog (
 
         dialog?.window?.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
+        val myProfile = preferences.myDetailProfile.value
         binding.titleTicket.text = "Request Pending Ticket# ${ticketNumber}"
-        binding.reason.setText(reasonPending)
-        if (pndInformationText.isNotNullOrEmpty()){
+
+        if (id == null || pndCanceled == true){
+            binding.tvApproveInformation.isVisible = false
+            binding.pndInformation.isVisible = false
+            binding.btnSend.isVisible = true
+            binding.btnDecline.isVisible = false
+            binding.btnApprove.isVisible = false
+        }
+
+        if (reasonPending.isNotNullOrEmpty() && pndCanceled != true) {
+            binding.reason.setText(reasonPending)
+            binding.reason.backgroundTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(requireContext(), R.color.gray)
+            )
+            binding.reason.isClickable = false
+            binding.reason.isEnabled = false
+        }
+
+        if (pndInformationText.isNotNullOrEmpty() && pndCanceled != true){
             binding.pndInformation.setText(pndInformationText)
             binding.pndInformation.isClickable = false
+            binding.pndInformation.isEnabled = false
             binding.btnApprove.isVisible = false
             binding.btnDecline.isVisible = false
+        }
+
+        if (id != null && pndInformationText.isNullOrEmpty() && pndCanceled != true && emp_pic_id != myProfile?.id){
+            binding.tvApproveInformation.isVisible = false
+            binding.pndInformation.isVisible = false
+            binding.btnSend.isVisible = false
+            binding.btnCancel.isVisible = true
+            binding.btnDecline.isVisible = false
+            binding.btnApprove.isVisible = false
+            binding.btnSend.backgroundTintList = ColorStateList.valueOf(
+                ContextCompat.getColor(requireContext(), R.color.gray)
+            )
+        }
+
+        if (pndApproved == true && pndCanceled != true && emp_pic_id != myProfile?.id){
+            binding.btnCancel.isVisible = true
         }
 
         binding.btnHide.setOnClickListener {
@@ -76,7 +116,24 @@ class RequestPendingDialog (
             }
         })
 
+        binding.btnSend.setOnClickListener {
+            if (binding.reason.text.isNullOrEmpty()){
+                Toast.makeText(context, "Reason is required!", Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.requestPending(
+                    id = ticketNumber,
+                    mutableMapOf(
+                        "reason" to binding.reason.text.toString(),
+                    )
+                )
+            }
+        }
 
+        binding.btnCancel.setOnClickListener {
+                viewModel.cancelPending(
+                    id = ticketNumber
+                )
+        }
 
         binding.btnApprove.setOnClickListener {
             if (binding.reason.text.isNullOrEmpty()){

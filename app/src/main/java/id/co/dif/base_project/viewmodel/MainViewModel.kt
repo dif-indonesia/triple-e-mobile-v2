@@ -34,6 +34,7 @@ class MainViewModel : BaseViewModel() {
             viewModelJob?.cancel()
         }) {
             val response = apiServices.getLatestAppVersion(
+                url = "https://api-assets.triple-e.id:5051/api/v1/assets/check_version",
                 bearerToken = "Bearer ${session?.token_access}",
             )
             responseCheckLatestAppVersion.postValue(response)

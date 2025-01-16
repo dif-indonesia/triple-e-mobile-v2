@@ -19,6 +19,8 @@ class Rca (
     val mrca_rc_category: String,
     val mrca_rc1: String,
     val mrca_rc2: String,
+    val rca_id: Int,
+    val rca_tt_id: Int,
     val rca_notes: String,
     val rca_rc_category: String,
     val rca_rc_tier1: String,

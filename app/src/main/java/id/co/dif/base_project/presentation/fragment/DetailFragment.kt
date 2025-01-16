@@ -79,12 +79,12 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
     override fun onViewBindingCreated(savedInstanceState: Bundle?) {
         ticketDetails = preferences.ticketDetails.value?.copy()
         setupData()
-        requestPending()
 
         session?.let { session ->
             val enable = (session.emp_security ?: 0) >= 2
             binding.btnSelectEngineer.isEnabled = enable
             binding.btnRemoveEngineer.isEnabled = enable
+            binding.etTicFieldEngineer.isEnabled = enable
         }
 
         session?.let { session ->
@@ -696,8 +696,9 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
 
             if (ticketDetails.tic_accepted == false && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
                 binding.btnReqPermit.isVisible = false
-                binding.btnSubmitPending.isVisible = false
                 binding.save.isVisible = false
+                binding.chooceFile.isEnabled = false
+                binding.txtAddNotes.isEnabled = false
             } else {
                 if (ticketDetails.permit_status?.permitApproved == null && ticketDetails.permit_status?.permitInformation == null && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()) {
                     val listOfEdt = findViewsByType(binding.root, EditText::class.java)
@@ -708,17 +709,23 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                     }
                     binding.save.isVisible = false
                     binding.chooceFile.isEnabled = false
+                    binding.txtAddNotes.isEnabled = false
                     binding.btnReqPermit.isVisible = true
                 }
 
                 if (ticketDetails.permit_status?.permitId != null) {
                     binding.btnReqPermit.isEnabled = false
                     binding.chooceFile.isEnabled = false
+                    binding.txtAddNotes.isEnabled = false
                     binding.btnReqPermit.alpha = 0.5f
                     binding.btnReqPermit.text = "Waiting Approved"
                     binding.btnReqPermit.backgroundTintList = ColorStateList.valueOf(
                         ContextCompat.getColor(context, R.color.light_orange)
                     )
+                }
+                if (ticketDetails.permit_status?.permitApproved == true){
+                    binding.chooceFile.isEnabled = true
+                    binding.txtAddNotes.isEnabled = true
                 }
             }
 
@@ -739,57 +746,6 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                     ContextCompat.getColor(context, R.color.request_approve)
                 )
             }
-
-            if (ticketDetails.permit_status?.permitApproved != null && ticketDetails.permit_status?.permitInformation != null && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()) {
-                binding.btnReqPending.isVisible = true
-            }
-
-            if (ticketDetails.pending_status?.pdnRequestAt != null && ticketDetails.pending_status?.issuer == null  && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
-                binding.btnReqPending.text = "Waiting Approve Request Pending"
-                binding.btnReqPending.isEnabled = false
-            }
-            if (ticketDetails.pending_status?.pdnApproved != null && ticketDetails.pending_status?.pdnApproved == false  && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
-                binding.btnReqPending.text = "Request Pending Decline"
-                binding.btnReqPending.isEnabled = false
-                binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
-                    ContextCompat.getColor(context, R.color.pending)
-                )
-            }
-            if (ticketDetails.pending_status?.pdnApproved != null && ticketDetails.pending_status?.pdnApproved == true  && ticketDetails.tic_field_engineer_id == preferences.myDetailProfile.value?.id.toString()){
-                binding.btnReqPending.text = "Request Pending Approved"
-                binding.btnReqPending.isEnabled = false
-                binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
-                    ContextCompat.getColor(context, R.color.request_approve)
-                )
-            }
-
-
-
-            binding.btnReqPending.setOnClickListener {
-                // Balikkan nilai dari requestPending
-                val isPending = viewModel.requestPending ?: false
-                viewModel.requestPending = !isPending
-
-                if (viewModel.requestPending == true) {
-                    // Jika status berubah menjadi true, buka form
-                    binding.formPending.isVisible = true
-                    binding.btnReqPending.text = "Cancel"
-                    binding.btnReqPending.setTextColor(ContextCompat.getColor(context, R.color.black))
-                    binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
-                        ContextCompat.getColor(context, R.color.white)
-                    )
-                    binding.save.isVisible = false // Sembunyikan tombol Save
-                } else {
-                    // Jika status berubah menjadi false, tutup form
-                    binding.formPending.isVisible = false
-                    binding.btnReqPending.text = "Request Pending"
-                    binding.btnReqPending.backgroundTintList = ColorStateList.valueOf(
-                        ContextCompat.getColor(context, R.color.pending)
-                    )
-                    binding.save.isVisible = true // Tampilkan tombol Save kembali
-                }
-            }
-
 
             setFragmentResultListener("requestPermitKey") { _, bundle ->
                 val isSuccess = bundle.getBoolean("isSuccess")
@@ -904,7 +860,6 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                 "latitude" to location?.latitude,
                 "longitude" to location?.longitude,
                 "tic_notes" to binding.txtAddNotes.text.toString(),
-                "tic_status" to binding.etStatus.text.toString(),
                 "tic_accepted" to binding.acceptedByTripleE.isChecked,
                 "tic_closed" to binding.closedTicket.isChecked,
                 "tic_area" to binding.etTicArea.text.toString(),
@@ -954,7 +909,6 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
                             ).format(Date()),
                             file = file,
                             note = note,
-                            tic_status = "Pending",
                             time = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date()),
                             username = preferences.myDetailProfile.value?.fullname,
                             isWithinRadius = "1",
@@ -1096,20 +1050,4 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(), K
         requestPermitDialog().show(childFragmentManager, "requestPermitDialog")
     }
 
-    private fun requestPending (){
-        binding.btnSubmitPending.setOnClickListener {
-            if (binding.txtReasonPending.text.isNullOrEmpty()){
-                Toast.makeText(context, "Reason is required!", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            } else {
-            viewModel.requestPending(
-                id = ticketDetails?.tic_id,
-                mutableMapOf(
-                    "reason" to binding.txtReasonPending.text.toString(),
-                )
-            )
-                }
-        }
-
-    }
 }

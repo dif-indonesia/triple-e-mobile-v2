@@ -14,8 +14,8 @@ android {
         applicationId "id.co.dif.base_project"
         minSdk 21
         targetSdk 33
-        versionCode 125
-        versionName "1.2.5"
+        versionCode 127
+        versionName "1.2.7"
 
         multiDexEnabled = true
 

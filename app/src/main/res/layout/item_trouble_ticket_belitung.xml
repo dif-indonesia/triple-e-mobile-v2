@@ -187,6 +187,47 @@
             app:layout_constraintBottom_toBottomOf="@+id/txt_technician_name"
             />
 
+        <TextView
+            android:id="@+id/btn_pending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"
+            android:maxWidth="150dp"
+            android:text="Pending"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/bg_bottom"
+            android:backgroundTint="@color/pending"
+            android:padding="6dp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/txt_technician_name"
+            app:layout_constraintEnd_toStartOf="@id/btn_submit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/btn_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="150dp"
+            android:maxWidth="150dp"
+            android:text="Submit"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/bg_bottom"
+            android:backgroundTint="@color/request_approve"
+            android:padding="6dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/txt_technician_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
         <FrameLayout
             android:id="@+id/layout_alert"
             android:layout_width="wrap_content"

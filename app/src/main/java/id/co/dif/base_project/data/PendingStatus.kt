@@ -9,7 +9,9 @@ class PendingStatus (
     @SerializedName("pnd_id") val pndId: Int?,
     @SerializedName("pnd_information") val pdnInformation: String?,
     @SerializedName("pnd_reason") val pdnReason: String?,
-    @SerializedName("pnd_request_at") val pdnRequestAt: String?
+    @SerializedName("pnd_request_at") val pdnRequestAt: String?,
+    @SerializedName("pnd_canceled") val pndCanceled: Boolean?,
+    @SerializedName("pnd_canceled_date") val pndCanceledAt: String?
 ): BaseData()
 
 data class Issuer(

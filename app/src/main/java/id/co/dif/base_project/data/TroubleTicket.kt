@@ -15,6 +15,7 @@ data class TroubleTicket(
     @SerializedName("tic_assign_to") var ticAssignTo: String? = null,
     @SerializedName("tic_closed") var ticClosed: Boolean? = null,
     @SerializedName("tic_field_engineer") var ticFieldEngineer: String? = null,
+    @SerializedName("tic_field_engineer_emp_id") var ticFieldEngineerEmpId: Int? = null,
     @SerializedName("tic_closed_time") var ticClosedTime: String? = null,
     @SerializedName("tic_id") var ticId: String? = null,
     @SerializedName("tic_notes") var ticNotes: String? = null,
@@ -38,7 +39,9 @@ data class TroubleTicket(
     @SerializedName("tic_checkout_at") var ticCheckoutAt: String? = null,
     @SerializedName("checkin_status") var checkinStatus: CheckinStatus? = null,
     @SerializedName("tic_read_at") var ticReadAt: String? = null,
-    @SerializedName("pending_status") var pendingStatus: PendingStatus? = null
+    @SerializedName("pending_status") var pendingStatus: PendingStatus? = null,
+    @SerializedName("rca_data") var rcaData: Rca? = null,
+
 ) : BaseData()
 
 data class TicketPermitStatus(

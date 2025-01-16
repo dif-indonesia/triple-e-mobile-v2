@@ -26,6 +26,17 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Approve Permit"
+                android:textColor="@color/black"
+                android:fontFamily="@font/open_sauce_one_bold"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="40dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
             <EditText
                 android:id="@+id/note"
                 style="@style/Form.MultilineEditText"

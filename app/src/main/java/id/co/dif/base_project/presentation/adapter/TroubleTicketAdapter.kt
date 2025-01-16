@@ -12,6 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.compose.ui.graphics.Color
 import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.core.widget.TextViewCompat
@@ -55,7 +56,8 @@ import java.util.Locale
 class TroubleTicketAdapter(
    val onItemClicked: (TroubleTicket)->Unit
     = {},
-   val onAlertClicked: (View, String)->Unit = {_,_->}
+   val onAlertClicked: (View, String)->Unit = {_,_->},
+   val onItemClickedPending: (TroubleTicket) -> Unit = {}
 
 ) :
     BaseAdapter<BaseViewModel, ViewBinding, TroubleTicket>(), KoinComponent {
@@ -180,48 +182,45 @@ class TroubleTicketAdapter(
                     val item = data[position]
 
                     binding.isRead = item.ticReadAt.isNotNullOrEmpty()
+                    if (item.ticAccepted == true && item.ticFieldEngineerEmpId == myProfile?.id) {
+                        binding.btnPending.isVisible = true
+                    }
+                    when{
+                    item.pendingStatus?.pdnRequestAt != null && item.pendingStatus?.issuer == null && item.pendingStatus?.pndCanceled != true && item.ticPersonInChargeEmpId == myProfile?.id -> {
+                        binding.btnPending.text = "Request Approve Pending"
+                        binding.btnPending.alpha = 1.0f
+                        binding.btnPending.isVisible = true
+                        binding.btnPending.backgroundTintList = ColorStateList.valueOf(
+                            ContextCompat.getColor(context, R.color.request_approve)
+                        )
+                    }
+                    item.pendingStatus?.pdnRequestAt != null && item.pendingStatus?.issuer == null && item.pendingStatus?.pndCanceled != true && item.ticPersonInChargeEmpId != myProfile?.id -> {
+                        binding.btnPending.text = "Waiting Approve Pending"
+                        binding.btnPending.alpha = 1.0f
+                        binding.btnPending.backgroundTintList = ColorStateList.valueOf(
+                            ContextCompat.getColor(context, R.color.pending)
+                        )
+                    }
+                    item.pendingStatus?.pdnApproved == true && item.pendingStatus?.issuer != null && item.pendingStatus?.pndCanceled != true -> {
+                        binding.btnPending.text = "Pending Approved"
+                        binding.btnPending.alpha = 1.0f
+                        binding.btnPending.isVisible = true
+                        binding.btnPending.backgroundTintList = ColorStateList.valueOf(
+                            ContextCompat.getColor(context, R.color.request_approve)
+                        )
+                    }
+                    item.pendingStatus?.pdnApproved == false && item.pendingStatus?.issuer != null && item.pendingStatus?.pndCanceled != true-> {
+                        binding.btnPending.text = "Request Pending Decline"
+                        binding.btnPending.alpha = 1.0f
+                        binding.btnPending.isVisible = true
+                        binding.btnPending.backgroundTintList = ColorStateList.valueOf(
+                            ContextCompat.getColor(context, R.color.checkout)
+                        )
+                    }
+                        }
+
                     item.permitStatus?.let { permitStatus ->
                         when {
-                            item.pendingStatus?.pdnRequestAt != null && item.pendingStatus?.issuer == null && item.ticPersonInChargeEmpId == myProfile?.id -> {
-                                binding.btnCheckin.isVisible = true
-                                binding.btnCheckin.isEnabled = true
-                                binding.btnApprovePermit.isVisible = false
-                                binding.btnCheckin.text = "Request Approve Pending"
-                                binding.btnCheckin.alpha = 1.0f
-                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
-                                    ContextCompat.getColor(context, R.color.request_approve)
-                                )
-                            }
-                            item.pendingStatus?.pdnRequestAt != null && item.pendingStatus?.issuer == null && item.ticPersonInChargeEmpId != myProfile?.id -> {
-                                binding.btnCheckin.isVisible = true
-                                binding.btnCheckin.isEnabled = false
-                                binding.btnApprovePermit.isVisible = false
-                                binding.btnCheckin.text = "Waiting Approve Pending"
-                                binding.btnCheckin.alpha = 1.0f
-                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
-                                    ContextCompat.getColor(context, R.color.pending)
-                                )
-                            }
-                            item.pendingStatus?.pdnApproved == true && item.pendingStatus?.issuer != null -> {
-                                binding.btnCheckin.isVisible = true
-                                binding.btnCheckin.isEnabled = true
-                                binding.btnApprovePermit.isVisible = false
-                                binding.btnCheckin.text = "Pending Approved"
-                                binding.btnCheckin.alpha = 1.0f
-                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
-                                    ContextCompat.getColor(context, R.color.request_approve)
-                                )
-                            }
-                            item.pendingStatus?.pdnApproved == false && item.pendingStatus?.issuer != null -> {
-                                binding.btnCheckin.isVisible = true
-                                binding.btnCheckin.isEnabled = true
-                                binding.btnApprovePermit.isVisible = false
-                                binding.btnCheckin.text = "Request Pending Decline"
-                                binding.btnCheckin.alpha = 1.0f
-                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
-                                    ContextCompat.getColor(context, R.color.checkout)
-                                )
-                            }
                             item.ticCheckinAt == null && item.checkinStatus != null && item.checkinStatus?.checkinApproved == null  && item.ticPersonInChargeEmpId != myProfile?.id && item.permitStatus?.permitApproved == true -> {
                                 binding.btnCheckin.isVisible = true
                                 binding.btnCheckin.isEnabled = false
@@ -245,6 +244,7 @@ class TroubleTicketAdapter(
                             item.ticCheckinAt != null && item.ticCheckoutAt != null  -> {
                                 binding.btnCheckin.isVisible = true
                                 binding.btnCheckin.isEnabled = false
+                                binding.btnPending.isVisible = false
                                 binding.btnApprovePermit.isVisible = false
                                 binding.btnCheckin.text = "Closed"
                                 binding.btnCheckin.isEnabled = false
@@ -257,6 +257,7 @@ class TroubleTicketAdapter(
                                 binding.btnCheckin.isVisible = true
                                 binding.btnCheckin.isEnabled = false
                                 binding.btnApprovePermit.isVisible = false
+                                binding.btnPending.isVisible = false
                                 binding.btnCheckin.text = "Checkout"
                                 binding.btnCheckin.isEnabled = true
                                 binding.btnCheckin.alpha = 1.0f
@@ -329,6 +330,7 @@ class TroubleTicketAdapter(
                             item.ticCheckinAt != null && item.ticPersonInChargeEmpId != myProfile?.id && item.submitStatus != null -> {
                                 binding.btnCheckin.isVisible = true
                                 binding.btnCheckin.isEnabled = false
+                                binding.btnPending.isVisible = false
                                 binding.btnApprovePermit.isVisible = false
                                 binding.btnCheckin.text = "Waiting Approved Submit"
                                 binding.btnCheckin.alpha = 1.0f
@@ -346,14 +348,27 @@ class TroubleTicketAdapter(
                                     ContextCompat.getColor(context, R.color.checked)
                                 )
                             }
+                            item.rcaData != null && item.ticCheckinAt != null && item.ticPersonInChargeEmpId != myProfile?.id -> {
+                                binding.btnCheckin.isVisible = true
+                                binding.btnApprovePermit.isVisible = false
+                                binding.btnCheckin.text = "Work completed"
+                                binding.btnCheckin.setTextColor(ContextCompat.getColor(context, R.color.request_approve))
+                                binding.btnCheckin.alpha = 1.0f
+                                binding.btnCheckin.isEnabled = false
+                                binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
+                                    ContextCompat.getColor(context, R.color.transparent)
+                                )
+                                binding.btnSubmit.isVisible = true
+                            }
                             item.ticCheckinAt != null && item.ticPersonInChargeEmpId != myProfile?.id -> {
                                 binding.btnCheckin.isVisible = true
                                 binding.btnApprovePermit.isVisible = false
-                                binding.btnCheckin.text = "Submit"
+                                binding.btnCheckin.text = "Work in progress!"
+                                binding.btnCheckin.setTextColor(ContextCompat.getColor(context, R.color.dark_purple))
                                 binding.btnCheckin.alpha = 1.0f
-                                binding.btnCheckin.isEnabled = true
+                                binding.btnCheckin.isEnabled = false
                                 binding.btnCheckin.backgroundTintList = ColorStateList.valueOf(
-                                    ContextCompat.getColor(context, R.color.request_approve)
+                                    ContextCompat.getColor(context, R.color.transparent)
                                 )
                             }
                             item.ticCheckinAt == null && item.checkinStatus?.checkinApproved == false && item.ticPersonInChargeEmpId != myProfile?.id -> {
@@ -538,6 +553,10 @@ class TroubleTicketAdapter(
 
                     binding.btnApprovePermit.setOnClickListener {
                         onItemClicked(item)
+                    }
+
+                    binding.btnPending.setOnClickListener{
+                        onItemClickedPending(item)
                     }
 
                     binding.layoutAlert.setOnClickListener {

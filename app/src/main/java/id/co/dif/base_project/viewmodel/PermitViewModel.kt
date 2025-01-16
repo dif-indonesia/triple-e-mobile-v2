@@ -279,6 +279,27 @@ class PermitViewModel: BaseViewModel() {
         }
     }
 
+    fun cancelPending(id: String?) {
+        viewModelScope.launch(CoroutineExceptionHandler { _, e ->
+            dissmissLoading()
+            responseRequestPending.postValue(BaseResponse(status = 500, message = "Cancel Pending failed", data = null)) // Menangani kegagalan dengan data null
+        }) {
+            showLoading()
+            try {
+                val response = apiServices.cancelPending(
+                    bearerToken = "Bearer ${session?.token_access}",
+                    id = id
+                )
+                responseRequestPending.postValue(BaseResponse(status = response.status, message = response.message, data = response.data)) // Menggunakan data respons API
+            } catch (e: Exception) {
+                Log.e("PermitViewModel", "Cancel Pending failed: ${e.message}")
+                responseRequestPending.postValue(BaseResponse(status = 500, message = "Cancel Pending failed", data = null)) // Menggunakan data null untuk error
+            } finally {
+                dissmissLoading()
+            }
+        }
+    }
+
     fun approvePending(id: Int?, param: MutableMap<String, Any?>) {
         viewModelScope.launch(CoroutineExceptionHandler { _, e ->
             dissmissLoading()

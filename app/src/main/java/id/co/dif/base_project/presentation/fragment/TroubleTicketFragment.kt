@@ -93,6 +93,19 @@ class TroubleTicketFragment : BaseFragment<TroubleTicketViewModel, FragmentTroub
             onItemClicked = {onCheckinChekout(it)},
             onAlertClicked = { anchor, message ->
                 declineInformationDialog(message).show(childFragmentManager, "declineInformationDialog")
+            },
+            onItemClickedPending = { tt ->
+                RequestPendingDialog(
+                    tt.pendingStatus?.pndId,
+                    tt.ticId,
+                    tt.pendingStatus?.pdnReason,
+                    tt.pendingStatus?.pdnInformation,
+                    tt.ticPersonInChargeEmpId,
+                    tt.pendingStatus?.pndCanceled,
+                    tt.pendingStatus?.pdnApproved
+                ) {
+                    setupTroubleTicketList()
+                }.show(childFragmentManager, "PendingRequestDialog")
             }
         )
 
@@ -235,6 +248,19 @@ class TroubleTicketFragment : BaseFragment<TroubleTicketViewModel, FragmentTroub
             onItemClicked = {onCheckinChekout(it)},
             onAlertClicked = { anchor, message ->
                 declineInformationDialog(message).show(childFragmentManager, "declineInformationDialog")
+            },
+            onItemClickedPending = { tt ->
+                RequestPendingDialog(
+                    tt.pendingStatus?.pndId,
+                    tt.ticId,
+                    tt.pendingStatus?.pdnReason,
+                    tt.pendingStatus?.pdnInformation,
+                    tt.ticPersonInChargeEmpId,
+                    tt.pendingStatus?.pndCanceled,
+                    tt.pendingStatus?.pdnApproved
+                ) {
+                    setupTroubleTicketList()
+                }.show(childFragmentManager, "PendingRequestDialog")
             }
         )
         troubleTicketAdapter.notifyDataSetChanged()
@@ -305,25 +331,6 @@ class TroubleTicketFragment : BaseFragment<TroubleTicketViewModel, FragmentTroub
         val checkID = tt.checkinStatus?.checkinId
         val pendingId = tt.pendingStatus?.pndId
         when {
-            tt.pendingStatus?.pdnRequestAt != null && tt.pendingStatus?.issuer == null -> {
-                RequestPendingDialog(
-                    pendingId,
-                    tt.ticId,
-                    tt.pendingStatus?.pdnReason
-                ){
-                    setupTroubleTicketList()
-                }.show(childFragmentManager, "PendingRequestDialog")
-            }
-            tt.pendingStatus?.pdnRequestAt != null && tt.pendingStatus?.issuer != null -> {
-                RequestPendingDialog(
-                    pendingId,
-                    tt.ticId,
-                    tt.pendingStatus?.pdnReason,
-                    tt.pendingStatus?.pdnInformation
-                ){
-                    setupTroubleTicketList()
-                }.show(childFragmentManager, "PendingRequestDialogApprove")
-            }
             tt.permitStatus?.permitApproved == true && tt.ticCheckinAt == null && tt.checkinStatus != null -> {
                 approveCheckinDialog(
                     checkID,

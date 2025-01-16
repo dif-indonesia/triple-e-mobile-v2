@@ -549,11 +549,16 @@ interface ApiServices {
         @Header("Authorization") bearerToken: String?,
     ): BaseResponse<NotificationUnreadStatus>
 
-    @GET("check_version")
+//    @GET("check_version")
+//    suspend fun getLatestAppVersion(
+//        @Header("Authorization") bearerToken: String?,
+//    ): BaseResponse<LatestAppVersion>
+
+    @GET
     suspend fun getLatestAppVersion(
+        @Url url: String,
         @Header("Authorization") bearerToken: String?,
     ): BaseResponse<LatestAppVersion>
-
 
     @GET("notifications/num_unread")
     suspend fun getUnreadNumber(
@@ -809,6 +814,12 @@ interface ApiServices {
         @Path("id") id: String?,
         @Header("Authorization") bearerToken: String?,
         @Body param: MutableMap<String, Any?>
+    ): BaseResponse<Any?>
+
+    @PUT("ops_ticket/cancel-pending/{id}")
+    suspend fun cancelPending(
+        @Path("id") id: String?,
+        @Header("Authorization") bearerToken: String?
     ): BaseResponse<Any?>
 
     @PUT("ops_ticket/request-pending/approve/{id}")

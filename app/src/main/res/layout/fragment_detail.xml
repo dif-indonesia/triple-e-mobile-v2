@@ -258,6 +258,7 @@
                                 style="@style/Form.EditText_grey"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
+                                android:clickable="true"
                                 android:focusable="true"
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
@@ -353,6 +354,7 @@
                                 android:layout_height="wrap_content"
                                 android:completionThreshold="1"
                                 android:focusable="true"
+                                android:clickable="true"
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -424,8 +426,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="start"
-                            android:focusable="false"
-                            android:clickable="false"
                             android:imeOptions="actionDone"
                             android:inputType="textShortMessage|textMultiLine"
                             android:minLines="4"
@@ -536,16 +536,8 @@
                             style="@style/Form.Button_save"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/submit" />
+                            android:text="Update Ticket" />
 
-                        <Button
-                            android:id="@+id/btn_req_pending"
-                            style="@style/Form.Button_request_pending"
-                            android:backgroundTint="@color/pending"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:visibility="gone"
-                            android:text="Request Pending" />
 
                         <Button
                             android:id="@+id/btn_req_permit"
@@ -555,39 +547,6 @@
                             android:layout_height="wrap_content"
                             android:text="@string/request_permit" />
 
-                        <LinearLayout
-                            android:id="@+id/form_pending"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:visibility="gone"
-                            android:orientation="vertical">
-
-                            <TextView
-                                style="@style/Form.Label"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/reason_pending" />
-
-                            <EditText
-                                android:id="@+id/txt_reason_pending"
-                                style="@style/Form.EditText"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="start"
-                                android:imeOptions="actionDone"
-                                android:inputType="textShortMessage|textMultiLine"
-                                android:minLines="4"
-                                app:validateEmpty="@{true}" />
-
-                            <Button
-                                android:id="@+id/btn_submit_pending"
-                                style="@style/Form.Button_save"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginBottom="20dp"
-                                android:text="Submit Pending" />
-
-                        </LinearLayout>
 
                     </LinearLayout>
                 </LinearLayout>
